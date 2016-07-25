@@ -6,6 +6,13 @@ body{
 #home{
 	background-color: #29B429;
 	height: 525px;
+	color: #FFFFFF;
+}
+
+#jumbo{
+	margin-top: 25%;
+	margin-left: 25%;
+	background: rgba(255, 255, 255, 0.5);;
 }
 
 #about{
@@ -19,7 +26,11 @@ body{
 	
 }
 
-#signup{
+#preview{
 	background-color: #29B429;
 	height: 525px;
+}
+
+#previewImage{
+	margin-top: 5%;
 }
