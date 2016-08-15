@@ -22,4 +22,11 @@ module.exports = function (app) {
 			link: 'signin',
 		})
 	});
+
+	app.get('/dashboard', function (req, res){
+		res.render('dashboard', {
+			title: "My HoneyDo",
+			link: "dashboard",
+		})
+	});
 };
