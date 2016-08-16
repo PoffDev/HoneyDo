@@ -2,6 +2,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var path = require('path');
 var bodyparser = require('body-parser');
+var orm = require('/config/orm.js')
 
 //Port
 var app = express();
