@@ -23,7 +23,7 @@ function connectToDB(){
 module.exports.connectToDB = connectToDB;
 
 function addUserToDB (name1, name2, email, password, callback){
-	var queryString = 'INSERT INTO Users (name1, name2, email, password) VALUES (?, ?, ?, ?)';
+	var queryString = 'INSERT INTO members (name1, name2, email, password) VALUES (?, ?, ?, ?)';
 	var vals = [name1, name2, email, password];
 	connection.query(queryString, vals, function(err, results){
 		if (err) return callback (false, err)

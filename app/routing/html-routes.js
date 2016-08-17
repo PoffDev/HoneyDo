@@ -57,15 +57,14 @@ module.exports = function (app) {
 	});
 
 	app.get('/dashboard', function (req, res){
-		var user_id = parseInt(req.user.userID);
-		if (req.isAuthenticated()){
-			console.log(req.user.userID);
+		//var user_id = parseInt(req.user.userID);
+		// if (req.isAuthenticated()){
+		// 	console.log(req.user.userID);
 				res.render('dashboard', {
-					title: "My HoneyDo",
-					link: "dashboard",
-					userID: req.user.userID
+					title: "My HoneyDo"
+					// userID: req.user.userID
 				})
-			}
+			//}
 		});
 
 	app.get('/authenticated', function(req,res){
