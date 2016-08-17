@@ -19,7 +19,9 @@
   "homepage": "https://github.com/PoffDev/HoneyDo#readme",
   "dependencies": {
     "browser-sync": "^2.13.0",
+    "connect-flash": "^0.1.1",
     "express": "^4.14.0",
+    "express-session": "^1.14.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
     "handlebars": "^4.0.5",

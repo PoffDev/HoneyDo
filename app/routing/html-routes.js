@@ -9,9 +9,11 @@ passport.use(new LocalStrategy({passReqToCallback : true},
 
   	//Search ORM DB for user
   	orm.findUser(email, function(err, user){
+  		
   		user = user[0];
-  		if (err) { return done(err); }
-      if (!user) { return done(null, false); }
+  			
+  			if (err) { return done(err); }
+      	if (!user) { return done(null, false); }
 
       //password compare
       if (password !== user.password) { return done(null, false);}
@@ -50,26 +52,31 @@ module.exports = function (app) {
 	app.get('/signin', function (req, res){
 		res.render('signin', {
 			title: 'Sign In', 
-			link: 'signin',
+			link: 'dashboard',
 		})
 	});
 
 	app.get('/dashboard', function (req, res){
-		res.render('dashboard', {
-			title: "My HoneyDo",
-			link: "dashboard",
-		})
-	});
+		var user_id = parseInt(req.user.userID);
+		if (req.isAuthenticated()){
+			console.log(req.user.userID);
+				res.render('dashboard', {
+					title: "My HoneyDo",
+					link: "dashboard",
+					userID: req.user.userID
+				})
+			}
+		});
 
 	app.get('/authenticated', function(req,res){
 		if (req.isAuthenticated()) {
 			res.render('authenticated', {
-				username: req.user.username
+				email: req.user.email
 			})
-		} else {
-			res.redirect('dashboard')
-		}
-	});
+			} else {
+				res.redirect('dashboard')
+			}
+		});
 
 	app.get('/logout', function(req, res){
 	  req.logout();
@@ -78,7 +85,7 @@ module.exports = function (app) {
 
 //Post Routes
 
-	app.post('/signin', passport.authenticate('local',{failureRedirect:'/', failureFlash:'Wrong Username or Password'}), function(req, res){
+	app.post('/signin', passport.authenticate('local',{failureRedirect:'/', failureFlash:'Wrong eMail or Password'}), function(req, res){
 		res.redirect('/authenticated');
 	});
 
