@@ -20,6 +20,7 @@ function connectToDB(){
     });
 };
 
+
 module.exports.connectToDB = connectToDB;
 
 function addUserToDB (name1, name2, email, password, callback){
@@ -45,3 +46,27 @@ function findUser(email, callback){
 	};
 
 module.exports.findUser = findUser;
+
+var orm = {
+
+	connectToDB: function (req, res){
+		connection.connect(function(err){
+        if (err) {
+            console.error('error connection:', err.stack);
+            return
+        }
+        //console.log('connected to MySQL DB')
+    	});
+	},
+
+	Tasks: function(userTaskID, callback){
+		console.log('find task function running')
+		connection.query('SELECT * FROM tasks', function (err, task){
+			callback(err, task)
+		})
+	},
+
+	
+}
+
+module.exports = orm;

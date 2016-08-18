@@ -82,6 +82,20 @@ module.exports = function (app) {
 	  res.redirect('/');
 	});
 
+	app.get('/test', function (req, res){
+		orm.Tasks(function(userTaskID){
+			res.render('test', {
+				title: 'test',
+				link: 'test',
+				task1: userTaskID
+			});
+
+			console.log('user task ID ' + userTaskID)
+		})
+		
+
+	});
+
 //Post Routes
 
 	app.post('/signin', passport.authenticate('local',{failureRedirect:'/', failureFlash:'Wrong eMail or Password'}), function(req, res){
