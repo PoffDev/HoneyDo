@@ -1,0 +1,33 @@
+{
+  "name": "honeydo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoffDev/HoneyDo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PoffDev/HoneyDo/issues"
+  },
+  "homepage": "https://github.com/PoffDev/HoneyDo#readme",
+  "dependencies": {
+    "browser-sync": "^2.13.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "handlebars": "^4.0.5",
+    "mysql": "^2.11.1",
+    "orm": "^3.1.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}
