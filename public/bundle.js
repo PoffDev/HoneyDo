@@ -56,6 +56,10 @@
 
 	var _Dash2 = _interopRequireDefault(_Dash);
 
+	var _Home = __webpack_require__(241);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
 	var _Login = __webpack_require__(99);
 
 	var _Login2 = _interopRequireDefault(_Login);
@@ -88,6 +92,7 @@
 		React.createElement(_reactRouter.Route, { path: '/', component: _Main2.default }),
 		React.createElement(_reactRouter.Route, { path: '/Add', component: _Add2.default }),
 		React.createElement(_reactRouter.Route, { path: '/Dash', component: _Dash2.default }),
+		React.createElement(_reactRouter.Route, { path: '/Home', component: _Home2.default }),
 		React.createElement(_reactRouter.Route, { path: '/Login', component: _Login2.default }),
 		React.createElement(_reactRouter.Route, { path: '/Main', component: _Main2.default }),
 		React.createElement(_reactRouter.Route, { path: '/Points', component: _Points2.default }),
@@ -9931,15 +9936,39 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(1);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
 	  displayName: 'Add',
+
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      null,
-	      'Add'
+	      { className: 'containter' },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'This is Add Task'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-md-1' },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/Home' },
+	            _react2.default.createElement(
+	              'button',
+	              { type: 'button', className: 'btn btn-danger' },
+	              'Log Out'
+	            )
+	          )
+	        )
+	      )
 	    );
 	  }
 	});
@@ -9951,24 +9980,131 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(1);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'Dash',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      'Dash'
-	    );
-	  }
+		displayName: 'Dash',
+
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'container' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-2 col-md-offset-5' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'panel panel-default text-center' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'panel-heading' },
+								_react2.default.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'Brownie Points'
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'panel-body' },
+								_react2.default.createElement(
+									'span',
+									null,
+									_react2.default.createElement(
+										'h1',
+										null,
+										'100'
+									),
+									_react2.default.createElement(
+										'p',
+										null,
+										'pts'
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-4 col-md-offset-1' },
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{ to: '/add' },
+							_react2.default.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-primary form-control' },
+								'Add Tasks'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-4 col-md-offset-2' },
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{ to: '/view' },
+							_react2.default.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-primary form-control' },
+								'View Tasks'
+							)
+						)
+					)
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'well well-lg' },
+							_react2.default.createElement(
+								'p',
+								null,
+								'I will be a well that displays a random array of information. Usually I\'ll display an idea for a task to be completed or an idea for a task to be completed. I\'ll also display random information about the app, like little known features such as the bonus points. '
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-1' },
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{ to: '/Home' },
+							_react2.default.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-danger' },
+								'Log Out'
+							)
+						)
+					)
+				)
+			);
+		}
 	});
 
 /***/ },
@@ -9984,6 +10120,8 @@
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(1);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10047,6 +10185,19 @@
 																																									_react2.default.createElement('br', null),
 																																									_react2.default.createElement('input', { type: 'password', id: 'emailInput' })
 																																					)
+																																	),
+																																	_react2.default.createElement(
+																																					'div',
+																																					{ className: 'row' },
+																																					_react2.default.createElement(
+																																									_reactRouter.Link,
+																																									{ to: '/dash' },
+																																									_react2.default.createElement(
+																																													'button',
+																																													{ type: 'button', className: 'btn btn-default' },
+																																													'Submit'
+																																									)
+																																					)
 																																	)
 																													)
 																									)
@@ -10070,6 +10221,8 @@
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(1);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10128,18 +10281,26 @@
 							'div',
 							{ className: 'col-md-1 col-md-offset-5' },
 							_react2.default.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-primary' },
-								'Login'
+								_reactRouter.Link,
+								{ to: '/login' },
+								_react2.default.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-primary' },
+									'Login'
+								)
 							)
 						),
 						_react2.default.createElement(
 							'div',
 							{ className: 'col-md-1' },
 							_react2.default.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-warning' },
-								'About'
+								_reactRouter.Link,
+								{ to: '/home' },
+								_react2.default.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-warning' },
+									'About'
+								)
 							)
 						)
 					)
@@ -10162,15 +10323,39 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(1);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
 	  displayName: 'Points',
+
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      null,
-	      'Points'
+	      { className: 'containter' },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'This is Points'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-md-1' },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/Home' },
+	            _react2.default.createElement(
+	              'button',
+	              { type: 'button', className: 'btn btn-danger' },
+	              'Log Out'
+	            )
+	          )
+	        )
+	      )
 	    );
 	  }
 	});
@@ -10189,15 +10374,39 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(1);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
 	  displayName: 'View',
+
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      null,
-	      'Views'
+	      { className: 'containter' },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'This is View'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-md-1' },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/Home' },
+	            _react2.default.createElement(
+	              'button',
+	              { type: 'button', className: 'btn btn-danger' },
+	              'Log Out'
+	            )
+	          )
+	        )
+	      )
 	    );
 	  }
 	});
@@ -27380,6 +27589,57 @@
 
 	module.exports = ReactDOMNullInputValuePropHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(1);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'Home',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'containter' },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'This is Home'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-md-1' },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/Home' },
+	            _react2.default.createElement(
+	              'button',
+	              { type: 'button', className: 'btn btn-danger' },
+	              'Log Out'
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
 
 /***/ }
 /******/ ]);

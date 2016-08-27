@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router'
+
 
 export default React.createClass({
     render: function() {
@@ -45,13 +47,13 @@ export default React.createClass({
 
 						<div className = "col-md-1 col-md-offset-5">
 
-							<button type="button" className="btn btn-primary">Login</button>
+							<Link to="/login"><button type="button" className="btn btn-primary">Login</button></Link>
 
 						</div>
 
 						<div className = "col-md-1">
 
-							<button type="button" className="btn btn-warning">About</button>
+							<Link to="/home"><button type="button" className="btn btn-warning">About</button></Link>
 
 						</div>
 

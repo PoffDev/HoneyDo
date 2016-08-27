@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router'
+
 
 export default React.createClass({
     render: function() {
@@ -23,6 +25,7 @@ export default React.createClass({
 			    					<div className="form-group">
 			    						<label for="exampleInputEmail1">Email address</label><br />
 			    						<input type="email"  id="emailInput"/>
+
 									</div>
 						</div>
 						<div className = "row">
@@ -31,6 +34,11 @@ export default React.createClass({
 										<label for="exampleInputEmail1">Password</label><br />
 			    						<input type="password"  id="emailInput" />
 									</div>
+						</div>
+
+						<div className = "row">
+
+									<Link to="/dash"><button type="button" className="btn btn-default">Submit</button></Link>
 						</div>
 						
 			  					</div>

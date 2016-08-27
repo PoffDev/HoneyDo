@@ -8,6 +8,7 @@ import { Router, Route, hashHistory } from 'react-router'
 // Include the Main Component
 import Add from './Components/Add'
 import Dash from './Components/Dash'
+import Home from './Components/Home'
 import Login from './Components/Login'
 import Main from './Components/Main'
 import Points from './Components/Points'
@@ -20,6 +21,7 @@ ReactDOM.render((
 		<Route path="/" component={Main}/>
 		<Route path="/Add" component={Add}/>
 		<Route path="/Dash" component={Dash}/>
+		<Route path="/Home" component={Home}/>
 		<Route path="/Login" component={Login}/>
 		<Route path="/Main" component={Main}/>
 		<Route path="/Points" component={Points}/>

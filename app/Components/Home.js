@@ -8,7 +8,7 @@ export default React.createClass({
 
     	<div className = "containter">
 
-    			<h1>This is Add Task</h1>
+    			<h1>This is Home</h1>
 
     			<div className = "row">
 
