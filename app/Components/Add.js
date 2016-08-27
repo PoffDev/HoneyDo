@@ -27,7 +27,7 @@ export default React.createClass({
 				  					<div className="panel-body">
 				    					<div className="form-group">
 				    						<label>HoneyDo</label><br />
-				    						<input type="text" id="addHoneyDo" className="form-control"/>
+				    						<input type="text" id="addHoneyDo" className="form-control" placeholder = "Do the Dishes..."/>
 
 										</div>
 									</div>
@@ -39,7 +39,7 @@ export default React.createClass({
 				  					<div className="panel-body">
 				    					<div className="form-group">
 				    						<label>Brownie Points</label><br />
-				    						<input type="text" id="addPoints" className="form-control"/>
+				    						<input type="text" id="addPoints" className="form-control" placeholder = "50"/>
 
 										</div>
 									</div>

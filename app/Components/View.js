@@ -2,15 +2,114 @@ import React from 'react'
 
 import { Link } from 'react-router'
 
+
 export default React.createClass({
-  render: function () {
-    return (
+    render: function() {
+        return (
+            
+            <div id = 'Add'>
 
-    	<div className = "containter">
+            	<div className = "container">
 
-    			<h1>This is View</h1>
+	            	<div className = "col-md-6 col-md-offset-3">
 
-    			<div className = "row">
+		                <div className="panel panel-default">
+							<div className="panel-heading text-center">
+		    					<h3 className="panel-title">Remaining HoneyDo's</h3>
+		  					</div>
+
+		  					<div className="panel-body">
+
+								<div className = "row">
+				  					<div className = "col-md-7 col-md-offset-1">
+					  					<div className="well">
+
+					  						<ul>
+					    						<li>This is a HoneyDo:
+					    							<ul>
+					    								<li><i>time remaining for bonus</i></li>
+					    							</ul>
+					    						</li>
+					    						
+					    						<li>This is a HoneyDo:
+					    							<ul>
+					    								<li><i>time remaining for bonus</i></li>
+					    							</ul>
+					    						</li>
+
+					    						<li>This is a HoneyDo:
+					    							<ul>
+					    								<li><i>time remaining for bonus</i></li>
+					    							</ul>
+					    						</li>
+
+					    						<li>This is a HoneyDo:
+					    							<ul>
+					    								<li><i>time remaining for bonus</i></li>
+					    							</ul>
+					    						</li>
+
+					    					</ul>
+										</div>
+									</div>
+
+									<div className = "col-md-3">
+					  					
+					  					<div className="well">
+											<ul>
+												<li><input type="checkbox"></input>
+					    							<ul>
+					    								<li></li>
+					    							</ul>
+					    						</li>
+												<li><input type="checkbox"></input>
+					    							<ul>
+					    								<li></li>
+					    							</ul>
+					    						</li>
+					    						<li><input type="checkbox"></input>
+					    							<ul>
+					    								<li></li>
+					    							</ul>
+					    						</li>
+					    						<li><input type="checkbox"></input>
+					    							<ul>
+					    								<li></li>
+					    							</ul>
+					    						</li>
+											</ul>
+										</div>
+
+									</div>
+
+
+								</div>
+
+								<div className = "row">
+
+									<div className = "col-md-3 col-md-offset-1">
+
+										<button type="button" className="btn btn-warning form-control">Dashboard</button>
+
+									</div>
+
+									<div className = "col-md-3 col-md-offset-4">
+
+										<button type="button" className="btn btn-primary form-control">Completed</button>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+						
+				</div>
+
+				<div className = "row">
 
 	    			<div className = "col-md-1">
 
@@ -20,8 +119,8 @@ export default React.createClass({
 
 	    		</div>
 
-	    </div>
-
-    	)
-	}
-})
+			</div>
+            
+        );
+    }
+});

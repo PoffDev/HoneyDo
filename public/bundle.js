@@ -9986,7 +9986,7 @@
 													'HoneyDo'
 												),
 												_react2.default.createElement('br', null),
-												_react2.default.createElement('input', { type: 'text', id: 'addHoneyDo', className: 'form-control' })
+												_react2.default.createElement('input', { type: 'text', id: 'addHoneyDo', className: 'form-control', placeholder: 'Do the Dishes...' })
 											)
 										)
 									)
@@ -10009,7 +10009,7 @@
 													'Brownie Points'
 												),
 												_react2.default.createElement('br', null),
-												_react2.default.createElement('input', { type: 'text', id: 'addPoints', className: 'form-control' })
+												_react2.default.createElement('input', { type: 'text', id: 'addPoints', className: 'form-control', placeholder: '50' })
 											)
 										)
 									),
@@ -10494,7 +10494,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(3);
@@ -10506,36 +10506,218 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'View',
+		displayName: 'View',
 
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'containter' },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'This is View'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'row' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'col-md-1' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/Home' },
-	            _react2.default.createElement(
-	              'button',
-	              { type: 'button', className: 'btn btn-danger' },
-	              'Log Out'
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ id: 'Add' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'container' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'panel panel-default' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'panel-heading text-center' },
+								_react2.default.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'Remaining HoneyDo\'s'
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'panel-body' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-7 col-md-offset-1' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'well' },
+											_react2.default.createElement(
+												'ul',
+												null,
+												_react2.default.createElement(
+													'li',
+													null,
+													'This is a HoneyDo:',
+													_react2.default.createElement(
+														'ul',
+														null,
+														_react2.default.createElement(
+															'li',
+															null,
+															_react2.default.createElement(
+																'i',
+																null,
+																'time remaining for bonus'
+															)
+														)
+													)
+												),
+												_react2.default.createElement(
+													'li',
+													null,
+													'This is a HoneyDo:',
+													_react2.default.createElement(
+														'ul',
+														null,
+														_react2.default.createElement(
+															'li',
+															null,
+															_react2.default.createElement(
+																'i',
+																null,
+																'time remaining for bonus'
+															)
+														)
+													)
+												),
+												_react2.default.createElement(
+													'li',
+													null,
+													'This is a HoneyDo:',
+													_react2.default.createElement(
+														'ul',
+														null,
+														_react2.default.createElement(
+															'li',
+															null,
+															_react2.default.createElement(
+																'i',
+																null,
+																'time remaining for bonus'
+															)
+														)
+													)
+												),
+												_react2.default.createElement(
+													'li',
+													null,
+													'This is a HoneyDo:',
+													_react2.default.createElement(
+														'ul',
+														null,
+														_react2.default.createElement(
+															'li',
+															null,
+															_react2.default.createElement(
+																'i',
+																null,
+																'time remaining for bonus'
+															)
+														)
+													)
+												)
+											)
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-3' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'well' },
+											_react2.default.createElement(
+												'ul',
+												null,
+												_react2.default.createElement(
+													'li',
+													null,
+													_react2.default.createElement('input', { type: 'checkbox' }),
+													_react2.default.createElement(
+														'ul',
+														null,
+														_react2.default.createElement('li', null)
+													)
+												),
+												_react2.default.createElement(
+													'li',
+													null,
+													_react2.default.createElement('input', { type: 'checkbox' }),
+													_react2.default.createElement(
+														'ul',
+														null,
+														_react2.default.createElement('li', null)
+													)
+												),
+												_react2.default.createElement(
+													'li',
+													null,
+													_react2.default.createElement('input', { type: 'checkbox' }),
+													_react2.default.createElement(
+														'ul',
+														null,
+														_react2.default.createElement('li', null)
+													)
+												),
+												_react2.default.createElement(
+													'li',
+													null,
+													_react2.default.createElement('input', { type: 'checkbox' }),
+													_react2.default.createElement(
+														'ul',
+														null,
+														_react2.default.createElement('li', null)
+													)
+												)
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-3 col-md-offset-1' },
+										_react2.default.createElement(
+											'button',
+											{ type: 'button', className: 'btn btn-warning form-control' },
+											'Dashboard'
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-3 col-md-offset-4' },
+										_react2.default.createElement(
+											'button',
+											{ type: 'button', className: 'btn btn-primary form-control' },
+											'Completed'
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-1' },
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{ to: '/Home' },
+							_react2.default.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-danger' },
+								'Log Out'
+							)
+						)
+					)
+				)
+			);
+		}
 	});
 
 /***/ },
