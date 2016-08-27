@@ -9929,7 +9929,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(3);
@@ -9941,36 +9941,115 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'Add',
+		displayName: 'Add',
 
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'containter' },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'This is Add Task'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'row' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'col-md-1' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/Home' },
-	            _react2.default.createElement(
-	              'button',
-	              { type: 'button', className: 'btn btn-danger' },
-	              'Log Out'
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ id: 'Add' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'container text-center' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-md-6 col-md-offset-3' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'panel panel-default' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'panel-heading' },
+									_react2.default.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'Add a Honey Do'
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-10 col-md-offset-1' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'panel-body' },
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group' },
+												_react2.default.createElement(
+													'label',
+													null,
+													'Email address'
+												),
+												_react2.default.createElement('br', null),
+												_react2.default.createElement('input', { type: 'email', id: 'emailInput', className: 'form-control' })
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-10 col-md-offset-1' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'panel-body' },
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group' },
+												_react2.default.createElement(
+													'label',
+													null,
+													'Password'
+												),
+												_react2.default.createElement('br', null),
+												_react2.default.createElement('input', { type: 'email', id: 'emailInput', className: 'form-control' })
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ to: '/dash' },
+										_react2.default.createElement(
+											'button',
+											{ type: 'button', className: 'btn btn-default' },
+											'Submit'
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-1' },
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{ to: '/Home' },
+							_react2.default.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-danger' },
+								'Log Out'
+							)
+						)
+					)
+				)
+			);
+		}
 	});
 
 /***/ },
@@ -10114,7 +10193,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-					value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(3);
@@ -10126,86 +10205,98 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-					displayName: 'Login',
+		displayName: 'Login',
 
-					render: function render() {
-									return _react2.default.createElement(
-													'div',
-													{ id: 'Login' },
-													_react2.default.createElement(
-																	'div',
-																	{ className: 'container text-center' },
-																	_react2.default.createElement(
-																					'div',
-																					{ className: 'row' },
-																					_react2.default.createElement(
-																									'div',
-																									{ className: 'col-md-4 col-md-offset-4' },
-																									_react2.default.createElement(
-																													'div',
-																													{ className: 'panel panel-default' },
-																													_react2.default.createElement(
-																																	'div',
-																																	{ className: 'panel-heading' },
-																																	_react2.default.createElement(
-																																					'h3',
-																																					{ className: 'panel-title' },
-																																					'HoneyDo Login'
-																																	)
-																													),
-																													_react2.default.createElement(
-																																	'div',
-																																	{ className: 'row' },
-																																	_react2.default.createElement(
-																																					'div',
-																																					{ className: 'panel-body' },
-																																					_react2.default.createElement(
-																																									'div',
-																																									{ className: 'form-group' },
-																																									_react2.default.createElement(
-																																													'label',
-																																													{ 'for': 'exampleInputEmail1' },
-																																													'Email address'
-																																									),
-																																									_react2.default.createElement('br', null),
-																																									_react2.default.createElement('input', { type: 'email', id: 'emailInput' })
-																																					)
-																																	),
-																																	_react2.default.createElement(
-																																					'div',
-																																					{ className: 'row' },
-																																					_react2.default.createElement(
-																																									'div',
-																																									{ className: 'form-group' },
-																																									_react2.default.createElement(
-																																													'label',
-																																													{ 'for': 'exampleInputEmail1' },
-																																													'Password'
-																																									),
-																																									_react2.default.createElement('br', null),
-																																									_react2.default.createElement('input', { type: 'password', id: 'emailInput' })
-																																					)
-																																	),
-																																	_react2.default.createElement(
-																																					'div',
-																																					{ className: 'row' },
-																																					_react2.default.createElement(
-																																									_reactRouter.Link,
-																																									{ to: '/dash' },
-																																									_react2.default.createElement(
-																																													'button',
-																																													{ type: 'button', className: 'btn btn-default' },
-																																													'Submit'
-																																									)
-																																					)
-																																	)
-																													)
-																									)
-																					)
-																	)
-													)
-									);
-					}
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ id: 'Add' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'container text-center' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-md-4 col-md-offset-4' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'panel panel-default' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'panel-heading' },
+									_react2.default.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'Log in to HoneyDo'
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-10 col-md-offset-1' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'panel-body' },
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group' },
+												_react2.default.createElement(
+													'label',
+													null,
+													'Email address'
+												),
+												_react2.default.createElement('br', null),
+												_react2.default.createElement('input', { type: 'email', id: 'emailInput', className: 'form-control' })
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-10 col-md-offset-1' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'panel-body' },
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group' },
+												_react2.default.createElement(
+													'label',
+													null,
+													'Password'
+												),
+												_react2.default.createElement('br', null),
+												_react2.default.createElement('input', { type: 'email', id: 'emailInput', className: 'form-control' })
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ to: '/dash' },
+										_react2.default.createElement(
+											'button',
+											{ type: 'button', className: 'btn btn-default' },
+											'Submit'
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+			);
+		}
 	});
 
 /***/ },
