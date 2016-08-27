@@ -89,13 +89,19 @@ export default React.createClass({
 
 									<div className = "col-md-3 col-md-offset-1">
 
-										<button type="button" className="btn btn-warning form-control">Dashboard</button>
+										<Link to="/dash"><button type="button" className="btn btn-warning form-control">Dashboard</button></Link>
 
 									</div>
 
-									<div className = "col-md-3 col-md-offset-4">
+									<div className = "col-md-3 col-md-offset-1">
 
-										<button type="button" className="btn btn-primary form-control">Completed</button>
+										<Link to="/completed"><button type="button" className="btn btn-primary form-control">Completed</button></Link>
+
+									</div>
+
+									<div className = "col-md-3">
+
+										<Link to="/redeem"><button type="button" className="btn btn-danger form-control">Finished</button></Link>
 
 									</div>
 
