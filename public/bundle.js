@@ -9983,10 +9983,52 @@
 												_react2.default.createElement(
 													'label',
 													null,
-													'Email address'
+													'HoneyDo'
 												),
 												_react2.default.createElement('br', null),
-												_react2.default.createElement('input', { type: 'email', id: 'emailInput', className: 'form-control' })
+												_react2.default.createElement('input', { type: 'text', id: 'addHoneyDo', className: 'form-control' })
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-4 col-md-offset-2' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'panel-body' },
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group' },
+												_react2.default.createElement(
+													'label',
+													null,
+													'Brownie Points'
+												),
+												_react2.default.createElement('br', null),
+												_react2.default.createElement('input', { type: 'text', id: 'addPoints', className: 'form-control' })
+											)
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-4' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'panel-body' },
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group' },
+												_react2.default.createElement(
+													'label',
+													null,
+													'Complete by Date'
+												),
+												_react2.default.createElement('br', null),
+												_react2.default.createElement('input', { type: 'text', id: 'Complete by', className: 'form-control', placeholder: '01/01/1900' })
 											)
 										)
 									)
@@ -9999,17 +10041,11 @@
 										{ className: 'col-md-10 col-md-offset-1' },
 										_react2.default.createElement(
 											'div',
-											{ className: 'panel-body' },
+											{ className: 'well' },
 											_react2.default.createElement(
-												'div',
-												{ className: 'form-group' },
-												_react2.default.createElement(
-													'label',
-													null,
-													'Password'
-												),
-												_react2.default.createElement('br', null),
-												_react2.default.createElement('input', { type: 'email', id: 'emailInput', className: 'form-control' })
+												'p',
+												null,
+												'Select a complete by date to automatically add a 25% brownie point bonus'
 											)
 										)
 									)
