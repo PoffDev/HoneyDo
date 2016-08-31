@@ -1,52 +1,62 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { browserHistory, Router, Route, Link, withRouter } from 'react-router'
 
-export default React.Component {
+import { Link } from 'react-router'
 
-	constructor() {
-		super(props)
-		this.state = {
-			email: '',
-			password: ''
-		};
+export default React.createClass({
+  render: function () {
+    return (
+
+    	<div className = "container text-center">
+
+	            	<div className = "row">
+
+		            	<div className = "col-md-4 col-md-offset-4">
+		            	<form-group>
+
+			                <div className="panel panel-default">
+								
+								<div className="panel-heading">
+			    					<h3 className="panel-title">Log in to HoneyDo</h3>
+			  					</div>
+
+			  			
+				  				<div className = "row">
+				  					<div className = "col-md-10 col-md-offset-1">
+				  					<div className="panel-body">
+				    					<div className="form-group">
+				    						<label>Email address</label><br />
+				    						<input type="email"  id="emailInput" className="form-control"/>
+
+										</div>
+									</div>
+									</div>
+								</div>
+
+								<div className = "row">
+				  					<div className = "col-md-10 col-md-offset-1">
+				  					<div className="panel-body">
+				    					<div className="form-group">
+				    						<label>Password</label><br />
+				    						<input type="email"  id="emailInput" className="form-control"/>
+
+										</div>
+									</div>
+									</div>
+								</div>
+
+								<div className = "row">
+
+											<Link to="/dash"><button type="button" className="btn btn-default">Submit</button></Link>
+								</div>
+						
+			  				</div>
+			  			</form-group>
+						</div>
+
+					</div>
+
+				</div>
+
+    	)
 	}
-
-	login(e) {
-		e.preventDefault();
-
-		Auth.login(this.state.email, this.state.password)
-			.catch(function(err){
-				console.log("error loggin in", err);
-			});
-
-	}
-}
-
-export default React.createClass ({
-    render: function () {
-        
-        return (
-            
-            <div id = 'Login'>
-
-            	<form role="form">
-
-            		<div className="form-group">
-
-            			<input type="text" valueLink={this.linkState('email')} placeholder="Email Adress" />
-
-            			<input type="password" valueLink={this.linkState('password')} placeholder='Password' />
-            		</div>
-
-            		<button type="submit" onClick={this.login.bind(this)}>Submit</button>
-
-            	</form>
-
-            </div>
-            
-        );
-    }
-
-}
-});
+})

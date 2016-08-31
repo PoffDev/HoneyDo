@@ -2,6 +2,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
+var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
 var mongojs = require('mongojs');
 
 // Create Instance of Express
@@ -19,9 +22,9 @@ app.use(express.static('./public'));
 
 // -------------------------------------------------
 
-// MongoDB Configuration configuration (Change this URL to your own DB)
+// MongoDB Configuration
 var databaseUrl = 'React';
-var collections = ["terms"];
+var collections = ["hello"];
 
 // use mongojs to hook the database to the db variable 
 var db = mongojs(databaseUrl, collections);
@@ -29,6 +32,16 @@ var db = mongojs(databaseUrl, collections);
 db.on('error', function (err) {
   console.log('MongoDB Error: ', err);
 });
+
+//session keeps the user logged in
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true}))
+
+//flash is used to show incorrect login
+app.use(flash());
+
+//passport middleware methods
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // -------------------------------------------------
