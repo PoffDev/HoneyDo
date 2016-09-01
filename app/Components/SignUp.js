@@ -1,13 +1,11 @@
 import React from 'react'
-
 import { Link } from 'react-router'
 
+function Signup(props) {
 
-export default React.createClass({
-    render: function() {
-        return (
-            
-            <div id = 'Add'>
+	return (
+
+		<div id = 'Add'>
 
             	<div className = "container text-center">
 
@@ -26,7 +24,7 @@ export default React.createClass({
 				  					<div className="panel-body">
 				    					<div className="form-group">
 				    						<label>Email address</label><br />
-				    						<input type="email"  id="emailInput" className="form-control"/>
+				    						<input type="email"  id="emailInput" className="form-control" onChange={props.updateInputs}/>
 
 										</div>
 									</div>
@@ -39,7 +37,7 @@ export default React.createClass({
 				  					<div className="panel-body">
 				    					<div className="form-group">
 				    						<label>Partner 1</label><br />
-				    						<input type="text"  id="emailInput" className="form-control"/>
+				    						<input type="text"  id="emailInput" className="form-control" onChange={props.updateInputs}/>
 
 										</div>
 									</div>
@@ -49,7 +47,7 @@ export default React.createClass({
 				  					<div className="panel-body">
 				    					<div className="form-group">
 				    						<label>Partner 2</label><br />
-				    						<input type="text"  id="emailInput" className="form-control"/>
+				    						<input type="text"  id="emailInput" className="form-control" onChange={props.updateInputs}/>
 
 										</div>
 									</div>
@@ -61,7 +59,7 @@ export default React.createClass({
 				  					<div className="panel-body">
 				    					<div className="form-group">
 				    						<label>Password</label><br />
-				    						<input type="password"  id="emailInput" className="form-control"/>
+				    						<input type="password"  id="emailInput" className="form-control" onChange={props.updateInputs}/>
 
 										</div>
 									</div>
@@ -98,7 +96,9 @@ export default React.createClass({
 	    		</div>
 
 			</div>
-            
-        );
-    }
-});
+
+
+	)
+};
+
+module.exports = Signup;
