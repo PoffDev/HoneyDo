@@ -53,6 +53,13 @@ app.get('/', function(req, res){
 
 })
 
+app.post('/signup', function(req, res){
+
+	console.log('email ' + req.body.email);
+	console.log('partner1 ' + req.body.partner1);
+	console.log('partner2 ' + req.body.partner2);
+	console.log('password ' + req.body.password);
+})
 
 // -------------------------------------------------
 

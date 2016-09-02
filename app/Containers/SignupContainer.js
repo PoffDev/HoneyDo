@@ -9,7 +9,7 @@ var SignupContainer = React.createClass({
 	},
 
 	getInitialState() {
-		return{
+		return {
 			email: '',
 			partner1: '',
 			partner2: '',
@@ -29,9 +29,12 @@ var SignupContainer = React.createClass({
 
 		this.context.router.push({
 
-			pathname:'/dash',
+			pathname:'/SignUp',
 			state:{
-				email: this.state.email
+				email: this.state.email,
+				partner1: this.state.partner1,
+				partner2: this.state.partner2,
+				password: this.state.password
 			}
 		});
 

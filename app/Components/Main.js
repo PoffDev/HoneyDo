@@ -1,13 +1,12 @@
-import React from 'react'
+var React = require("react");
+var ReactRouter = require("react-router");
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var Link = ReactRouter.Link;
 
-import { Link } from 'react-router'
-
-
-export default React.createClass({
+var Main = React.createClass({
     render: function() {
         return (
-            
-            <div id = 'main'>
 
                 <div className="container text-center">
 
@@ -25,7 +24,7 @@ export default React.createClass({
 					</div>
 
 
-					<div className='row'>
+					<div className="row">
 
 						<div className="col-md-4 col-md-offset-4">
 
@@ -43,7 +42,7 @@ export default React.createClass({
 			
 					</div>
 
-					<div className='row'>
+					<div className="row">
 
 						<div className = "col-md-1 col-md-offset-5">
 
@@ -60,9 +59,9 @@ export default React.createClass({
 					</div>
 
 				</div>
-
-			</div>
             
         );
     }
 });
+
+module.exports = Main;

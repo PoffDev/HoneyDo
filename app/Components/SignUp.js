@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router'
+var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 function Signup(props) {
 
@@ -13,87 +14,30 @@ function Signup(props) {
 
 		            	<div className = "col-md-6 col-md-offset-3">
 
-			                <div className="panel panel-default">
-								
-								<div className="panel-heading">
-			    					<h3 className="panel-title">Sign-up for HoneyDo</h3>
-			  					</div>
+		            	<form className="contact-form" onSubmit={props.signupUser}>
+                			<div className="form-group">
+                 			 <input type="email" className="form-control" id="email" placeholder="Email" onChange={props.updateInputs} />
+                			</div>
+                
+	                		<div className="form-group">
+	                  			<input type="text" className="form-control" id="partner1" placeholder="Partner 1" onChange={props.updateInputs} />
+	                		</div>
+	                		<div className="form-group">
+                  				<input type="text" className="form-control" id="partner2" placeholder="Partner 2" onChange={props.updateInputs} />
+                			</div>
+                			<div className="form-group">
+                 				<input type="password" className="form-control" id="password" placeholder="Password" onChange={props.updateInputs} />
+                			</div>
 
-			  					<div className = "row">
-				  					<div className = "col-md-10 col-md-offset-1">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>Email address</label><br />
-				    						<input type="email"  id="emailInput" className="form-control" onChange={props.updateInputs}/>
-
-										</div>
-									</div>
-									</div>
-								</div>
-
-			  			
-				  				<div className = "row">
-				  					<div className = "col-md-5 col-md-offset-1">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>Partner 1</label><br />
-				    						<input type="text"  id="emailInput" className="form-control" onChange={props.updateInputs}/>
-
-										</div>
-									</div>
-									</div>
-								
-				  					<div className = "col-md-5">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>Partner 2</label><br />
-				    						<input type="text"  id="emailInput" className="form-control" onChange={props.updateInputs}/>
-
-										</div>
-									</div>
-									</div>
-								</div>
-
-								<div className = "row">
-				  					<div className = "col-md-10 col-md-offset-1">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>Password</label><br />
-				    						<input type="password"  id="emailInput" className="form-control" onChange={props.updateInputs}/>
-
-										</div>
-									</div>
-									</div>
-								</div>
-
-								<div className = "row">
-
-									<div className="panel-body">
-				    					<div className="form-group">
-
-											<Link to="/dash"><button type="button" className="btn btn-primary">Sign-up</button></Link>
-								
-										</div>
-									</div>
-								</div>
-						
-			  				</div>
+                			<button type="submit" className="btn btn-lg btn-block btn-default">Signup</button>
+              
+              			</form>
 
 						</div>
 
 					</div>
 
 				</div>
-
-				<div className = "row">
-
-	    			<div className = "col-md-1">
-
-	    				<Link to="/Home"><button type="button" className="btn btn-danger">Log Out</button></Link>
-
-	    			</div>
-
-	    		</div>
 
 			</div>
 

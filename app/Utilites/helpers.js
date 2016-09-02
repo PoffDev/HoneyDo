@@ -11,7 +11,9 @@ var helpers = {
 				.then(function(response) {
 
 					var email = response.data.email;
-					var password = response.data.emial;
+					var partner1 = response.data.partner1;
+					var partner2 = response.data.partner2;
+					var password = response.data.password;
 
 			}.bind(this));
 			
