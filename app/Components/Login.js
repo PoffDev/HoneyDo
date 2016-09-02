@@ -1,62 +1,37 @@
-import React from 'react'
+var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
-import { Link } from 'react-router'
+function Login(props) {
 
-export default React.createClass({
-  render: function () {
-    return (
+	return(
+		<div className = "container text-center">
 
-    	<div className = "container text-center">
+	        <div className = "row">
 
-	            	<div className = "row">
+		        <div className = "col-md-6 col-md-offset-3">
 
-		            	<div className = "col-md-4 col-md-offset-4">
-		            	<form-group>
+					<form className="contact-form" onSubmit={props.loginUser}>
 
-			                <div className="panel panel-default">
-								
-								<div className="panel-heading">
-			    					<h3 className="panel-title">Log in to HoneyDo</h3>
-			  					</div>
-
-			  			
-				  				<div className = "row">
-				  					<div className = "col-md-10 col-md-offset-1">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>Email address</label><br />
-				    						<input type="email"  id="emailInput" className="form-control"/>
-
-										</div>
-									</div>
-									</div>
-								</div>
-
-								<div className = "row">
-				  					<div className = "col-md-10 col-md-offset-1">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>Password</label><br />
-				    						<input type="email"  id="emailInput" className="form-control"/>
-
-										</div>
-									</div>
-									</div>
-								</div>
-
-								<div className = "row">
-
-											<Link to="/dash"><button type="button" className="btn btn-default">Submit</button></Link>
-								</div>
-						
-			  				</div>
-			  			</form-group>
+						<div className="form-group">
+			 			 <input type="email" className="form-control" id="email" placeholder="Email" onChange={props.updateInputs} />
 						</div>
 
-					</div>
+						<div className="form-group">
+			 				<input type="password" className="form-control" id="password" placeholder="Password" onChange={props.updateInputs} />
+						</div>
 
-				</div>
+						<button type="submit" className="btn btn-lg btn-block btn-default">Login</button>
+			              
+			        </form>
 
-    	)
-	}
-})
+			    </div>
+
+			</div>
+
+		</div>
+
+	)
+}
+
+module.exports = Login;

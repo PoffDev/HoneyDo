@@ -5,7 +5,9 @@ var Route = ReactRouter.Route;
 var Link = ReactRouter.Link;
 
 var Main = React.createClass({
+
     render: function() {
+
         return (
 
                 <div className="container text-center">

@@ -18,6 +18,30 @@ var helpers = {
 			}.bind(this));
 			
 	},
+
+	loginUser: function (email, password) {
+
+		var user = {
+
+			email: email,
+			password: password
+		}
+
+		console.log(user)
+
+		return axios.post('/login', user)
+			.then(function(response){
+
+				console.log(response.data.email)
+				localStorage.setItem('email', response.data.email);
+
+				this.isAuthenticated = true;
+
+		}.bind(this))
+
+	},
+
+	isAuthenticated: false
 }
 
 module.exports = helpers;

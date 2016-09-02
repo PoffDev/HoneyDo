@@ -46,19 +46,28 @@ app.use(passport.session());
 
 // -------------------------------------------------
 
-// Main Route. This route will redirect to our rendered React application
+//Get Routes
 app.get('/', function(req, res){
 
   res.sendFile('./public/index.html');
 
 })
 
+
+//Post Routes
 app.post('/signup', function(req, res){
 
-	console.log('email ' + req.body.email);
-	console.log('partner1 ' + req.body.partner1);
-	console.log('partner2 ' + req.body.partner2);
-	console.log('password ' + req.body.password);
+	console.log('sign up email ' + req.body.email);
+	console.log('sign up partner1 ' + req.body.partner1);
+	console.log('sign up partner2 ' + req.body.partner2);
+	console.log('sign up password ' + req.body.password);
+})
+
+app.post('/login', function (req, res){
+
+	console.log('login email ' + req.body.email);
+	console.log('login password ' + req.body.password);
+
 })
 
 // -------------------------------------------------
