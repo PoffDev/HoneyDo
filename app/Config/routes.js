@@ -10,6 +10,7 @@ var hashHistory = ReactRouter.hashHistory;
 //Components
 var Main = require('../Components/Main');
 var Login = require('../Components/Login');
+var Home = require('../Components/Home');
 
 // var Signup = require('../Components/SignUp');
 
@@ -27,7 +28,7 @@ var Routes = React.createClass({
 
 	 	return (
 			<Router history={hashHistory}>
-				<Route path= "/" component={Main} />
+				<Route path= "/" component={Home} />
 				<Route path= "/SignUp" component={SignupContainer} />
 				<Route path= "Login" component={LoginContainer}/>
 

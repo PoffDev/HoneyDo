@@ -27075,6 +27075,7 @@
 	//Components
 	var Main = __webpack_require__(236);
 	var Login = __webpack_require__(237);
+	var Home = __webpack_require__(265);
 
 	// var Signup = require('../Components/SignUp');
 
@@ -27092,7 +27093,7 @@
 			return React.createElement(
 				Router,
 				{ history: hashHistory },
-				React.createElement(Route, { path: '/', component: Main }),
+				React.createElement(Route, { path: '/', component: Home }),
 				React.createElement(Route, { path: '/SignUp', component: SignupContainer }),
 				React.createElement(Route, { path: 'Login', component: LoginContainer })
 			);
@@ -28837,6 +28838,290 @@
 	});
 
 	module.exports = LoginContainer;
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Nav = __webpack_require__(268);
+	var Footer = __webpack_require__(267);
+	var Link = ReactRouter.Link;
+
+	var Home = React.createClass({
+		displayName: 'Home',
+
+
+		render: function render() {
+
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(Nav, null),
+				React.createElement(
+					'div',
+					{ className: 'containter' },
+					React.createElement(
+						'div',
+						{ id: 'home' },
+						React.createElement(
+							'div',
+							{ className: 'container-fluid' },
+							React.createElement(
+								'div',
+								{ className: 'container' },
+								React.createElement(
+									'div',
+									{ className: 'row' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-10 col-md-offset-2' },
+										React.createElement(
+											'div',
+											{ className: 'jumbotron', id: 'jumbo' },
+											React.createElement(
+												'h1',
+												null,
+												'HoneyDo'
+											),
+											React.createElement(
+												'div',
+												{ id: 'catchPhrase' },
+												React.createElement(
+													'p',
+													null,
+													'The only way to get what either of you want'
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'container' },
+						React.createElement(
+							'div',
+							{ id: 'about' },
+							React.createElement(
+								'div',
+								{ className: 'row', id: 'aboutRow' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-4' },
+									React.createElement(
+										'div',
+										{ className: 'panel panel-default' },
+										React.createElement(
+											'div',
+											{ className: 'panel-body' },
+											React.createElement('i', { className: 'fa fa-list-ul fa-5x', 'aria-hidden': 'true' }),
+											React.createElement(
+												'h1',
+												null,
+												'Assign'
+											),
+											React.createElement(
+												'p',
+												null,
+												'Assign tasks, with "brownie" points, for your Hubby to complete'
+											)
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-4' },
+									React.createElement(
+										'div',
+										{ className: 'panel panel-default' },
+										React.createElement(
+											'div',
+											{ className: 'panel-body' },
+											React.createElement('i', { className: 'fa fa-check fa-5x', 'aria-hidden': 'true' }),
+											React.createElement(
+												'h1',
+												null,
+												'Complete'
+											),
+											React.createElement(
+												'p',
+												null,
+												'Hubby completes those tasks to earn "brownie" points.'
+											)
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-4' },
+									React.createElement(
+										'div',
+										{ className: 'panel panel-default' },
+										React.createElement(
+											'div',
+											{ className: 'panel-body' },
+											React.createElement('i', { className: 'fa fa-gift fa-5x', 'aria-hidden': 'true' }),
+											React.createElement(
+												'h1',
+												null,
+												'Redeem'
+											),
+											React.createElement(
+												'p',
+												null,
+												'Hubby redeems collected "brownie" points for prizes'
+											)
+										)
+									)
+								)
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ id: 'preview' },
+						React.createElement(
+							'div',
+							{ className: 'container-fluid' },
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-10 col-md-offset-1' },
+									React.createElement(
+										'div',
+										{ id: 'previewImage' },
+										React.createElement('img', { src: 'http://placehold.it/950x425' })
+									)
+								)
+							)
+						)
+					)
+				),
+				React.createElement(Footer, null)
+			);
+		}
+	});
+
+	module.exports = Home;
+
+/***/ },
+/* 266 */,
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var Footer = React.createClass({
+		displayName: "Footer",
+
+
+		render: function render() {
+
+			return React.createElement(
+				"div",
+				{ className: "container-fluid" },
+				React.createElement(
+					"div",
+					{ id: "footer" },
+					React.createElement(
+						"nav",
+						{ className: "navbar navbar-default" },
+						React.createElement(
+							"div",
+							{ className: "container" },
+							React.createElement(
+								"ul",
+								{ className: "nav navbar-nav navbar-right" },
+								React.createElement(
+									"li",
+									{ role: "presentation" },
+									React.createElement(
+										"a",
+										{ href: "http://wwww.github.com/PoffDev" },
+										"Designed and Created with Love from PoffDev"
+									)
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = Footer;
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var Nav = React.createClass({
+		displayName: "Nav",
+
+
+		render: function render() {
+
+			return React.createElement(
+				"div",
+				{ className: "container-fluid" },
+				React.createElement(
+					"nav",
+					{ className: "navbar navbar-default navbar-fixed-top" },
+					React.createElement(
+						"div",
+						{ className: "container" },
+						React.createElement(
+							"ul",
+							{ className: "nav navbar-nav navbar-right" },
+							React.createElement(
+								"li",
+								{ role: "presentation" },
+								React.createElement(
+									"a",
+									{ href: "#Home" },
+									"Home"
+								)
+							),
+							React.createElement(
+								"li",
+								{ role: "presentation" },
+								React.createElement(
+									"a",
+									{ href: "#About" },
+									"About"
+								)
+							),
+							React.createElement(
+								"li",
+								{ role: "presentation" },
+								React.createElement(
+									"a",
+									{ href: "/signup" },
+									"Sign Up"
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = Nav;
 
 /***/ }
 /******/ ]);
