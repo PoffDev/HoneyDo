@@ -6,8 +6,8 @@ var mongojs = require('mongojs');
 // -------------------------------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-var databaseUrl = 'Sunshare';
-var collections = ["Users", "Sunshares", "Gatherings"];
+var databaseUrl = 'HoneyDo';
+var collections = ["users"];
 
 // use mongojs to hook the database to the db variable
 var db = mongojs(databaseUrl, collections);
@@ -63,7 +63,7 @@ module.exports = function(app) {
   app.post('/Signup', function(req, res) {
     var user = req.body;
     // console.log(user);
-    db.Users.insert(user, function(err, docs) {
+    db.users.insert(user, function(err, docs) {
       if (err) throw err;
       console.log('saved to db');
       res.send(docs);
