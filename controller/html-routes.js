@@ -26,16 +26,16 @@ passport.use(new LocalStrategy({passReqToCallback : true},
     console.log(email, password);
 
     // Searching the ORM for the user in the database
-    db.users.findOne({email: email}, function(err, user){
+    // db.users.findOne({email: email}, function(err, user){
+    //   console.log("findONe Ran");
+    //   if (err) { return done(err); }
+    //   if (!user) { return done(null, false); }
 
-      if (err) { return done(err); }
-      if (!user) { return done(null, false); }
+    //   // comparing user passwords - return if not a match
+    //   if (password !== user.password) { return done(null, false);}
 
-      // comparing user passwords - return if not a match
-      if (password !== user.password) { return done(null, false);}
-
-      return done(null, user);
-    });
+    //   return done(null, user);
+    // });
   }
 ));
 
@@ -71,18 +71,34 @@ module.exports = function(app) {
   }); // end app.post()
 
   // login a user
-  app.post('/login', passport.authenticate('local',{failureRedirect:'/', failureFlash:'Wrong email or Password'}), function(req, res){
-    console.log(user);
-    console.log(req.user.email);
-    if (req.isAuthenticated()) {
-      console.log('user signed in properlly');
-      res.send({
-        email: req.user.email,
-      });
-    } else {
-      console.log('user not signed in ');
-      res.redirect('/SignUp')
-    }
+  app.post('/login', function(req, res){
+    console.log(req.body.email);
+
+    db.users.findOne({email: req.body.email}, function(err, user){
+
+      if(user == null || user == []){
+        res.send({status: "Error", Error: "No User By That Email", transaction: "un-paid"});
+        console.log({status: "Error", Error: "No User By That Email", transaction: "un-paid"});
+      }else{
+        if(user.password === req.body.password){
+          res.send({
+            status: "Ok",
+            transaction: "Paid",
+            _id: user._id,
+            login: true,
+          })
+          console.log({
+            status: "Ok",
+            transaction: "Paid",
+            _id: user._id,
+            login: true,
+          })
+        }
+      }
+
+
+    });
+
   });
 
 }

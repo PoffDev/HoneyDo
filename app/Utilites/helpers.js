@@ -21,24 +21,30 @@ var helpers = {
 
 	loginUser: function (email, password) {
 
-		var user = {
+		return new Promise(function(resolve,reject){
+			var user = {
+				email: email,
+				password: password
+			};
 
-			email: email,
-			password: password
-		}
+			return axios.post('/login', user)
+				.then(function(response){
 
-		console.log('helpers loginUser ' + user)
+					console.log('helpers line 35: ' + JSON.stringify(response));
+					if(response.data.login === true){
+						localStorage.setItem('_id', response.data._id);
+						resolve("Storage Is Set");
+					}else{
+						resolve("User is null No User by that email");
+						console.warn("No user or email")
+					}
 
-		return axios.post('/login', user)
-			.then(function(response){
+					// this.isAuthenticated = true;
 
-				// console.log(user)
-				localStorage.setItem('email', response.data.email);
+			}.bind(this))
 
-				this.isAuthenticated = true;
 
-		}.bind(this))
-
+		});
 	},
 
 	isAuthenticated: false

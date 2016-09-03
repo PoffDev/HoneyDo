@@ -1,6 +1,7 @@
 var React = require('react');
 var Login = require('../Components/Login');
 var helpers = require('../utilites/helpers');
+var axios = require('axios');
 
 var LoginContainer = React.createClass({
 
@@ -21,18 +22,32 @@ var LoginContainer = React.createClass({
 	},
 
 	loginUser: function(event){
+
 		event.preventDefault();
 
-		helpers.loginUser(this.state.email, this.state.password);
+		var self = this;
 
-		this.context.router.push({
-
-			pathname:'/',
-			state:{
-				email: this.state.email,
-			}
+		helpers.loginUser(this.state.email, this.state.password).then(function(msg){
+			console.log(msg, localStorage.getItem('_id'));
+			if(localStorage.getItem('_id') == null){
+				self.context.router.push({
+					pathname: '/Signup',
+					state: {
+						message: "You are not logged in."
+					}
+				})
+			}else{
+				self.context.router.push({
+							pathname: '/Dash',
+							state: {
+								email: self.state.email
+							}
+					})
+			};
 		});
 
+
+		
 	},
 
 	render: function() {

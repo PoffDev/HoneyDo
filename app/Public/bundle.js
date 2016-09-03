@@ -50,7 +50,7 @@
 	var ReactDom = __webpack_require__(34);
 	var Router = __webpack_require__(172).Router;
 	var Routes = __webpack_require__(235);
-	var Main = __webpack_require__(242);
+	var Main = __webpack_require__(243);
 	
 	//require('css file here');
 	
@@ -27073,18 +27073,18 @@
 	
 	//Components
 	var Add = __webpack_require__(236);
-	var Completed = __webpack_require__(272);
-	var Dash = __webpack_require__(239);
-	var Home = __webpack_require__(240);
-	var Login = __webpack_require__(241);
-	var Main = __webpack_require__(242);
-	var Redeem = __webpack_require__(243);
+	var Completed = __webpack_require__(239);
+	var Dash = __webpack_require__(240);
+	var Home = __webpack_require__(241);
+	var Login = __webpack_require__(242);
+	var Main = __webpack_require__(243);
+	var Redeem = __webpack_require__(244);
 	// var SignUp = require('../Components/SignUp')
-	var View = __webpack_require__(244);
+	var View = __webpack_require__(245);
 	
 	//Containers
-	var SignupContainer = __webpack_require__(245);
-	var LoginContainer = __webpack_require__(271);
+	var SignupContainer = __webpack_require__(246);
+	var LoginContainer = __webpack_require__(272);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27398,6 +27398,137 @@
 	var Footer = __webpack_require__(238);
 	var Link = ReactRouter.Link;
 	
+	var Completed = React.createClass({
+		displayName: 'Completed',
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				'div',
+				{ id: 'Add' },
+				React.createElement(
+					'div',
+					{ className: 'container' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'div',
+							{ className: 'panel panel-default' },
+							React.createElement(
+								'div',
+								{ className: 'panel-heading text-center' },
+								React.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'Completed Tasks'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'panel-body' },
+								React.createElement(
+									'div',
+									{ className: 'row' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-10 col-md-offset-1' },
+										React.createElement(
+											'div',
+											{ className: 'well' },
+											React.createElement(
+												'ul',
+												null,
+												React.createElement(
+													'li',
+													null,
+													'This is a Completed HoneyDo'
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a Completed HoneyDo'
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a Completed HoneyDo'
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a Completed HoneyDo'
+												)
+											)
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'row' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-3 col-md-offset-1' },
+										React.createElement(
+											'button',
+											{ type: 'button', className: 'btn btn-warning form-control' },
+											'Dashboard'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-3 col-md-offset-4' },
+										React.createElement(
+											Link,
+											{ to: '/view' },
+											React.createElement(
+												'button',
+												{ type: 'button', className: 'btn btn-primary form-control' },
+												'HoneyDo List'
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-1' },
+						React.createElement(
+							Link,
+							{ to: '/Home' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-danger' },
+								'Log Out'
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = Completed;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Nav = __webpack_require__(237);
+	var Footer = __webpack_require__(238);
+	var Link = ReactRouter.Link;
+	
 	var Dash = React.createClass({
 		displayName: 'Dash',
 	
@@ -27524,7 +27655,7 @@
 	module.exports = Dash;
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27727,7 +27858,7 @@
 	module.exports = Home;
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27774,7 +27905,7 @@
 	module.exports = Login;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27869,7 +28000,7 @@
 	module.exports = Main;
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28072,7 +28203,7 @@
 	module.exports = Redeem;
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28324,7 +28455,7 @@
 	module.exports = View;
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28332,8 +28463,8 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Signup = __webpack_require__(246);
-	var helpers = __webpack_require__(247);
+	var Signup = __webpack_require__(247);
+	var helpers = __webpack_require__(248);
 	
 	var SignupContainer = React.createClass({
 		displayName: 'SignupContainer',
@@ -28385,7 +28516,7 @@
 	module.exports = SignupContainer;
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28446,13 +28577,13 @@
 	module.exports = Signup;
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var axios = __webpack_require__(248);
-	var UserModel = __webpack_require__(270);
+	var axios = __webpack_require__(249);
+	var UserModel = __webpack_require__(271);
 	
 	var helpers = {
 	
@@ -28471,21 +28602,26 @@
 	
 		loginUser: function loginUser(email, password) {
 	
-			var user = {
+			return new Promise(function (resolve, reject) {
+				var user = {
+					email: email,
+					password: password
+				};
 	
-				email: email,
-				password: password
-			};
+				return axios.post('/login', user).then(function (response) {
 	
-			console.log('helpers loginUser ' + user);
+					console.log('helpers line 35: ' + JSON.stringify(response));
+					if (response.data.login === true) {
+						localStorage.setItem('_id', response.data._id);
+						resolve("Storage Is Set");
+					} else {
+						resolve("User is null No User by that email");
+						console.warn("No user or email");
+					}
 	
-			return axios.post('/login', user).then(function (response) {
-	
-				// console.log(user)
-				localStorage.setItem('email', response.data.email);
-	
-				this.isAuthenticated = true;
-			}.bind(this));
+					// this.isAuthenticated = true;
+				}.bind(this));
+			});
 		},
 	
 		isAuthenticated: false
@@ -28494,20 +28630,20 @@
 	module.exports = helpers;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(249);
+	module.exports = __webpack_require__(250);
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
-	var bind = __webpack_require__(251);
-	var Axios = __webpack_require__(252);
+	var utils = __webpack_require__(251);
+	var bind = __webpack_require__(252);
+	var Axios = __webpack_require__(253);
 	
 	/**
 	 * Create an instance of Axios
@@ -28543,7 +28679,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(269);
+	axios.spread = __webpack_require__(270);
 	
 	module.exports = axios;
 	
@@ -28552,12 +28688,12 @@
 
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var bind = __webpack_require__(251);
+	var bind = __webpack_require__(252);
 	
 	/*global toString:true*/
 	
@@ -28857,7 +28993,7 @@
 
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28874,17 +29010,17 @@
 
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var defaults = __webpack_require__(253);
-	var utils = __webpack_require__(250);
-	var InterceptorManager = __webpack_require__(255);
-	var dispatchRequest = __webpack_require__(256);
-	var isAbsoluteURL = __webpack_require__(267);
-	var combineURLs = __webpack_require__(268);
+	var defaults = __webpack_require__(254);
+	var utils = __webpack_require__(251);
+	var InterceptorManager = __webpack_require__(256);
+	var dispatchRequest = __webpack_require__(257);
+	var isAbsoluteURL = __webpack_require__(268);
+	var combineURLs = __webpack_require__(269);
 	
 	/**
 	 * Create a new instance of Axios
@@ -28965,13 +29101,13 @@
 
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
-	var normalizeHeaderName = __webpack_require__(254);
+	var utils = __webpack_require__(251);
+	var normalizeHeaderName = __webpack_require__(255);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -29043,12 +29179,12 @@
 
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
+	var utils = __webpack_require__(251);
 	
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -29061,12 +29197,12 @@
 
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
+	var utils = __webpack_require__(251);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -29119,13 +29255,13 @@
 
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(250);
-	var transformData = __webpack_require__(257);
+	var utils = __webpack_require__(251);
+	var transformData = __webpack_require__(258);
 	
 	/**
 	 * Dispatch a request to the server using whichever adapter
@@ -29166,10 +29302,10 @@
 	    adapter = config.adapter;
 	  } else if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(258);
+	    adapter = __webpack_require__(259);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(258);
+	    adapter = __webpack_require__(259);
 	  }
 	
 	  return Promise.resolve(config)
@@ -29201,12 +29337,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
+	var utils = __webpack_require__(251);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -29227,18 +29363,18 @@
 
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(250);
-	var settle = __webpack_require__(259);
-	var buildURL = __webpack_require__(262);
-	var parseHeaders = __webpack_require__(263);
-	var isURLSameOrigin = __webpack_require__(264);
-	var createError = __webpack_require__(260);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(265);
+	var utils = __webpack_require__(251);
+	var settle = __webpack_require__(260);
+	var buildURL = __webpack_require__(263);
+	var parseHeaders = __webpack_require__(264);
+	var isURLSameOrigin = __webpack_require__(265);
+	var createError = __webpack_require__(261);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(266);
 	
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -29332,7 +29468,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(266);
+	      var cookies = __webpack_require__(267);
 	
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -29396,12 +29532,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var createError = __webpack_require__(260);
+	var createError = __webpack_require__(261);
 	
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -29427,12 +29563,12 @@
 
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var enhanceError = __webpack_require__(261);
+	var enhanceError = __webpack_require__(262);
 	
 	/**
 	 * Create an Error with the specified message, config, error code, and response.
@@ -29450,7 +29586,7 @@
 
 
 /***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29475,12 +29611,12 @@
 
 
 /***/ },
-/* 262 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
+	var utils = __webpack_require__(251);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -29549,12 +29685,12 @@
 
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
+	var utils = __webpack_require__(251);
 	
 	/**
 	 * Parse headers into an object
@@ -29592,12 +29728,12 @@
 
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
+	var utils = __webpack_require__(251);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29666,7 +29802,7 @@
 
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29708,12 +29844,12 @@
 
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(250);
+	var utils = __webpack_require__(251);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29767,7 +29903,7 @@
 
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29787,7 +29923,7 @@
 
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29805,7 +29941,7 @@
 
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29838,7 +29974,7 @@
 
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29853,7 +29989,7 @@
 	module.exports = User;
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29861,8 +29997,9 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Login = __webpack_require__(241);
-	var helpers = __webpack_require__(247);
+	var Login = __webpack_require__(242);
+	var helpers = __webpack_require__(248);
+	var axios = __webpack_require__(249);
 	
 	var LoginContainer = React.createClass({
 		displayName: 'LoginContainer',
@@ -29885,16 +30022,28 @@
 		},
 	
 		loginUser: function loginUser(event) {
+	
 			event.preventDefault();
 	
-			helpers.loginUser(this.state.email, this.state.password);
+			var self = this;
 	
-			this.context.router.push({
-	
-				pathname: '/',
-				state: {
-					email: this.state.email
-				}
+			helpers.loginUser(this.state.email, this.state.password).then(function (msg) {
+				console.log(msg, localStorage.getItem('_id'));
+				if (localStorage.getItem('_id') == null) {
+					self.context.router.push({
+						pathname: '/Signup',
+						state: {
+							message: "You are not logged in."
+						}
+					});
+				} else {
+					self.context.router.push({
+						pathname: '/Dash',
+						state: {
+							email: self.state.email
+						}
+					});
+				};
 			});
 		},
 	
@@ -29907,137 +30056,6 @@
 	});
 	
 	module.exports = LoginContainer;
-
-/***/ },
-/* 272 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(237);
-	var Footer = __webpack_require__(238);
-	var Link = ReactRouter.Link;
-	
-	var Completed = React.createClass({
-		displayName: 'Completed',
-	
-	
-		render: function render() {
-	
-			return React.createElement(
-				'div',
-				{ id: 'Add' },
-				React.createElement(
-					'div',
-					{ className: 'container' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
-						React.createElement(
-							'div',
-							{ className: 'panel panel-default' },
-							React.createElement(
-								'div',
-								{ className: 'panel-heading text-center' },
-								React.createElement(
-									'h3',
-									{ className: 'panel-title' },
-									'Completed Tasks'
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'panel-body' },
-								React.createElement(
-									'div',
-									{ className: 'row' },
-									React.createElement(
-										'div',
-										{ className: 'col-md-10 col-md-offset-1' },
-										React.createElement(
-											'div',
-											{ className: 'well' },
-											React.createElement(
-												'ul',
-												null,
-												React.createElement(
-													'li',
-													null,
-													'This is a Completed HoneyDo'
-												),
-												React.createElement(
-													'li',
-													null,
-													'This is a Completed HoneyDo'
-												),
-												React.createElement(
-													'li',
-													null,
-													'This is a Completed HoneyDo'
-												),
-												React.createElement(
-													'li',
-													null,
-													'This is a Completed HoneyDo'
-												)
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'row' },
-									React.createElement(
-										'div',
-										{ className: 'col-md-3 col-md-offset-1' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-warning form-control' },
-											'Dashboard'
-										)
-									),
-									React.createElement(
-										'div',
-										{ className: 'col-md-3 col-md-offset-4' },
-										React.createElement(
-											Link,
-											{ to: '/view' },
-											React.createElement(
-												'button',
-												{ type: 'button', className: 'btn btn-primary form-control' },
-												'HoneyDo List'
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				),
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-1' },
-						React.createElement(
-							Link,
-							{ to: '/Home' },
-							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-danger' },
-								'Log Out'
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-	
-	module.exports = Completed;
 
 /***/ }
 /******/ ]);
