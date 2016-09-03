@@ -1,11 +1,19 @@
-import React from 'react'
+var React = require('react');
+var ReactRouter = require('react-router');
+var Nav = require('./Children/Nav');
+var Footer = require('./Children/Footer')
+var Link = ReactRouter.Link;
 
-import { Link } from 'react-router'
 
+var Dash = React.createClass({
 
-export default React.createClass({
-	render: function () {
-    	return (
+    render: function() {
+
+    return (
+
+    	<div>
+
+    		<Nav />
 
     		<div className = "container">
 
@@ -73,6 +81,10 @@ export default React.createClass({
 
     		</div>
 
+    	</div>
+
     	)
   	}
 });
+
+module.exports = Dash;

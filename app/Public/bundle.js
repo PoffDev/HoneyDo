@@ -27072,13 +27072,19 @@
 	var hashHistory = ReactRouter.hashHistory;
 	
 	//Components
-	var Main = __webpack_require__(236);
-	var Login = __webpack_require__(237);
+	// var Add = require('../Components/Add');
+	// var Completed = require('../Components/Completed')
+	var Dash = __webpack_require__(241);
 	var Home = __webpack_require__(238);
+	var Login = __webpack_require__(237);
+	var Main = __webpack_require__(236);
+	var Redeem = __webpack_require__(242);
+	// var SignUp = require('../Components/SignUp')
+	var View = __webpack_require__(270);
 	
 	//Containers
-	var SignupContainer = __webpack_require__(241);
-	var LoginContainer = __webpack_require__(267);
+	var SignupContainer = __webpack_require__(243);
+	var LoginContainer = __webpack_require__(269);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27090,14 +27096,20 @@
 				Router,
 				{ history: hashHistory },
 				React.createElement(Route, { path: '/', component: Home }),
+				React.createElement(Route, { path: '/Dash', component: Dash }),
+				React.createElement(Route, { path: '/Login', component: LoginContainer }),
+				React.createElement(Route, { path: '/Redeem', component: Redeem }),
 				React.createElement(Route, { path: '/SignUp', component: SignupContainer }),
-				React.createElement(Route, { path: 'Login', component: LoginContainer })
+				React.createElement(Route, { path: '/View', component: View })
 			);
 		}
 	
 	});
 	
 	module.exports = Routes;
+	
+	//<Route path= "/Add" component={Add}/>
+	//<Route path= "/Completed" component={Completed}/>
 
 /***/ },
 /* 236 */
@@ -27562,11 +27574,351 @@
 
 	'use strict';
 	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Nav = __webpack_require__(239);
+	var Footer = __webpack_require__(240);
+	var Link = ReactRouter.Link;
+	
+	var Dash = React.createClass({
+		displayName: 'Dash',
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(Nav, null),
+				React.createElement(
+					'div',
+					{ className: 'container' },
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-2 col-md-offset-5' },
+							React.createElement(
+								'div',
+								{ className: 'panel panel-default text-center' },
+								React.createElement(
+									'div',
+									{ className: 'panel-heading' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'Brownie Points'
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									React.createElement(
+										'span',
+										null,
+										React.createElement(
+											'h1',
+											null,
+											'100'
+										),
+										React.createElement(
+											'p',
+											null,
+											'pts'
+										)
+									)
+								)
+							)
+						)
+					),
+					React.createElement('br', null),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-4 col-md-offset-1' },
+							React.createElement(
+								Link,
+								{ to: '/add' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-primary form-control' },
+									'Add Tasks'
+								)
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'col-md-4 col-md-offset-2' },
+							React.createElement(
+								Link,
+								{ to: '/view' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-primary form-control' },
+									'View Tasks'
+								)
+							)
+						)
+					),
+					React.createElement('br', null),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-6 col-md-offset-3' },
+							React.createElement(
+								'div',
+								{ className: 'well well-lg' },
+								React.createElement(
+									'p',
+									null,
+									'I will be a well that displays a random array of information. Usually I\'ll display an idea for a task to be completed or an idea for a task to be completed. I\'ll also display random information about the app, like little known features such as the bonus points. '
+								)
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-1' },
+							React.createElement(
+								Link,
+								{ to: '/Home' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-danger' },
+									'Log Out'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = Dash;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Nav = __webpack_require__(239);
+	var Footer = __webpack_require__(240);
+	var Link = ReactRouter.Link;
+	
+	var Redeem = React.createClass({
+		displayName: 'Redeem',
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				'div',
+				{ id: 'Add' },
+				React.createElement(
+					'div',
+					{ className: 'container' },
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-2 col-md-offset-5' },
+							React.createElement(
+								'div',
+								{ className: 'panel panel-default text-center' },
+								React.createElement(
+									'div',
+									{ className: 'panel-heading' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'Brownie Points'
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									React.createElement(
+										'span',
+										null,
+										React.createElement(
+											'h1',
+											null,
+											'100'
+										),
+										React.createElement(
+											'p',
+											null,
+											'pts'
+										)
+									)
+								)
+							)
+						)
+					),
+					React.createElement('br', null),
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'div',
+							{ className: 'panel panel-default' },
+							React.createElement(
+								'div',
+								{ className: 'panel-heading text-center' },
+								React.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'Redeem Brownie Points'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'panel-body' },
+								React.createElement(
+									'div',
+									{ className: 'row' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-7 col-md-offset-1' },
+										React.createElement(
+											'div',
+											{ className: 'well' },
+											React.createElement(
+												'ul',
+												null,
+												React.createElement(
+													'li',
+													null,
+													'This is a HoneyDo REWARD!'
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a HoneyDo REWARD!'
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a HoneyDo REWARD!'
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a HoneyDo REWARD!'
+												)
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-3' },
+										React.createElement(
+											'div',
+											{ className: 'well' },
+											React.createElement(
+												'ul',
+												null,
+												React.createElement(
+													'li',
+													null,
+													React.createElement('input', { type: 'checkbox' })
+												),
+												React.createElement(
+													'li',
+													null,
+													React.createElement('input', { type: 'checkbox' })
+												),
+												React.createElement(
+													'li',
+													null,
+													React.createElement('input', { type: 'checkbox' })
+												),
+												React.createElement(
+													'li',
+													null,
+													React.createElement('input', { type: 'checkbox' })
+												)
+											)
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'row' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-7 col-md-offset-1' },
+										React.createElement(
+											'div',
+											{ className: 'well well-lg' },
+											React.createElement(
+												'p',
+												null,
+												'Click select which reward you would like to redeem and then click the redeem button'
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-3' },
+										React.createElement(
+											'button',
+											{ type: 'button', className: 'btn btn-primary form-control' },
+											'Redeem'
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-1' },
+						React.createElement(
+							Link,
+							{ to: '/Home' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-danger' },
+								'Log Out'
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = Redeem;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Signup = __webpack_require__(242);
-	var helpers = __webpack_require__(243);
+	var Signup = __webpack_require__(244);
+	var helpers = __webpack_require__(245);
 	
 	var SignupContainer = React.createClass({
 		displayName: 'SignupContainer',
@@ -27618,7 +27970,7 @@
 	module.exports = SignupContainer;
 
 /***/ },
-/* 242 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27679,13 +28031,13 @@
 	module.exports = Signup;
 
 /***/ },
-/* 243 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var axios = __webpack_require__(244);
-	var UserModel = __webpack_require__(266);
+	var axios = __webpack_require__(246);
+	var UserModel = __webpack_require__(268);
 	
 	var helpers = {
 	
@@ -27727,20 +28079,20 @@
 	module.exports = helpers;
 
 /***/ },
-/* 244 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(245);
+	module.exports = __webpack_require__(247);
 
 /***/ },
-/* 245 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
-	var bind = __webpack_require__(247);
-	var Axios = __webpack_require__(248);
+	var utils = __webpack_require__(248);
+	var bind = __webpack_require__(249);
+	var Axios = __webpack_require__(250);
 	
 	/**
 	 * Create an instance of Axios
@@ -27776,7 +28128,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(265);
+	axios.spread = __webpack_require__(267);
 	
 	module.exports = axios;
 	
@@ -27785,12 +28137,12 @@
 
 
 /***/ },
-/* 246 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var bind = __webpack_require__(247);
+	var bind = __webpack_require__(249);
 	
 	/*global toString:true*/
 	
@@ -28090,7 +28442,7 @@
 
 
 /***/ },
-/* 247 */
+/* 249 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28107,17 +28459,17 @@
 
 
 /***/ },
-/* 248 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var defaults = __webpack_require__(249);
-	var utils = __webpack_require__(246);
-	var InterceptorManager = __webpack_require__(251);
-	var dispatchRequest = __webpack_require__(252);
-	var isAbsoluteURL = __webpack_require__(263);
-	var combineURLs = __webpack_require__(264);
+	var defaults = __webpack_require__(251);
+	var utils = __webpack_require__(248);
+	var InterceptorManager = __webpack_require__(253);
+	var dispatchRequest = __webpack_require__(254);
+	var isAbsoluteURL = __webpack_require__(265);
+	var combineURLs = __webpack_require__(266);
 	
 	/**
 	 * Create a new instance of Axios
@@ -28198,13 +28550,13 @@
 
 
 /***/ },
-/* 249 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
-	var normalizeHeaderName = __webpack_require__(250);
+	var utils = __webpack_require__(248);
+	var normalizeHeaderName = __webpack_require__(252);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -28276,12 +28628,12 @@
 
 
 /***/ },
-/* 250 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
+	var utils = __webpack_require__(248);
 	
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -28294,12 +28646,12 @@
 
 
 /***/ },
-/* 251 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
+	var utils = __webpack_require__(248);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -28352,13 +28704,13 @@
 
 
 /***/ },
-/* 252 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(246);
-	var transformData = __webpack_require__(253);
+	var utils = __webpack_require__(248);
+	var transformData = __webpack_require__(255);
 	
 	/**
 	 * Dispatch a request to the server using whichever adapter
@@ -28399,10 +28751,10 @@
 	    adapter = config.adapter;
 	  } else if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(254);
+	    adapter = __webpack_require__(256);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(254);
+	    adapter = __webpack_require__(256);
 	  }
 	
 	  return Promise.resolve(config)
@@ -28434,12 +28786,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 253 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
+	var utils = __webpack_require__(248);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -28460,18 +28812,18 @@
 
 
 /***/ },
-/* 254 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(246);
-	var settle = __webpack_require__(255);
-	var buildURL = __webpack_require__(258);
-	var parseHeaders = __webpack_require__(259);
-	var isURLSameOrigin = __webpack_require__(260);
-	var createError = __webpack_require__(256);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(261);
+	var utils = __webpack_require__(248);
+	var settle = __webpack_require__(257);
+	var buildURL = __webpack_require__(260);
+	var parseHeaders = __webpack_require__(261);
+	var isURLSameOrigin = __webpack_require__(262);
+	var createError = __webpack_require__(258);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(263);
 	
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -28565,7 +28917,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(262);
+	      var cookies = __webpack_require__(264);
 	
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -28629,12 +28981,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 255 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var createError = __webpack_require__(256);
+	var createError = __webpack_require__(258);
 	
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -28660,12 +29012,12 @@
 
 
 /***/ },
-/* 256 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var enhanceError = __webpack_require__(257);
+	var enhanceError = __webpack_require__(259);
 	
 	/**
 	 * Create an Error with the specified message, config, error code, and response.
@@ -28683,7 +29035,7 @@
 
 
 /***/ },
-/* 257 */
+/* 259 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28708,12 +29060,12 @@
 
 
 /***/ },
-/* 258 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
+	var utils = __webpack_require__(248);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -28782,12 +29134,12 @@
 
 
 /***/ },
-/* 259 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
+	var utils = __webpack_require__(248);
 	
 	/**
 	 * Parse headers into an object
@@ -28825,12 +29177,12 @@
 
 
 /***/ },
-/* 260 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
+	var utils = __webpack_require__(248);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -28899,7 +29251,7 @@
 
 
 /***/ },
-/* 261 */
+/* 263 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28941,12 +29293,12 @@
 
 
 /***/ },
-/* 262 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(246);
+	var utils = __webpack_require__(248);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29000,7 +29352,7 @@
 
 
 /***/ },
-/* 263 */
+/* 265 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29020,7 +29372,7 @@
 
 
 /***/ },
-/* 264 */
+/* 266 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29038,7 +29390,7 @@
 
 
 /***/ },
-/* 265 */
+/* 267 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29071,7 +29423,7 @@
 
 
 /***/ },
-/* 266 */
+/* 268 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29086,7 +29438,7 @@
 	module.exports = User;
 
 /***/ },
-/* 267 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29095,7 +29447,7 @@
 	
 	var React = __webpack_require__(1);
 	var Login = __webpack_require__(237);
-	var helpers = __webpack_require__(243);
+	var helpers = __webpack_require__(245);
 	
 	var LoginContainer = React.createClass({
 		displayName: 'LoginContainer',
@@ -29124,7 +29476,7 @@
 	
 			this.context.router.push({
 	
-				pathname: '/Dash',
+				pathname: '/',
 				state: {
 					email: this.state.email
 				}
@@ -29140,6 +29492,258 @@
 	});
 	
 	module.exports = LoginContainer;
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Nav = __webpack_require__(239);
+	var Footer = __webpack_require__(240);
+	var Link = ReactRouter.Link;
+	
+	var View = React.createClass({
+		displayName: 'View',
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				'div',
+				{ id: 'Add' },
+				React.createElement(
+					'div',
+					{ className: 'container' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'div',
+							{ className: 'panel panel-default' },
+							React.createElement(
+								'div',
+								{ className: 'panel-heading text-center' },
+								React.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'Remaining HoneyDo\'s'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'panel-body' },
+								React.createElement(
+									'div',
+									{ className: 'row' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-7 col-md-offset-1' },
+										React.createElement(
+											'div',
+											{ className: 'well' },
+											React.createElement(
+												'ul',
+												null,
+												React.createElement(
+													'li',
+													null,
+													'This is a HoneyDo:',
+													React.createElement(
+														'ul',
+														null,
+														React.createElement(
+															'li',
+															null,
+															React.createElement(
+																'i',
+																null,
+																'time remaining for bonus'
+															)
+														)
+													)
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a HoneyDo:',
+													React.createElement(
+														'ul',
+														null,
+														React.createElement(
+															'li',
+															null,
+															React.createElement(
+																'i',
+																null,
+																'time remaining for bonus'
+															)
+														)
+													)
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a HoneyDo:',
+													React.createElement(
+														'ul',
+														null,
+														React.createElement(
+															'li',
+															null,
+															React.createElement(
+																'i',
+																null,
+																'time remaining for bonus'
+															)
+														)
+													)
+												),
+												React.createElement(
+													'li',
+													null,
+													'This is a HoneyDo:',
+													React.createElement(
+														'ul',
+														null,
+														React.createElement(
+															'li',
+															null,
+															React.createElement(
+																'i',
+																null,
+																'time remaining for bonus'
+															)
+														)
+													)
+												)
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-3' },
+										React.createElement(
+											'div',
+											{ className: 'well' },
+											React.createElement(
+												'ul',
+												null,
+												React.createElement(
+													'li',
+													null,
+													React.createElement('input', { type: 'checkbox' }),
+													React.createElement(
+														'ul',
+														null,
+														React.createElement('li', null)
+													)
+												),
+												React.createElement(
+													'li',
+													null,
+													React.createElement('input', { type: 'checkbox' }),
+													React.createElement(
+														'ul',
+														null,
+														React.createElement('li', null)
+													)
+												),
+												React.createElement(
+													'li',
+													null,
+													React.createElement('input', { type: 'checkbox' }),
+													React.createElement(
+														'ul',
+														null,
+														React.createElement('li', null)
+													)
+												),
+												React.createElement(
+													'li',
+													null,
+													React.createElement('input', { type: 'checkbox' }),
+													React.createElement(
+														'ul',
+														null,
+														React.createElement('li', null)
+													)
+												)
+											)
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'row' },
+									React.createElement(
+										'div',
+										{ className: 'col-md-3 col-md-offset-1' },
+										React.createElement(
+											Link,
+											{ to: '/dash' },
+											React.createElement(
+												'button',
+												{ type: 'button', className: 'btn btn-warning form-control' },
+												'Dashboard'
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-3 col-md-offset-1' },
+										React.createElement(
+											Link,
+											{ to: '/completed' },
+											React.createElement(
+												'button',
+												{ type: 'button', className: 'btn btn-primary form-control' },
+												'Completed'
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'col-md-3' },
+										React.createElement(
+											Link,
+											{ to: '/redeem' },
+											React.createElement(
+												'button',
+												{ type: 'button', className: 'btn btn-danger form-control' },
+												'Finished'
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-1' },
+						React.createElement(
+							Link,
+							{ to: '/Home' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-danger' },
+								'Log Out'
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = View;
 
 /***/ }
 /******/ ]);
