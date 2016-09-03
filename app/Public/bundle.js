@@ -27221,7 +27221,7 @@
 						React.createElement(
 							'div',
 							{ className: 'form-group' },
-							React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
+							React.createElement('input', { type: 'text', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
 						),
 						React.createElement(
 							'div',
@@ -27710,11 +27710,11 @@
 				password: password
 			};
 	
-			console.log(user);
+			console.log('helpers loginUser ' + user);
 	
 			return axios.post('/login', user).then(function (response) {
 	
-				console.log(response.data.email);
+				// console.log(user)
 				localStorage.setItem('email', response.data.email);
 	
 				this.isAuthenticated = true;
@@ -29124,7 +29124,7 @@
 	
 			this.context.router.push({
 	
-				pathname: '/',
+				pathname: '/Dash',
 				state: {
 					email: this.state.email
 				}

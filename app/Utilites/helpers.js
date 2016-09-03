@@ -27,12 +27,12 @@ var helpers = {
 			password: password
 		}
 
-		console.log(user)
+		console.log('helpers loginUser ' + user)
 
 		return axios.post('/login', user)
 			.then(function(response){
 
-				console.log(response.data.email)
+				// console.log(user)
 				localStorage.setItem('email', response.data.email);
 
 				this.isAuthenticated = true;

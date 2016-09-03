@@ -14,11 +14,11 @@ function Login(props) {
 					<form className="contact-form" onSubmit={props.loginUser}>
 
 						<div className="form-group">
-			 			 <input type="email" className="form-control" id="email" placeholder="Email" onChange={props.updateInputs} />
+			 			 <input type="text" className="form-control" id="email" placeholder="Email" onChange={props.updateInputs} />
 						</div>
 
 						<div className="form-group">
-			 				<input type="password" className="form-control" id="password" placeholder="Password" onChange={props.updateInputs} />
+			 			<input type="password" className="form-control" id="password" placeholder="Password" onChange={props.updateInputs} />
 						</div>
 
 						<button type="submit" className="btn btn-lg btn-block btn-default">Login</button>

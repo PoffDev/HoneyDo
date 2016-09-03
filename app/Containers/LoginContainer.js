@@ -27,7 +27,7 @@ var LoginContainer = React.createClass({
 
 		this.context.router.push({
 
-			pathname:'/',
+			pathname:'/Dash',
 			state:{
 				email: this.state.email,
 			}

@@ -26,7 +26,7 @@ passport.use(new LocalStrategy({passReqToCallback : true},
     console.log(email, password);
 
     // Searching the ORM for the user in the database
-    db.Users.findOne({email: email}, function(err, user){
+    db.users.findOne({email: email}, function(err, user){
 
       if (err) { return done(err); }
       if (!user) { return done(null, false); }
@@ -71,14 +71,17 @@ module.exports = function(app) {
   }); // end app.post()
 
   // login a user
-  app.post('/Login', passport.authenticate('local',{failureRedirect:'/', failureFlash:'Wrong email or Password'}), function(req, res){
+  app.post('/login', passport.authenticate('local',{failureRedirect:'/', failureFlash:'Wrong email or Password'}), function(req, res){
+    console.log(user);
     console.log(req.user.email);
     if (req.isAuthenticated()) {
+      console.log('user signed in properlly');
       res.send({
-        email: req.user.email
+        email: req.user.email,
       });
     } else {
-      res.redirect('/')
+      console.log('user not signed in ');
+      res.redirect('/SignUp')
     }
   });
 
