@@ -1,13 +1,16 @@
-import React from 'react'
+var React = require('react');
+var ReactRouter = require('react-router');
+var Nav = require('./Children/Nav');
+var Footer = require('./Children/Footer')
+var Link = ReactRouter.Link;
 
-import { Link } from 'react-router'
+var Completed = React.createClass({
 
-
-export default React.createClass({
     render: function() {
-        return (
-            
-            <div id = 'Add'>
+
+    return (
+
+    	<div id = 'Add'>
 
             	<div className = "container">
 
@@ -74,7 +77,10 @@ export default React.createClass({
 	    		</div>
 
 			</div>
-            
-        );
-    }
+
+    	)
+	}
 });
+
+
+module.exports = Completed;
