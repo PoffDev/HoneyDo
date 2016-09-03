@@ -5,7 +5,6 @@ var logger = require('morgan');
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
-var mongojs = require('mongojs');
 
 // Create Instance of Express
 var app = express();
@@ -18,25 +17,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-app.use(express.static('./public'));
+app.use(express.static('./App/Public'));
 
-// -------------------------------------------------
 
-// MongoDB Configuration
-var databaseUrl = 'React';
-var collections = ["hello"];
-
-// use mongojs to hook the database to the db variable 
-var db = mongojs(databaseUrl, collections);
-
-db.on('error', function (err) {
-  console.log('MongoDB Error: ', err);
-});
-
-//session keeps the user logged in
+// Passport
+// -----------------------------------------------
+//session is used to keep the user logged in
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true}))
 
-//flash is used to show incorrect login
+//flash is used to show a message on an incorrect login
 app.use(flash());
 
 //passport middleware methods
@@ -44,35 +33,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+// Routes
 // -------------------------------------------------
 
-//Get Routes
-app.get('/', function(req, res){
+require('./controller/html-routes.js')(app);
 
-  res.sendFile('./public/index.html');
-
-})
-
-
-//Post Routes
-app.post('/signup', function(req, res){
-
-	console.log('sign up email ' + req.body.email);
-	console.log('sign up partner1 ' + req.body.partner1);
-	console.log('sign up partner2 ' + req.body.partner2);
-	console.log('sign up password ' + req.body.password);
-})
-
-app.post('/login', function (req, res){
-
-	console.log('login email ' + req.body.email);
-	console.log('login password ' + req.body.password);
-
-})
-
-// -------------------------------------------------
 
 // Listener
+// -------------------------------------------------
+
 app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
+	console.log("App listening on PORT: " + PORT);
 });

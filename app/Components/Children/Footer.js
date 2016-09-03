@@ -13,7 +13,7 @@ var Footer = React.createClass({
 						<div className = "container">
 					
 							<ul className="nav navbar-nav navbar-right">
-							  	<li role="presentation"><a href="http://wwww.github.com/PoffDev">Designed and Created with Love from PoffDev</a></li>
+							  	<li role="presentation"><a href="http://www.github.com/PoffDev">Designed and Created with Love from PoffDev</a></li>
 							</ul>
 
 						</div>

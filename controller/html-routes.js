@@ -6,8 +6,8 @@ var mongojs = require('mongojs');
 // -------------------------------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-var databaseUrl = 'HoneyDo';
-var collections = ["users"];
+var databaseUrl = 'Sunshare';
+var collections = ["Users", "Sunshares", "Gatherings"];
 
 // use mongojs to hook the database to the db variable
 var db = mongojs(databaseUrl, collections);
@@ -25,17 +25,17 @@ passport.use(new LocalStrategy({passReqToCallback : true},
   function(req, email, password, done) {
     console.log(email, password);
 
-  	// Searching the ORM for the user in the database
-  	db.Users.findOne({email: email}, function(err, user){
+    // Searching the ORM for the user in the database
+    db.Users.findOne({email: email}, function(err, user){
 
-  		if (err) { return done(err); }
+      if (err) { return done(err); }
       if (!user) { return done(null, false); }
 
       // comparing user passwords - return if not a match
       if (password !== user.password) { return done(null, false);}
 
       return done(null, user);
-  	});
+    });
   }
 ));
 
@@ -55,13 +55,12 @@ passport.deserializeUser(function(user, done) {
 module.exports = function(app) {
 
   // entry for the React app
-app.get('/', function() 
-    {res.sendFile('public/index.html');
-  
+  app.get('/', function() {
+    res.sendFile('./App/Public/index.html');
   });
 
   // signup a user
-app.post('/Signup', function(req, res) {
+  app.post('/Signup', function(req, res) {
     var user = req.body;
     // console.log(user);
     db.Users.insert(user, function(err, docs) {
@@ -75,12 +74,12 @@ app.post('/Signup', function(req, res) {
   app.post('/Login', passport.authenticate('local',{failureRedirect:'/', failureFlash:'Wrong email or Password'}), function(req, res){
     console.log(req.user.email);
     if (req.isAuthenticated()) {
-			res.send({
-				email: req.user.email
-			});
-		} else {
-			res.redirect('/')
-		}
-	});
+      res.send({
+        email: req.user.email
+      });
+    } else {
+      res.redirect('/')
+    }
+  });
 
 }

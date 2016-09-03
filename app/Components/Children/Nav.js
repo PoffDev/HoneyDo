@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 var Nav = React.createClass({
 
@@ -13,9 +15,9 @@ var Nav = React.createClass({
 					<div className = "container">
 					
 						<ul className="nav navbar-nav navbar-right">
-						  	<li role="presentation"><a href="#Home">Home</a></li>
-						  	<li role="presentation"><a href="#About">About</a></li>
-						  	<li role="presentation"><a href="/signup">Sign Up</a></li>
+						  	<li role="presentation"><Link to="/SignUp">Home</Link></li>
+						  	<li role="presentation"><Link to="/SignUp">About</Link></li>
+						  	<li role="presentation"><Link to="/SignUp">Sign Up</Link></li>
 						</ul>
 
 					</div>
