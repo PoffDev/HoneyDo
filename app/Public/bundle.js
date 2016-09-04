@@ -27073,7 +27073,7 @@
 	
 	//Components
 	var Add = __webpack_require__(236);
-	var Completed = __webpack_require__(239);
+	var Completed = __webpack_require__(238);
 	var Dash = __webpack_require__(240);
 	var Home = __webpack_require__(241);
 	var Login = __webpack_require__(242);
@@ -27118,228 +27118,158 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(237);
-	var Footer = __webpack_require__(238);
+	var Footer = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
-	var Add = React.createClass({
-		displayName: 'Add',
+	function Add(props) {
 	
-	
-		render: function render() {
-	
-			return React.createElement(
+		return React.createElement(
+			'div',
+			{ id: 'Add' },
+			React.createElement(
 				'div',
-				{ id: 'Add' },
-				React.createElement(
-					'div',
-					{ className: 'container text-center' },
-					React.createElement(
-						'div',
-						{ className: 'row' },
-						React.createElement(
-							'div',
-							{ className: 'col-md-6 col-md-offset-3' },
-							React.createElement(
-								'div',
-								{ className: 'panel panel-default' },
-								React.createElement(
-									'div',
-									{ className: 'panel-heading' },
-									React.createElement(
-										'h3',
-										{ className: 'panel-title' },
-										'Add a Honey Do'
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'row' },
-									React.createElement(
-										'div',
-										{ className: 'col-md-10 col-md-offset-1' },
-										React.createElement(
-											'div',
-											{ className: 'panel-body' },
-											React.createElement(
-												'div',
-												{ className: 'form-group' },
-												React.createElement(
-													'label',
-													null,
-													'HoneyDo'
-												),
-												React.createElement('br', null),
-												React.createElement('input', { type: 'text', id: 'addHoneyDo', className: 'form-control', placeholder: 'Do the Dishes...' })
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'row' },
-									React.createElement(
-										'div',
-										{ className: 'col-md-4 col-md-offset-2' },
-										React.createElement(
-											'div',
-											{ className: 'panel-body' },
-											React.createElement(
-												'div',
-												{ className: 'form-group' },
-												React.createElement(
-													'label',
-													null,
-													'Brownie Points'
-												),
-												React.createElement('br', null),
-												React.createElement('input', { type: 'text', id: 'addPoints', className: 'form-control', placeholder: '50' })
-											)
-										)
-									),
-									React.createElement(
-										'div',
-										{ className: 'col-md-4' },
-										React.createElement(
-											'div',
-											{ className: 'panel-body' },
-											React.createElement(
-												'div',
-												{ className: 'form-group' },
-												React.createElement(
-													'label',
-													null,
-													'Complete by Date'
-												),
-												React.createElement('br', null),
-												React.createElement('input', { type: 'text', id: 'Complete by', className: 'form-control', placeholder: '01/01/1900' })
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'row' },
-									React.createElement(
-										'div',
-										{ className: 'col-md-10 col-md-offset-1' },
-										React.createElement(
-											'div',
-											{ className: 'well' },
-											React.createElement(
-												'p',
-												null,
-												'Select a complete by date to automatically add a 25% brownie point bonus'
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'row' },
-									React.createElement(
-										Link,
-										{ to: '/dash' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-default' },
-											'Submit'
-										)
-									)
-								)
-							)
-						)
-					)
-				),
+				{ className: 'container text-center' },
 				React.createElement(
 					'div',
 					{ className: 'row' },
 					React.createElement(
 						'div',
-						{ className: 'col-md-1' },
+						{ className: 'col-md-6 col-md-offset-3' },
 						React.createElement(
-							Link,
-							{ to: '/Home' },
+							'div',
+							{ className: 'panel panel-default' },
 							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-danger' },
-								'Log Out'
+								'div',
+								{ className: 'panel-heading' },
+								React.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'Add a Honey Do'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-10 col-md-offset-1' },
+									React.createElement(
+										'div',
+										{ className: 'panel-body' },
+										React.createElement(
+											'div',
+											{ className: 'form-group' },
+											React.createElement(
+												'label',
+												null,
+												'HoneyDo'
+											),
+											React.createElement('br', null),
+											React.createElement('input', { type: 'text', id: 'addHoneyDo', className: 'form-control', placeholder: 'Do the Dishes...' })
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-4 col-md-offset-2' },
+									React.createElement(
+										'div',
+										{ className: 'panel-body' },
+										React.createElement(
+											'div',
+											{ className: 'form-group' },
+											React.createElement(
+												'label',
+												null,
+												'Brownie Points'
+											),
+											React.createElement('br', null),
+											React.createElement('input', { type: 'text', id: 'addPoints', className: 'form-control', placeholder: '50' })
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-4' },
+									React.createElement(
+										'div',
+										{ className: 'panel-body' },
+										React.createElement(
+											'div',
+											{ className: 'form-group' },
+											React.createElement(
+												'label',
+												null,
+												'Complete by Date'
+											),
+											React.createElement('br', null),
+											React.createElement('input', { type: 'text', id: 'Complete by', className: 'form-control', placeholder: '01/01/1900' })
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-10 col-md-offset-1' },
+									React.createElement(
+										'div',
+										{ className: 'well' },
+										React.createElement(
+											'p',
+											null,
+											'Select a complete by date to automatically add a 25% brownie point bonus'
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									Link,
+									{ to: '/dash' },
+									React.createElement(
+										'button',
+										{ type: 'button', className: 'btn btn-default' },
+										'Submit'
+									)
+								)
 							)
 						)
 					)
 				)
-			);
-		}
-	});
+			),
+			React.createElement(
+				'div',
+				{ className: 'row' },
+				React.createElement(
+					'div',
+					{ className: 'col-md-1' },
+					React.createElement(
+						Link,
+						{ to: '/Home' },
+						React.createElement(
+							'button',
+							{ type: 'button', className: 'btn btn-danger' },
+							'Log Out'
+						)
+					)
+				)
+			)
+		);
+	};
 	
 	module.exports = Add;
 
 /***/ },
 /* 237 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var ReactRouter = __webpack_require__(172);
-	var Link = ReactRouter.Link;
-	
-	var Nav = React.createClass({
-		displayName: 'Nav',
-	
-	
-		render: function render() {
-	
-			return React.createElement(
-				'div',
-				{ className: 'container-fluid' },
-				React.createElement(
-					'nav',
-					{ className: 'navbar navbar-default navbar-fixed-top' },
-					React.createElement(
-						'div',
-						{ className: 'container' },
-						React.createElement(
-							'ul',
-							{ className: 'nav navbar-nav navbar-right' },
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'Home'
-								)
-							),
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'About'
-								)
-							),
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'Sign Up'
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-	
-	module.exports = Nav;
-
-/***/ },
-/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27387,15 +27317,15 @@
 	module.exports = Footer;
 
 /***/ },
-/* 239 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(237);
-	var Footer = __webpack_require__(238);
+	var Nav = __webpack_require__(239);
+	var Footer = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	var Completed = React.createClass({
@@ -27518,131 +27448,58 @@
 	module.exports = Completed;
 
 /***/ },
-/* 240 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(237);
-	var Footer = __webpack_require__(238);
 	var Link = ReactRouter.Link;
 	
-	var Dash = React.createClass({
-		displayName: 'Dash',
+	var Nav = React.createClass({
+		displayName: 'Nav',
 	
 	
 		render: function render() {
 	
 			return React.createElement(
 				'div',
-				null,
-				React.createElement(Nav, null),
+				{ className: 'container-fluid' },
 				React.createElement(
-					'div',
-					{ className: 'container' },
+					'nav',
+					{ className: 'navbar navbar-default navbar-fixed-top' },
 					React.createElement(
 						'div',
-						{ className: 'row' },
+						{ className: 'container' },
 						React.createElement(
-							'div',
-							{ className: 'col-md-2 col-md-offset-5' },
+							'ul',
+							{ className: 'nav navbar-nav navbar-right' },
 							React.createElement(
-								'div',
-								{ className: 'panel panel-default text-center' },
+								'li',
+								{ role: 'presentation' },
 								React.createElement(
-									'div',
-									{ className: 'panel-heading' },
-									React.createElement(
-										'h3',
-										{ className: 'panel-title' },
-										'Brownie Points'
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'panel-body' },
-									React.createElement(
-										'span',
-										null,
-										React.createElement(
-											'h1',
-											null,
-											'100'
-										),
-										React.createElement(
-											'p',
-											null,
-											'pts'
-										)
-									)
+									Link,
+									{ to: '/SignUp' },
+									'Home'
 								)
-							)
-						)
-					),
-					React.createElement('br', null),
-					React.createElement(
-						'div',
-						{ className: 'row' },
-						React.createElement(
-							'div',
-							{ className: 'col-md-4 col-md-offset-1' },
+							),
 							React.createElement(
-								Link,
-								{ to: '/add' },
+								'li',
+								{ role: 'presentation' },
 								React.createElement(
-									'button',
-									{ type: 'button', className: 'btn btn-primary form-control' },
-									'Add Tasks'
+									Link,
+									{ to: '/SignUp' },
+									'About'
 								)
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'col-md-4 col-md-offset-2' },
+							),
 							React.createElement(
-								Link,
-								{ to: '/view' },
+								'li',
+								{ role: 'presentation' },
 								React.createElement(
-									'button',
-									{ type: 'button', className: 'btn btn-primary form-control' },
-									'View Tasks'
-								)
-							)
-						)
-					),
-					React.createElement('br', null),
-					React.createElement(
-						'div',
-						{ className: 'row' },
-						React.createElement(
-							'div',
-							{ className: 'col-md-6 col-md-offset-3' },
-							React.createElement(
-								'div',
-								{ className: 'well well-lg' },
-								React.createElement(
-									'p',
-									null,
-									'I will be a well that displays a random array of information. Usually I\'ll display an idea for a task to be completed or an idea for a task to be completed. I\'ll also display random information about the app, like little known features such as the bonus points. '
-								)
-							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'row' },
-						React.createElement(
-							'div',
-							{ className: 'col-md-1' },
-							React.createElement(
-								Link,
-								{ to: '/Home' },
-								React.createElement(
-									'button',
-									{ type: 'button', className: 'btn btn-danger' },
-									'Log Out'
+									Link,
+									{ to: '/SignUp' },
+									'Sign Up'
 								)
 							)
 						)
@@ -27651,6 +27508,132 @@
 			);
 		}
 	});
+	
+	module.exports = Nav;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Footer = __webpack_require__(237);
+	var Link = ReactRouter.Link;
+	
+	function Dash(props) {
+	
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'div',
+				{ className: 'container' },
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-2 col-md-offset-5' },
+						React.createElement(
+							'div',
+							{ className: 'panel panel-default text-center' },
+							React.createElement(
+								'div',
+								{ className: 'panel-heading' },
+								React.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'Brownie Points'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'panel-body' },
+								React.createElement(
+									'span',
+									null,
+									React.createElement(
+										'h1',
+										null,
+										'100'
+									),
+									React.createElement(
+										'p',
+										null,
+										'pts'
+									)
+								)
+							)
+						)
+					)
+				),
+				React.createElement('br', null),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-4 col-md-offset-1' },
+						React.createElement(
+							Link,
+							{ to: '/add' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-primary form-control' },
+								'Add Tasks'
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-md-4 col-md-offset-2' },
+						React.createElement(
+							Link,
+							{ to: '/view' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-primary form-control' },
+								'View Tasks'
+							)
+						)
+					)
+				),
+				React.createElement('br', null),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'div',
+							{ className: 'well well-lg' },
+							React.createElement('div', { onLoad: props.randomArray })
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-1' },
+						React.createElement(
+							Link,
+							{ to: '/Home' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-danger' },
+								'Log Out'
+							)
+						)
+					)
+				)
+			)
+		);
+	};
 	
 	module.exports = Dash;
 
@@ -27662,8 +27645,8 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(237);
-	var Footer = __webpack_require__(238);
+	var Nav = __webpack_require__(239);
+	var Footer = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	var Home = React.createClass({
@@ -28007,8 +27990,8 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(237);
-	var Footer = __webpack_require__(238);
+	var Nav = __webpack_require__(239);
+	var Footer = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	var Redeem = React.createClass({
@@ -28210,8 +28193,8 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(237);
-	var Footer = __webpack_require__(238);
+	var Nav = __webpack_require__(239);
+	var Footer = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	var View = React.createClass({
@@ -28587,6 +28570,8 @@
 	
 	var helpers = {
 	
+		addTask: function addTask(task, bPoint, date) {},
+	
 		signupUser: function signupUser(email, partner1, partner2, password) {
 	
 			var user = new UserModel(email, partner1, partner2, password);
@@ -28625,6 +28610,7 @@
 		},
 	
 		isAuthenticated: false
+	
 	};
 	
 	module.exports = helpers;

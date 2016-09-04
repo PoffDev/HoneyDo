@@ -1,19 +1,13 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-var Nav = require('./Children/Nav');
 var Footer = require('./Children/Footer')
 var Link = ReactRouter.Link;
 
-
-var Dash = React.createClass({
-
-    render: function() {
+function Dash (props) {
 
     return (
 
     	<div>
-
-    		<Nav />
 
     		<div className = "container">
 
@@ -61,7 +55,8 @@ var Dash = React.createClass({
 
 		    			<div className="well well-lg">
 
-		    				<p>I will be a well that displays a random array of information. Usually I'll display an idea for a task to be completed or an idea for a task to be completed. I'll also display random information about the app, like little known features such as the bonus points. </p>
+		    				<div onLoad={props.randomArray}></div>
+
 
 		    			</div>
 
@@ -84,7 +79,6 @@ var Dash = React.createClass({
     	</div>
 
     	)
-  	}
-});
+  	};
 
 module.exports = Dash;

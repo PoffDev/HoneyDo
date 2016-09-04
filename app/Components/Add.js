@@ -1,15 +1,12 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-var Nav = require('./Children/Nav');
 var Footer = require('./Children/Footer')
 var Link = ReactRouter.Link;
 
 
-var Add = React.createClass({
+function Add(props) {
 
-    render: function() {
-
-    return (
+	return (
 
     	<div id = 'Add'>
 
@@ -94,8 +91,7 @@ var Add = React.createClass({
 			</div>
 
     	)
-  	}
-});
+};
 
 module.exports = Add;
 

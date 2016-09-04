@@ -3,6 +3,10 @@ var UserModel = require('../../models/User')
 
 var helpers = {
 
+	addTask: function (task, bPoint, date) {
+
+	},
+
 	signupUser: function (email, partner1, partner2, password) {
 
 		var user = new UserModel(email, partner1, partner2, password)
@@ -48,6 +52,7 @@ var helpers = {
 	},
 
 	isAuthenticated: false
+
 }
 
 module.exports = helpers;

@@ -101,4 +101,12 @@ module.exports = function(app) {
 
   });
 
+// //addTask
+//   app.post('/addTask', function (req, res) {
+
+//     db.users.update ({_id : localStorage.getItem('_id')}, {$set: {"task": "Do the dishes"}})
+
+//     db.users.
+//   });
+
 }
