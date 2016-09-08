@@ -6,7 +6,7 @@ var Link = ReactRouter.Link;
 var Dash = React.createClass({
 	render: function(){
 		var self = this;
-		console.log(self)
+		
 	    return (
 
 	    	<div>
