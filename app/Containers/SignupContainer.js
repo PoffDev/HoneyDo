@@ -41,7 +41,7 @@ var SignupContainer = React.createClass({
 	},
 
 	render: function() {
-
+		console.log(this)
 		return (
 			<Signup
 				updateInputs={this.updateInputs}

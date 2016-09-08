@@ -27085,6 +27085,7 @@
 	//Containers
 	var SignupContainer = __webpack_require__(246);
 	var LoginContainer = __webpack_require__(272);
+	var DashContainer = __webpack_require__(273);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27098,7 +27099,7 @@
 				React.createElement(Route, { path: '/', component: Home }),
 				React.createElement(Route, { path: '/Add', component: Add }),
 				React.createElement(Route, { path: '/Completed', component: Completed }),
-				React.createElement(Route, { path: '/Dash', component: Dash }),
+				React.createElement(Route, { path: '/Dash', component: DashContainer }),
 				React.createElement(Route, { path: '/Login', component: LoginContainer }),
 				React.createElement(Route, { path: '/Redeem', component: Redeem }),
 				React.createElement(Route, { path: '/SignUp', component: SignupContainer }),
@@ -27522,118 +27523,142 @@
 	var Footer = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
-	function Dash(props) {
+	var Dash = React.createClass({
+		displayName: 'Dash',
 	
-		return React.createElement(
-			'div',
-			null,
-			React.createElement(
+		render: function render() {
+			var self = this;
+			console.log(self);
+			return React.createElement(
 				'div',
-				{ className: 'container' },
+				null,
 				React.createElement(
 					'div',
-					{ className: 'row' },
+					{ className: 'container' },
 					React.createElement(
 						'div',
-						{ className: 'col-md-2 col-md-offset-5' },
+						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'panel panel-default text-center' },
+							{ className: 'col-md-2 col-md-offset-5' },
 							React.createElement(
 								'div',
-								{ className: 'panel-heading' },
+								{ className: 'panel panel-default text-center' },
 								React.createElement(
-									'h3',
-									{ className: 'panel-title' },
-									'Brownie Points'
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'panel-body' },
+									'div',
+									{ className: 'panel-heading' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'Brownie Points'
+									)
+								),
 								React.createElement(
-									'span',
-									null,
+									'div',
+									{ className: 'panel-body' },
 									React.createElement(
-										'h1',
+										'span',
 										null,
-										'100'
-									),
-									React.createElement(
-										'p',
-										null,
-										'pts'
+										React.createElement(
+											'h1',
+											null,
+											'100'
+										),
+										React.createElement(
+											'p',
+											null,
+											'pts'
+										)
 									)
 								)
 							)
 						)
-					)
-				),
-				React.createElement('br', null),
-				React.createElement(
-					'div',
-					{ className: 'row' },
+					),
+					React.createElement('br', null),
 					React.createElement(
 						'div',
-						{ className: 'col-md-4 col-md-offset-1' },
+						{ className: 'row' },
 						React.createElement(
-							Link,
-							{ to: '/add' },
+							'div',
+							{ className: 'col-md-4 col-md-offset-1' },
 							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-primary form-control' },
-								'Add Tasks'
+								Link,
+								{ to: '/add' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-primary form-control' },
+									'Add Tasks'
+								)
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'col-md-4 col-md-offset-2' },
+							React.createElement(
+								Link,
+								{ to: '/view' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-primary form-control' },
+									'View Tasks'
+								)
+							)
+						)
+					),
+					React.createElement('br', null),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-6 col-md-offset-3' },
+							React.createElement(
+								'div',
+								{ className: 'well well-lg' },
+								React.createElement(
+									'div',
+									null,
+									' ',
+									self.props.message,
+									' '
+								)
 							)
 						)
 					),
 					React.createElement(
 						'div',
-						{ className: 'col-md-4 col-md-offset-2' },
-						React.createElement(
-							Link,
-							{ to: '/view' },
-							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-primary form-control' },
-								'View Tasks'
-							)
-						)
-					)
-				),
-				React.createElement('br', null),
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
+						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'well well-lg' },
-							React.createElement('div', { onLoad: props.randomArray })
-						)
-					)
-				),
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-1' },
-						React.createElement(
-							Link,
-							{ to: '/Home' },
+							{ className: 'col-md-2 col-md-offset-5' },
 							React.createElement(
 								'button',
-								{ type: 'button', className: 'btn btn-danger' },
-								'Log Out'
+								{ type: 'button', className: 'btn btn-primary form-control', onClick: self.props.onClick },
+								'More Tips'
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-1' },
+							React.createElement(
+								Link,
+								{ to: '/Home' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-danger' },
+									'Log Out'
+								)
 							)
 						)
 					)
 				)
-			)
-		);
-	};
+			);
+		}
+	});
 	
 	module.exports = Dash;
 
@@ -28489,7 +28514,7 @@
 		},
 	
 		render: function render() {
-	
+			console.log(this);
 			return React.createElement(Signup, {
 				updateInputs: this.updateInputs,
 				signupUser: this.signupUser });
@@ -30042,6 +30067,65 @@
 	});
 	
 	module.exports = LoginContainer;
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var helpers = __webpack_require__(248);
+	var axios = __webpack_require__(249);
+	var Dash = __webpack_require__(240);
+	
+	var DashContainer = React.createClass({
+			displayName: 'DashContainer',
+	
+			getInitialState: function getInitialState() {
+					return { message: 'Click to see more tips' };
+			},
+	
+			onClick: function onClick() {
+					var messages = ["HoneyDo rewards can be anything and everything, the only limit is your imagination!", "Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!", "Brownie Points can be both rewarding and Delicious!", "Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!", "Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
+	
+					var randomMessage = messages[Math.floor(Math.random() * 3)];
+	
+					this.setState({ message: randomMessage });
+			},
+	
+			// onClick: function () {
+	
+			// 		var array = [
+			// 		"HoneyDo rewards can be anything and everything, the only limit is your imagination!",
+			// 		"Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!",
+			// 		"Brownie Points can be both rewarding and Delicious!",
+			// 		"Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!",
+			// 		"Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!",
+			// 		"A clean house leads to less stress, and also some much needed, uninterupted time with your TV!",
+			// 		"The cleaner that garage, the easier it is to turn into a man cave!",
+			// 		"A HoneyDo without a point value is a HoneyDo that wont get done!",
+			// 		"2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later",
+			// 		"Love is shown in your deeds, but more importantly in your Rewards"
+			// 		];
+	
+	
+			// 		var randomArray = array[Math.floor(Math.random()*array.length)];
+	
+			// 		this.setState({message: randomArray}); 
+	
+			// 		console.log('button clicked');
+			// },
+	
+			render: function render() {
+					console.log(this);
+					return React.createElement(Dash, {
+							message: this.state.message,
+							onClick: this.onClick });
+			}
+	});
+	
+	module.exports = DashContainer;
 
 /***/ }
 /******/ ]);
