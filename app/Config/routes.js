@@ -23,6 +23,7 @@ var View = require('../Components/View')
 var SignupContainer = require('../Containers/SignupContainer');
 var LoginContainer = require('../Containers/LoginContainer');
 var DashContainer = require('../Containers/DashContainer');
+var AddContainer = require('../Containers/AddContainer');
 
 
 
@@ -35,7 +36,7 @@ var Routes = React.createClass({
 			<Router history={hashHistory}>
 				<Route path= "/" component={Home} />
 
-				<Route path= "/Add" component={Add} />
+				<Route path= "/Add" component={AddContainer} />
 				<Route path= "/Completed" component={Completed} />
 				<Route path= "/Dash" component={DashContainer}/>
 				<Route path= "/Login" component={LoginContainer}/>

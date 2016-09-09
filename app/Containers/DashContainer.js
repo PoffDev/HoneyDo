@@ -4,8 +4,21 @@ var axios = require('axios');
 var Dash = require('../Components/Dash');
 
 var DashContainer = React.createClass({
+
 	getInitialState: function() {
-    	return { message: 'Click to see more tips' };
+    	return { 
+    		message: 'Click to see more tips',
+    		userID: localStorage.getItem('_id')
+    	};
+
+  	},
+
+  	componentWillMount: function (){
+  		if (this.state.userID === null){
+  			this.context.router.push({
+  				pathname: '/'
+  			})
+  		}
   	},
   
   	onClick: function() {
@@ -28,7 +41,9 @@ var DashContainer = React.createClass({
 
 	
 	render: function (){
-		console.log(this)
+		
+		console.log('userID = ' + this.state.userID)
+
 		return(
 			<Dash 
 				message = {this.state.message}

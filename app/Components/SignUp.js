@@ -6,7 +6,7 @@ function Signup(props) {
 
 	return (
 
-		<div id = 'Add'>
+		<div id = 'Signup'>
 
             	<div className = "container text-center">
 

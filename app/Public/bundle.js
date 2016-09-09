@@ -27086,6 +27086,7 @@
 	var SignupContainer = __webpack_require__(246);
 	var LoginContainer = __webpack_require__(272);
 	var DashContainer = __webpack_require__(273);
+	var AddContainer = __webpack_require__(274);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27097,7 +27098,7 @@
 				Router,
 				{ history: hashHistory },
 				React.createElement(Route, { path: '/', component: Home }),
-				React.createElement(Route, { path: '/Add', component: Add }),
+				React.createElement(Route, { path: '/Add', component: AddContainer }),
 				React.createElement(Route, { path: '/Completed', component: Completed }),
 				React.createElement(Route, { path: '/Dash', component: DashContainer }),
 				React.createElement(Route, { path: '/Login', component: LoginContainer }),
@@ -27137,111 +27138,27 @@
 						'div',
 						{ className: 'col-md-6 col-md-offset-3' },
 						React.createElement(
-							'div',
-							{ className: 'panel panel-default' },
+							'form',
+							{ className: 'contact-form', onSubmit: props.addUserTask },
 							React.createElement(
 								'div',
-								{ className: 'panel-heading' },
-								React.createElement(
-									'h3',
-									{ className: 'panel-title' },
-									'Add a Honey Do'
-								)
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'HoneyDo', placeholder: 'HoneyDo', onChange: props.updateInputs })
 							),
 							React.createElement(
 								'div',
-								{ className: 'row' },
-								React.createElement(
-									'div',
-									{ className: 'col-md-10 col-md-offset-1' },
-									React.createElement(
-										'div',
-										{ className: 'panel-body' },
-										React.createElement(
-											'div',
-											{ className: 'form-group' },
-											React.createElement(
-												'label',
-												null,
-												'HoneyDo'
-											),
-											React.createElement('br', null),
-											React.createElement('input', { type: 'text', id: 'addHoneyDo', className: 'form-control', placeholder: 'Do the Dishes...' })
-										)
-									)
-								)
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'BrowniePoints', placeholder: '50 Points', onChange: props.updateInputs })
 							),
 							React.createElement(
 								'div',
-								{ className: 'row' },
-								React.createElement(
-									'div',
-									{ className: 'col-md-4 col-md-offset-2' },
-									React.createElement(
-										'div',
-										{ className: 'panel-body' },
-										React.createElement(
-											'div',
-											{ className: 'form-group' },
-											React.createElement(
-												'label',
-												null,
-												'Brownie Points'
-											),
-											React.createElement('br', null),
-											React.createElement('input', { type: 'text', id: 'addPoints', className: 'form-control', placeholder: '50' })
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-4' },
-									React.createElement(
-										'div',
-										{ className: 'panel-body' },
-										React.createElement(
-											'div',
-											{ className: 'form-group' },
-											React.createElement(
-												'label',
-												null,
-												'Complete by Date'
-											),
-											React.createElement('br', null),
-											React.createElement('input', { type: 'text', id: 'Complete by', className: 'form-control', placeholder: '01/01/1900' })
-										)
-									)
-								)
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'Date', placeholder: '01/01/2001', onChange: props.updateInputs })
 							),
 							React.createElement(
-								'div',
-								{ className: 'row' },
-								React.createElement(
-									'div',
-									{ className: 'col-md-10 col-md-offset-1' },
-									React.createElement(
-										'div',
-										{ className: 'well' },
-										React.createElement(
-											'p',
-											null,
-											'Select a complete by date to automatically add a 25% brownie point bonus'
-										)
-									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'row' },
-								React.createElement(
-									Link,
-									{ to: '/dash' },
-									React.createElement(
-										'button',
-										{ type: 'button', className: 'btn btn-default' },
-										'Submit'
-									)
-								)
+								'button',
+								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
+								'Signup'
 							)
 						)
 					)
@@ -28537,7 +28454,7 @@
 	
 		return React.createElement(
 			'div',
-			{ id: 'Add' },
+			{ id: 'Signup' },
 			React.createElement(
 				'div',
 				{ className: 'container text-center' },
@@ -30080,29 +29997,123 @@
 	var Dash = __webpack_require__(240);
 	
 	var DashContainer = React.createClass({
-		displayName: 'DashContainer',
+	  displayName: 'DashContainer',
 	
-		getInitialState: function getInitialState() {
-			return { message: 'Click to see more tips' };
-		},
 	
-		onClick: function onClick() {
-			var messages = ["HoneyDo rewards can be anything and everything, the only limit is your imagination!", "Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!", "Brownie Points can be both rewarding and Delicious!", "Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!", "Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
+	  getInitialState: function getInitialState() {
+	    return {
+	      message: 'Click to see more tips',
+	      userID: localStorage.getItem('_id')
+	    };
+	  },
 	
-			var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+	  componentWillMount: function componentWillMount() {
+	    if (this.state.userID === null) {
+	      this.context.router.push({
+	        pathname: '/'
+	      });
+	    }
+	  },
 	
-			this.setState({ message: randomMessage });
-		},
+	  onClick: function onClick() {
+	    var messages = ["HoneyDo rewards can be anything and everything, the only limit is your imagination!", "Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!", "Brownie Points can be both rewarding and Delicious!", "Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!", "Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
 	
-		render: function render() {
-			console.log(this);
-			return React.createElement(Dash, {
-				message: this.state.message,
-				onClick: this.onClick });
-		}
+	    var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+	
+	    this.setState({ message: randomMessage });
+	  },
+	
+	  render: function render() {
+	
+	    console.log('userID = ' + this.state.userID);
+	
+	    return React.createElement(Dash, {
+	      message: this.state.message,
+	      onClick: this.onClick });
+	  }
 	});
 	
 	module.exports = DashContainer;
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	var React = __webpack_require__(1);
+	var Add = __webpack_require__(236);
+	var helpers = __webpack_require__(248);
+	var axios = __webpack_require__(249);
+	
+	var AddContainer = React.createClass({
+		displayName: 'AddContainer',
+	
+	
+		contextTypes: {
+			router: React.PropTypes.object.isRequired
+		},
+	
+		getInitialState: function getInitialState() {
+			return {
+				userID: localStorage.getItem('_id'),
+				HoneyDo: '',
+				BrowniePoints: '',
+				Date: ''
+			};
+		},
+	
+		componentWillMount: function componentWillMount() {
+			if (this.state.userID === null) {
+				this.context.router.push({
+					pathname: '/'
+				});
+			}
+		},
+	
+		updateInputs: function updateInputs(event) {
+			this.setState(_defineProperty({}, event.target.id, event.target.value));
+		},
+	
+		// addUserTask: function (event){
+		// 	even.preventDefault();
+	
+		// 	helpers.addTask(this.state.userID, this.state.HoneyDo, this.state.BrowniePoints, this.state.Date);
+	
+		// 	this.context.router.push({
+	
+		// 		pathname:'/addtask',
+		// 		state:{
+		// 			userID: this.state.userID,
+		// 			HoneyDo: this.state.HoneyDo,
+		// 			BrowniePoints: this.state.BrowniePoints,
+		// 			Date: this.state.Date
+		// 		}
+		// 	});
+		// },
+	
+	
+		//pull _id from local storage
+		//use _id to find matching _id in data base
+		//use _id to add tasks from form
+	
+	
+		//how to add tasks to the database, replace email with _id
+		//db.users.update({"email": "hello@hello.com"}, { $push: {"task": "take out the trash"} });
+	
+		render: function render() {
+	
+			console.log(this.state.userID);
+	
+			return React.createElement(Add, {
+				updateInputs: this.updateInputs });
+		}
+	
+	});
+	
+	module.exports = AddContainer;
 
 /***/ }
 /******/ ]);

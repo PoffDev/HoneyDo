@@ -16,61 +16,21 @@ function Add(props) {
 
 		            	<div className = "col-md-6 col-md-offset-3">
 
-			                <div className="panel panel-default">
-								
-								<div className="panel-heading">
-			    					<h3 className="panel-title">Add a Honey Do</h3>
-			  					</div>
+		            	<form className="contact-form" onSubmit={props.addUserTask}>
+                			<div className="form-group">
+                 			 <input type="text" className="form-control" id="HoneyDo" placeholder="HoneyDo" onChange={props.updateInputs} />
+                			</div>
+                
+	                		<div className="form-group">
+	                  			<input type="text" className="form-control" id="BrowniePoints" placeholder="50 Points" onChange={props.updateInputs} />
+	                		</div>
+	                		<div className="form-group">
+                  				<input type="text" className="form-control" id="Date" placeholder="01/01/2001" onChange={props.updateInputs} />
+                			</div>
 
-			  			
-				  				<div className = "row">
-				  					<div className = "col-md-10 col-md-offset-1">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>HoneyDo</label><br />
-				    						<input type="text" id="addHoneyDo" className="form-control" placeholder = "Do the Dishes..."/>
-
-										</div>
-									</div>
-									</div>
-								</div>
-
-								<div className = "row">
-				  					<div className = "col-md-4 col-md-offset-2">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>Brownie Points</label><br />
-				    						<input type="text" id="addPoints" className="form-control" placeholder = "50"/>
-
-										</div>
-									</div>
-									</div>
-
-									<div className = "col-md-4">
-				  					<div className="panel-body">
-				    					<div className="form-group">
-				    						<label>Complete by Date</label><br />
-				    						<input type="text" id="Complete by" className="form-control" placeholder = "01/01/1900"/>
-
-										</div>
-									</div>
-									</div>
-								</div>
-
-								<div className = "row">
-				  					<div className = "col-md-10 col-md-offset-1">
-					  					<div className="well">
-					    					<p>Select a complete by date to automatically add a 25% brownie point bonus</p>
-										</div>
-									</div>
-								</div>
-
-								<div className = "row">
-
-											<Link to="/dash"><button type="button" className="btn btn-default">Submit</button></Link>
-								</div>
-						
-			  				</div>
+                			<button type="submit" className="btn btn-lg btn-block btn-default">Signup</button>
+              
+              			</form>
 
 						</div>
 

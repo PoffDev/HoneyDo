@@ -11,10 +11,14 @@ var collections = ["users"];
 
 // use mongojs to hook the database to the db variable
 var db = mongojs(databaseUrl, collections);
-
-db.on('error', function(err) {
-  console.log('MongoDB Error: ', err);
-});
+ 
+db.on('error', function (err) {
+    console.log('database error', err)
+})
+ 
+db.on('connect', function () {
+    console.log('database connected')
+})
 
 
 // Passport
