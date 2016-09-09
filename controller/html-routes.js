@@ -103,6 +103,24 @@ module.exports = function(app) {
 
     });
 
+  app.post('/addtask', function(req, res){
+    
+    console.log("Body: " + req.body);
+    
+    console.log("HoneyDo = " + req.body.HoneyDo):
+    
+    var task = req.body.HoneyDo;
+
+      db.users.update({"email": "hello@hello.com"}, { $push: {"task": " Task Test "} }, function(err, docs) {
+
+        if (err) throw err;
+
+        console.log('pushed to db');
+        res.send(docs)
+
+      })
+  })
+
   });
 
 // //addTask

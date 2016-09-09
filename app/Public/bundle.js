@@ -28512,7 +28512,23 @@
 	
 	var helpers = {
 	
-		addTask: function addTask(task, bPoint, date) {},
+		addTask: function addTask(userID, HoneyDo, BrowniePoints, Date) {
+	
+			var user = localStorage.getItem('_id');
+	
+			return axios.post('/addtask', user).then(function (response) {
+	
+				var userID = response.data.userID;
+				var HoneyDo = response.data.HoneyDo;
+				var BrowniePoints = response.data.BrowniePoints;
+				var Date = response.data.Date;
+			}.bind(this));
+		},
+	
+		//populate tasks by user
+		//add task by user
+		//add point value by user
+		//remove task by user
 	
 		signupUser: function signupUser(email, partner1, partner2, password) {
 	
@@ -30061,7 +30077,7 @@
 				userID: localStorage.getItem('_id'),
 				HoneyDo: '',
 				BrowniePoints: '',
-				Date: ''
+				CompleteBy: ''
 			};
 		},
 	
@@ -30075,25 +30091,26 @@
 	
 		updateInputs: function updateInputs(event) {
 			this.setState(_defineProperty({}, event.target.id, event.target.value));
+	
+			console.log('working');
 		},
 	
-		// addUserTask: function (event){
-		// 	even.preventDefault();
+		addUserTask: function addUserTask(event) {
+			event.preventDefault();
 	
-		// 	helpers.addTask(this.state.userID, this.state.HoneyDo, this.state.BrowniePoints, this.state.Date);
+			helpers.addTask(this.state.userID, this.state.HoneyDo, this.state.BrowniePoints, this.state.Date);
 	
-		// 	this.context.router.push({
+			this.context.router.push({
 	
-		// 		pathname:'/addtask',
-		// 		state:{
-		// 			userID: this.state.userID,
-		// 			HoneyDo: this.state.HoneyDo,
-		// 			BrowniePoints: this.state.BrowniePoints,
-		// 			Date: this.state.Date
-		// 		}
-		// 	});
-		// },
-	
+				pathname: '/addtask',
+				state: {
+					userID: this.state.userID,
+					HoneyDo: this.state.HoneyDo,
+					BrowniePoints: this.state.BrowniePoints,
+					CompleteBy: this.state.CompleteBy
+				}
+			});
+		},
 	
 		//pull _id from local storage
 		//use _id to find matching _id in data base
@@ -30105,10 +30122,11 @@
 	
 		render: function render() {
 	
-			console.log(this.state.userID);
+			//console.log(this.state.userID)
 	
 			return React.createElement(Add, {
-				updateInputs: this.updateInputs });
+				updateInputs: this.updateInputs,
+				addUserTask: this.addUserTask });
 		}
 	
 	});

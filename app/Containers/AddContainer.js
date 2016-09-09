@@ -14,7 +14,7 @@ var AddContainer = React.createClass({
   			userID: localStorage.getItem('_id'),
   			HoneyDo: '',
   			BrowniePoints: '',
-  			Date: '',
+  			CompleteBy: '',
   		}
   	},
 
@@ -29,24 +29,26 @@ var AddContainer = React.createClass({
   	updateInputs: function(event) {
 		this.setState({[event.target.id]: event.target.value});
 
+		console.log('working');
+
 	},
 
-	// addUserTask: function (event){
-	// 	even.preventDefault();
+	addUserTask: function (event){
+		event.preventDefault();
 
-	// 	helpers.addTask(this.state.userID, this.state.HoneyDo, this.state.BrowniePoints, this.state.Date);
+		helpers.addTask(this.state.userID, this.state.HoneyDo, this.state.BrowniePoints, this.state.Date);
 
-	// 	this.context.router.push({
+		this.context.router.push({
 
-	// 		pathname:'/addtask',
-	// 		state:{
-	// 			userID: this.state.userID,
-	// 			HoneyDo: this.state.HoneyDo,
-	// 			BrowniePoints: this.state.BrowniePoints,
-	// 			Date: this.state.Date
-	// 		}
-	// 	});
-	// },
+			pathname:'/addtask',
+			state:{
+				userID: this.state.userID,
+				HoneyDo: this.state.HoneyDo,
+				BrowniePoints: this.state.BrowniePoints,
+				CompleteBy: this.state.CompleteBy
+			}
+		});
+	},
 
 
 
@@ -62,12 +64,13 @@ var AddContainer = React.createClass({
 
 	render: function() {
 
-		console.log(this.state.userID)
+		//console.log(this.state.userID)
 
 		return (
 
 			<Add 
-				updateInputs = {this.updateInputs} />
+				updateInputs = {this.updateInputs}
+				addUserTask = {this.addUserTask} />
 
 		)
 	}

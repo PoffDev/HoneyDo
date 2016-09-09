@@ -3,20 +3,20 @@ var UserModel = require('../../models/User')
 
 var helpers = {
 
-	// addTask: function (userID, HoneyDo, BrowniePoints, Date) {
+	addTask: function (userID, HoneyDo, BrowniePoints, Date) {
 
-	// 	var user = localStorage.getItem('_id')
+		var user = localStorage.getItem('_id')
 
-	// 	//return axios.post('/addtask', user)
-	// 		.then(function(response) {
+		return axios.post('/addtask', task)
+			.then(function(response) {
 
-	// 			var userID = response.data.userID;
-	// 			var HoneyDo = response.data.HoneyDo;
-	// 			var BrowniePoints = response.data.BrowniePoints;
-	// 			var Date = response.data.Date;
-	// 		}.bind(this));
+				var userID = response.data.userID;
+				var HoneyDo = response.data.HoneyDo;
+				var BrowniePoints = response.data.BrowniePoints;
+				var CompleteBy = response.data.CompleteBy;
+			}.bind(this));
 
-	// },
+	},
 
 	//populate tasks by user
 	//add task by user
