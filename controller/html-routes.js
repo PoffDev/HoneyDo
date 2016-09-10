@@ -62,7 +62,7 @@ passport.deserializeUser(function(user, done) {
 module.exports = function(app) {
 
   // entry for the React app
-  app.get('/', function() {
+  app.get('/', function(req, res) {
     res.sendFile('./App/Public/index.html');
   });
 
