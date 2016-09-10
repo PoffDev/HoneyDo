@@ -110,7 +110,7 @@ module.exports = function(app) {
     
     console.log("Body: " + req.body);
     
-    console.log("HoneyDo = " + req.body.HoneyDo):
+    console.log("HoneyDo = " + req.body.HoneyDo);
     
     var task = req.body.HoneyDo;
 
