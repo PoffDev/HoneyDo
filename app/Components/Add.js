@@ -1,6 +1,5 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-var Footer = require('./Children/Footer')
 var Link = ReactRouter.Link;
 
 
@@ -22,13 +21,13 @@ function Add(props) {
                 			</div>
                 
 	                		<div className="form-group">
-	                  			<input type="text" className="form-control" id="BrowniePoints" placeholder="50 Points" onChange={props.updateInputs} />
+	                  			<input type="text" className="form-control" id="BrowniePoints" placeholder="500" onChange={props.updateInputs} />
 	                		</div>
 	                		<div className="form-group">
-                  				<input type="text" className="form-control" id="Date" placeholder="01/01/2001" onChange={props.updateInputs} />
+                  				<input type="text" className="form-control" id="CompleteBy" placeholder="01/01/2017" onChange={props.updateInputs} />
                 			</div>
 
-                			<button type="submit" className="btn btn-lg btn-block btn-default">Signup</button>
+                			<button type="submit" className="btn btn-lg btn-block btn-default">Add Task</button>
               
               			</form>
 
@@ -48,7 +47,7 @@ function Add(props) {
 
 	    		</div>
 
-			</div>
+		</div>
 
     	)
 };

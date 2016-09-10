@@ -16,12 +16,12 @@ var SignupContainer = React.createClass({
 			password: ''
 		};
 	},
-
+	
 	updateInputs: function(event) {
 		this.setState({[event.target.id]: event.target.value});
 
 	},
-
+	
 	signupUser: function(event){
 		event.preventDefault();
 

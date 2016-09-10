@@ -27073,7 +27073,7 @@
 	
 	//Components
 	var Add = __webpack_require__(236);
-	var Completed = __webpack_require__(238);
+	var Completed = __webpack_require__(237);
 	var Dash = __webpack_require__(240);
 	var Home = __webpack_require__(241);
 	var Login = __webpack_require__(242);
@@ -27083,10 +27083,10 @@
 	var View = __webpack_require__(245);
 	
 	//Containers
-	var SignupContainer = __webpack_require__(246);
+	var AddContainer = __webpack_require__(246);
+	var DashContainer = __webpack_require__(271);
 	var LoginContainer = __webpack_require__(272);
-	var DashContainer = __webpack_require__(273);
-	var AddContainer = __webpack_require__(274);
+	var SignupContainer = __webpack_require__(273);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27120,7 +27120,6 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Footer = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	function Add(props) {
@@ -27148,17 +27147,17 @@
 							React.createElement(
 								'div',
 								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'BrowniePoints', placeholder: '50 Points', onChange: props.updateInputs })
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'BrowniePoints', placeholder: '500', onChange: props.updateInputs })
 							),
 							React.createElement(
 								'div',
 								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'Date', placeholder: '01/01/2001', onChange: props.updateInputs })
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'CompleteBy', placeholder: '01/01/2017', onChange: props.updateInputs })
 							),
 							React.createElement(
 								'button',
 								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
-								'Signup'
+								'Add Task'
 							)
 						)
 					)
@@ -27190,60 +27189,12 @@
 /* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	
-	var React = __webpack_require__(1);
-	
-	var Footer = React.createClass({
-		displayName: "Footer",
-	
-	
-		render: function render() {
-	
-			return React.createElement(
-				"div",
-				{ className: "container-fluid" },
-				React.createElement(
-					"div",
-					{ id: "footer" },
-					React.createElement(
-						"nav",
-						{ className: "navbar navbar-default" },
-						React.createElement(
-							"div",
-							{ className: "container" },
-							React.createElement(
-								"ul",
-								{ className: "nav navbar-nav navbar-right" },
-								React.createElement(
-									"li",
-									{ role: "presentation" },
-									React.createElement(
-										"a",
-										{ href: "http://www.github.com/PoffDev" },
-										"Designed and Created with Love from PoffDev"
-									)
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-	
-	module.exports = Footer;
-
-/***/ },
-/* 238 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(239);
-	var Footer = __webpack_require__(237);
+	var Nav = __webpack_require__(238);
+	var Footer = __webpack_require__(239);
 	var Link = ReactRouter.Link;
 	
 	var Completed = React.createClass({
@@ -27366,7 +27317,7 @@
 	module.exports = Completed;
 
 /***/ },
-/* 239 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27430,6 +27381,54 @@
 	module.exports = Nav;
 
 /***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var React = __webpack_require__(1);
+	
+	var Footer = React.createClass({
+		displayName: "Footer",
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				"div",
+				{ className: "container-fluid" },
+				React.createElement(
+					"div",
+					{ id: "footer" },
+					React.createElement(
+						"nav",
+						{ className: "navbar navbar-default" },
+						React.createElement(
+							"div",
+							{ className: "container" },
+							React.createElement(
+								"ul",
+								{ className: "nav navbar-nav navbar-right" },
+								React.createElement(
+									"li",
+									{ role: "presentation" },
+									React.createElement(
+										"a",
+										{ href: "http://www.github.com/PoffDev" },
+										"Designed and Created with Love from PoffDev"
+									)
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = Footer;
+
+/***/ },
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27437,7 +27436,7 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Footer = __webpack_require__(237);
+	var Footer = __webpack_require__(239);
 	var Link = ReactRouter.Link;
 	
 	var Dash = React.createClass({
@@ -27587,8 +27586,8 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(239);
-	var Footer = __webpack_require__(237);
+	var Nav = __webpack_require__(238);
+	var Footer = __webpack_require__(239);
 	var Link = ReactRouter.Link;
 	
 	var Home = React.createClass({
@@ -27932,8 +27931,8 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(239);
-	var Footer = __webpack_require__(237);
+	var Nav = __webpack_require__(238);
+	var Footer = __webpack_require__(239);
 	var Link = ReactRouter.Link;
 	
 	var Redeem = React.createClass({
@@ -28135,8 +28134,8 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(239);
-	var Footer = __webpack_require__(237);
+	var Nav = __webpack_require__(238);
+	var Footer = __webpack_require__(239);
 	var Link = ReactRouter.Link;
 	
 	var View = React.createClass({
@@ -28388,57 +28387,67 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Signup = __webpack_require__(247);
-	var helpers = __webpack_require__(248);
+	var Add = __webpack_require__(236);
+	var helpers = __webpack_require__(247);
 	
-	var SignupContainer = React.createClass({
-		displayName: 'SignupContainer',
+	var AddContainer = React.createClass({
+		displayName: 'AddContainer',
 	
 	
 		contextTypes: {
 			router: React.PropTypes.object
 		},
 	
-		getInitialState: function getInitialState() {
-			return {
-				email: '',
-				partner1: '',
-				partner2: '',
-				password: ''
-			};
+		componentWillMount: function componentWillMount() {
+			if (this.state.userID === null) {
+				this.context.router.push({
+					pathname: '/'
+				});
+			}
 		},
 	
+		getInitialState: function getInitialState() {
+			return {
+				//userID: localStorage.getItem('_id'),
+				HoneyDo: '',
+				BrowniePoints: '',
+				CompleteBy: ''
+			};
+		},
 	
 		updateInputs: function updateInputs(event) {
 			this.setState(_defineProperty({}, event.target.id, event.target.value));
 		},
 	
-		signupUser: function signupUser(event) {
+		addUserTask: function addUserTask(event) {
 			event.preventDefault();
 	
-			helpers.signupUser(this.state.email, this.state.partner1, this.state.partner2, this.state.password);
+			helpers.addTask(this.state.HoneyDo, this.state.BrowniePoints, this.state.CompleteBy);
 	
 			this.context.router.push({
 	
-				pathname: '/SignUp',
+				pathname: '/add',
 				state: {
-					email: this.state.email,
-					partner1: this.state.partner1,
-					partner2: this.state.partner2,
-					password: this.state.password
+					//userID: this.state.userID,
+					HoneyDo: this.state.HoneyDo,
+					BrowniePoints: this.state.BrowniePoints,
+					CompleteBy: this.state.CompleteBy
 				}
 			});
 		},
 	
 		render: function render() {
-			console.log(this);
-			return React.createElement(Signup, {
+			// console.log(this.state.HoneyDo);
+			// console.log(this.state.BrowniePoints);
+			// console.log(this.state.CompleteBy);
+			return React.createElement(Add, {
 				updateInputs: this.updateInputs,
-				signupUser: this.signupUser });
+				addUserTask: this.addUserTask });
 		}
+	
 	});
 	
-	module.exports = SignupContainer;
+	module.exports = AddContainer;
 
 /***/ },
 /* 247 */
@@ -28446,82 +28455,25 @@
 
 	'use strict';
 	
-	var React = __webpack_require__(1);
-	var ReactRouter = __webpack_require__(172);
-	var Link = ReactRouter.Link;
-	
-	function Signup(props) {
-	
-		return React.createElement(
-			'div',
-			{ id: 'Signup' },
-			React.createElement(
-				'div',
-				{ className: 'container text-center' },
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
-						React.createElement(
-							'form',
-							{ className: 'contact-form', onSubmit: props.signupUser },
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner1', placeholder: 'Partner 1', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Partner 2', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'button',
-								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
-								'Signup'
-							)
-						)
-					)
-				)
-			)
-		);
-	};
-	
-	module.exports = Signup;
-
-/***/ },
-/* 248 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var axios = __webpack_require__(249);
-	var UserModel = __webpack_require__(271);
+	var axios = __webpack_require__(248);
+	var UserModel = __webpack_require__(270);
 	
 	var helpers = {
 	
-		addTask: function addTask(userID, HoneyDo, BrowniePoints, Date) {
+		addTask: function addTask(HoneyDo, BrowniePoints, CompleteBy) {
+	
+			var task = {
+				HoneyDo: HoneyDo,
+				BrowniePoints: BrowniePoints,
+				CompleteBy: CompleteBy
+			};
 	
 			var user = localStorage.getItem('_id');
 	
-			return axios.post('/addtask', task).then(function (response) {
+			return axios.post('/add', { task: task, user: user }).then(function (response) {
 	
-				var userID = response.data.userID;
-				var HoneyDo = response.data.HoneyDo;
-				var BrowniePoints = response.data.BrowniePoints;
-				var CompleteBy = response.data.CompleteBy;
+				//var userID = response.data.userID;
+				console.log(response);
 			}.bind(this));
 		},
 	
@@ -28574,20 +28526,20 @@
 	module.exports = helpers;
 
 /***/ },
-/* 249 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(250);
+	module.exports = __webpack_require__(249);
 
 /***/ },
-/* 250 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
-	var bind = __webpack_require__(252);
-	var Axios = __webpack_require__(253);
+	var utils = __webpack_require__(250);
+	var bind = __webpack_require__(251);
+	var Axios = __webpack_require__(252);
 	
 	/**
 	 * Create an instance of Axios
@@ -28623,7 +28575,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(270);
+	axios.spread = __webpack_require__(269);
 	
 	module.exports = axios;
 	
@@ -28632,12 +28584,12 @@
 
 
 /***/ },
-/* 251 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var bind = __webpack_require__(252);
+	var bind = __webpack_require__(251);
 	
 	/*global toString:true*/
 	
@@ -28937,7 +28889,7 @@
 
 
 /***/ },
-/* 252 */
+/* 251 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28954,17 +28906,17 @@
 
 
 /***/ },
-/* 253 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var defaults = __webpack_require__(254);
-	var utils = __webpack_require__(251);
-	var InterceptorManager = __webpack_require__(256);
-	var dispatchRequest = __webpack_require__(257);
-	var isAbsoluteURL = __webpack_require__(268);
-	var combineURLs = __webpack_require__(269);
+	var defaults = __webpack_require__(253);
+	var utils = __webpack_require__(250);
+	var InterceptorManager = __webpack_require__(255);
+	var dispatchRequest = __webpack_require__(256);
+	var isAbsoluteURL = __webpack_require__(267);
+	var combineURLs = __webpack_require__(268);
 	
 	/**
 	 * Create a new instance of Axios
@@ -29045,13 +28997,13 @@
 
 
 /***/ },
-/* 254 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
-	var normalizeHeaderName = __webpack_require__(255);
+	var utils = __webpack_require__(250);
+	var normalizeHeaderName = __webpack_require__(254);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -29123,12 +29075,12 @@
 
 
 /***/ },
-/* 255 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(250);
 	
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -29141,12 +29093,12 @@
 
 
 /***/ },
-/* 256 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(250);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -29199,13 +29151,13 @@
 
 
 /***/ },
-/* 257 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(251);
-	var transformData = __webpack_require__(258);
+	var utils = __webpack_require__(250);
+	var transformData = __webpack_require__(257);
 	
 	/**
 	 * Dispatch a request to the server using whichever adapter
@@ -29246,10 +29198,10 @@
 	    adapter = config.adapter;
 	  } else if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(259);
+	    adapter = __webpack_require__(258);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(259);
+	    adapter = __webpack_require__(258);
 	  }
 	
 	  return Promise.resolve(config)
@@ -29281,12 +29233,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 258 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(250);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -29307,18 +29259,18 @@
 
 
 /***/ },
-/* 259 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(251);
-	var settle = __webpack_require__(260);
-	var buildURL = __webpack_require__(263);
-	var parseHeaders = __webpack_require__(264);
-	var isURLSameOrigin = __webpack_require__(265);
-	var createError = __webpack_require__(261);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(266);
+	var utils = __webpack_require__(250);
+	var settle = __webpack_require__(259);
+	var buildURL = __webpack_require__(262);
+	var parseHeaders = __webpack_require__(263);
+	var isURLSameOrigin = __webpack_require__(264);
+	var createError = __webpack_require__(260);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(265);
 	
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -29412,7 +29364,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(267);
+	      var cookies = __webpack_require__(266);
 	
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -29476,12 +29428,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 260 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var createError = __webpack_require__(261);
+	var createError = __webpack_require__(260);
 	
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -29507,12 +29459,12 @@
 
 
 /***/ },
-/* 261 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var enhanceError = __webpack_require__(262);
+	var enhanceError = __webpack_require__(261);
 	
 	/**
 	 * Create an Error with the specified message, config, error code, and response.
@@ -29530,7 +29482,7 @@
 
 
 /***/ },
-/* 262 */
+/* 261 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29555,12 +29507,12 @@
 
 
 /***/ },
-/* 263 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(250);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -29629,12 +29581,12 @@
 
 
 /***/ },
-/* 264 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(250);
 	
 	/**
 	 * Parse headers into an object
@@ -29672,12 +29624,12 @@
 
 
 /***/ },
-/* 265 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(250);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29746,7 +29698,7 @@
 
 
 /***/ },
-/* 266 */
+/* 265 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29788,12 +29740,12 @@
 
 
 /***/ },
-/* 267 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(250);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29847,7 +29799,7 @@
 
 
 /***/ },
-/* 268 */
+/* 267 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29867,7 +29819,7 @@
 
 
 /***/ },
-/* 269 */
+/* 268 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29885,7 +29837,7 @@
 
 
 /***/ },
-/* 270 */
+/* 269 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29918,7 +29870,7 @@
 
 
 /***/ },
-/* 271 */
+/* 270 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29933,6 +29885,56 @@
 	module.exports = User;
 
 /***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var helpers = __webpack_require__(247);
+	var axios = __webpack_require__(248);
+	var Dash = __webpack_require__(240);
+	
+	var DashContainer = React.createClass({
+	  displayName: 'DashContainer',
+	
+	
+	  getInitialState: function getInitialState() {
+	    return {
+	      message: 'Click to see more tips',
+	      userID: localStorage.getItem('_id')
+	    };
+	  },
+	
+	  componentWillMount: function componentWillMount() {
+	    if (this.state.userID === null) {
+	      this.context.router.push({
+	        pathname: '/'
+	      });
+	    }
+	  },
+	
+	  onClick: function onClick() {
+	    var messages = ["HoneyDo rewards can be anything and everything, the only limit is your imagination!", "Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!", "Brownie Points can be both rewarding and Delicious!", "Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!", "Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
+	
+	    var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+	
+	    this.setState({ message: randomMessage });
+	  },
+	
+	  render: function render() {
+	
+	    console.log('userID = ' + this.state.userID);
+	
+	    return React.createElement(Dash, {
+	      message: this.state.message,
+	      onClick: this.onClick });
+	  }
+	});
+	
+	module.exports = DashContainer;
+
+/***/ },
 /* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -29942,8 +29944,8 @@
 	
 	var React = __webpack_require__(1);
 	var Login = __webpack_require__(242);
-	var helpers = __webpack_require__(248);
-	var axios = __webpack_require__(249);
+	var helpers = __webpack_require__(247);
+	var axios = __webpack_require__(248);
 	
 	var LoginContainer = React.createClass({
 		displayName: 'LoginContainer',
@@ -30007,49 +30009,60 @@
 
 	'use strict';
 	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
 	var React = __webpack_require__(1);
-	var helpers = __webpack_require__(248);
-	var axios = __webpack_require__(249);
-	var Dash = __webpack_require__(240);
+	var Signup = __webpack_require__(274);
+	var helpers = __webpack_require__(247);
 	
-	var DashContainer = React.createClass({
-	  displayName: 'DashContainer',
+	var SignupContainer = React.createClass({
+		displayName: 'SignupContainer',
 	
 	
-	  getInitialState: function getInitialState() {
-	    return {
-	      message: 'Click to see more tips',
-	      userID: localStorage.getItem('_id')
-	    };
-	  },
+		contextTypes: {
+			router: React.PropTypes.object
+		},
 	
-	  componentWillMount: function componentWillMount() {
-	    if (this.state.userID === null) {
-	      this.context.router.push({
-	        pathname: '/'
-	      });
-	    }
-	  },
+		getInitialState: function getInitialState() {
+			return {
+				email: '',
+				partner1: '',
+				partner2: '',
+				password: ''
+			};
+		},
 	
-	  onClick: function onClick() {
-	    var messages = ["HoneyDo rewards can be anything and everything, the only limit is your imagination!", "Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!", "Brownie Points can be both rewarding and Delicious!", "Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!", "Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
 	
-	    var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+		updateInputs: function updateInputs(event) {
+			this.setState(_defineProperty({}, event.target.id, event.target.value));
+		},
 	
-	    this.setState({ message: randomMessage });
-	  },
+		signupUser: function signupUser(event) {
+			event.preventDefault();
 	
-	  render: function render() {
+			helpers.signupUser(this.state.email, this.state.partner1, this.state.partner2, this.state.password);
 	
-	    console.log('userID = ' + this.state.userID);
+			this.context.router.push({
 	
-	    return React.createElement(Dash, {
-	      message: this.state.message,
-	      onClick: this.onClick });
-	  }
+				pathname: '/SignUp',
+				state: {
+					email: this.state.email,
+					partner1: this.state.partner1,
+					partner2: this.state.partner2,
+					password: this.state.password
+				}
+			});
+		},
+	
+		render: function render() {
+			console.log(this);
+			return React.createElement(Signup, {
+				updateInputs: this.updateInputs,
+				signupUser: this.signupUser });
+		}
 	});
 	
-	module.exports = DashContainer;
+	module.exports = SignupContainer;
 
 /***/ },
 /* 274 */
@@ -30057,79 +30070,60 @@
 
 	'use strict';
 	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
 	var React = __webpack_require__(1);
-	var Add = __webpack_require__(236);
-	var helpers = __webpack_require__(248);
-	var axios = __webpack_require__(249);
+	var ReactRouter = __webpack_require__(172);
+	var Link = ReactRouter.Link;
 	
-	var AddContainer = React.createClass({
-		displayName: 'AddContainer',
+	function Signup(props) {
 	
+		return React.createElement(
+			'div',
+			{ id: 'Signup' },
+			React.createElement(
+				'div',
+				{ className: 'container text-center' },
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'form',
+							{ className: 'contact-form', onSubmit: props.signupUser },
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner1', placeholder: 'Partner 1', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Partner 2', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'button',
+								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
+								'Signup'
+							)
+						)
+					)
+				)
+			)
+		);
+	};
 	
-		contextTypes: {
-			router: React.PropTypes.object.isRequired
-		},
-	
-		getInitialState: function getInitialState() {
-			return {
-				userID: localStorage.getItem('_id'),
-				HoneyDo: '',
-				BrowniePoints: '',
-				CompleteBy: ''
-			};
-		},
-	
-		componentWillMount: function componentWillMount() {
-			if (this.state.userID === null) {
-				this.context.router.push({
-					pathname: '/'
-				});
-			}
-		},
-	
-		updateInputs: function updateInputs(event) {
-			this.setState(_defineProperty({}, event.target.id, event.target.value));
-		},
-	
-		addUserTask: function addUserTask(event) {
-			event.preventDefault();
-	
-			helpers.addTask(this.state.userID, this.state.HoneyDo, this.state.BrowniePoints, this.state.Date);
-	
-			this.context.router.push({
-	
-				pathname: '/addtask',
-				state: {
-					userID: this.state.userID,
-					HoneyDo: this.state.HoneyDo,
-					BrowniePoints: this.state.BrowniePoints,
-					CompleteBy: this.state.CompleteBy
-				}
-			});
-		},
-	
-		//pull _id from local storage
-		//use _id to find matching _id in data base
-		//use _id to add tasks from form
-	
-	
-		//how to add tasks to the database, replace email with _id
-		//db.users.update({"email": "hello@hello.com"}, { $push: {"task": "take out the trash"} });
-	
-		render: function render() {
-	
-			//console.log(this.state.userID)
-	
-			return React.createElement(Add, {
-				updateInputs: this.updateInputs,
-				addUserTask: this.addUserTask });
-		}
-	
-	});
-	
-	module.exports = AddContainer;
+	module.exports = Signup;
 
 /***/ }
 /******/ ]);

@@ -3,17 +3,22 @@ var UserModel = require('../../models/User')
 
 var helpers = {
 
-	addTask: function (userID, HoneyDo, BrowniePoints, Date) {
+	addTask: function (HoneyDo, BrowniePoints, CompleteBy) {
+
+		var task = {
+			HoneyDo: HoneyDo,
+			BrowniePoints: BrowniePoints,
+			CompleteBy: CompleteBy
+		};
 
 		var user = localStorage.getItem('_id')
 
-		return axios.post('/addtask', task)
+		return axios.post('/add', {task: task, user: user})
 			.then(function(response) {
 
-				var userID = response.data.userID;
-				var HoneyDo = response.data.HoneyDo;
-				var BrowniePoints = response.data.BrowniePoints;
-				var CompleteBy = response.data.CompleteBy;
+				//var userID = response.data.userID;
+				console.log(response)
+
 			}.bind(this));
 
 	},

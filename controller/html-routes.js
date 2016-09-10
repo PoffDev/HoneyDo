@@ -6,10 +6,10 @@ var mongojs = require('mongojs');
 // -------------------------------------------------
 
 //MongoLab
-var databaseUrl = 'mongodb://heroku_p4fxmdhp:flluml0imtkisl87catagjddcf@ds011449.mlab.com:11449/heroku_p4fxmdhp'
+//var databaseUrl = 'mongodb://heroku_p4fxmdhp:flluml0imtkisl87catagjddcf@ds011449.mlab.com:11449/heroku_p4fxmdhp'
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-//var databaseUrl = 'HoneyDo';
+var databaseUrl = 'HoneyDo';
 var collections = ["users"];
 
 // use mongojs to hook the database to the db variable
@@ -105,16 +105,18 @@ module.exports = function(app) {
 
 
     });
+  });
+  app.post('/add', function(req, res){
+    console.log('hit')
+    
+    //console.log("Body: " + req.body);
+    
+    //console.log("HoneyDo = " + req.body.HoneyDo);
+    
+    //var task = req.body.HoneyDo;
+    
 
-  app.post('/addtask', function(req, res){
-    
-    console.log("Body: " + req.body);
-    
-    console.log("HoneyDo = " + req.body.HoneyDo);
-    
-    var task = req.body.HoneyDo;
-
-      db.users.update({"email": "hello@hello.com"}, { $push: {"task": " Task Test "} }, function(err, docs) {
+      db.users.update({"_id": mongojs.ObjectId(req.body.user)}, { $push: {"task": req.body.task} }, function(err, docs) {
 
         if (err) throw err;
 
@@ -123,15 +125,5 @@ module.exports = function(app) {
 
       })
   })
-
-  });
-
-// //addTask
-//   app.post('/addTask', function (req, res) {
-
-//     db.users.update ({_id : localStorage.getItem('_id')}, {$set: {"task": "Do the dishes"}})
-
-//     db.users.
-//   });
 
 }

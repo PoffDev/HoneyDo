@@ -1,21 +1,11 @@
 var React = require('react');
 var Add = require('../Components/Add');
 var helpers = require('../utilites/helpers');
-var axios = require('axios');
 
 var AddContainer = React.createClass({
 
 	contextTypes: {
-    	router: React.PropTypes.object.isRequired
-  	},
-
-  	getInitialState: function (){
-  		return {
-  			userID: localStorage.getItem('_id'),
-  			HoneyDo: '',
-  			BrowniePoints: '',
-  			CompleteBy: '',
-  		}
+    	router: React.PropTypes.object
   	},
 
   	componentWillMount: function (){
@@ -23,6 +13,15 @@ var AddContainer = React.createClass({
   			this.context.router.push({
   				pathname: '/'
   			})
+  		}
+  	},
+
+  	getInitialState: function (){
+  		return {
+  			//userID: localStorage.getItem('_id'),
+  			HoneyDo: '',
+  			BrowniePoints: '',
+  			CompleteBy: '',
   		}
   	},
 
@@ -34,13 +33,13 @@ var AddContainer = React.createClass({
 	addUserTask: function (event){
 		event.preventDefault();
 
-		helpers.addTask(this.state.userID, this.state.HoneyDo, this.state.BrowniePoints, this.state.Date);
+		helpers.addTask(this.state.HoneyDo, this.state.BrowniePoints, this.state.CompleteBy);
 
 		this.context.router.push({
 
-			pathname:'/addtask',
+			pathname:'/add',
 			state:{
-				userID: this.state.userID,
+				//userID: this.state.userID,
 				HoneyDo: this.state.HoneyDo,
 				BrowniePoints: this.state.BrowniePoints,
 				CompleteBy: this.state.CompleteBy
@@ -48,24 +47,11 @@ var AddContainer = React.createClass({
 		});
 	},
 
-
-
-
-	//pull _id from local storage
-	//use _id to find matching _id in data base
-	//use _id to add tasks from form
-
-
-
-	//how to add tasks to the database, replace email with _id
-	//db.users.update({"email": "hello@hello.com"}, { $push: {"task": "take out the trash"} });
-
 	render: function() {
-
-		//console.log(this.state.userID)
-
+		// console.log(this.state.HoneyDo);
+		// console.log(this.state.BrowniePoints);
+		// console.log(this.state.CompleteBy);
 		return (
-
 			<Add 
 				updateInputs = {this.updateInputs}
 				addUserTask = {this.addUserTask} />
