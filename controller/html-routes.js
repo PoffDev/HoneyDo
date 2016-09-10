@@ -6,10 +6,10 @@ var mongojs = require('mongojs');
 // -------------------------------------------------
 
 //MongoLab
-var databaseUrl = 'mongodb://heroku_p4fxmdhp:flluml0imtkisl87catagjddcf@ds011449.mlab.com:11449/heroku_p4fxmdhp'
+//var databaseUrl = 'mongodb://heroku_p4fxmdhp:flluml0imtkisl87catagjddcf@ds011449.mlab.com:11449/heroku_p4fxmdhp'
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-// var databaseUrl = 'HoneyDo';
+var databaseUrl = 'HoneyDo';
 var collections = ["users"];
 
 // use mongojs to hook the database to the db variable

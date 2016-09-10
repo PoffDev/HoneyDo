@@ -28516,12 +28516,12 @@
 	
 			var user = localStorage.getItem('_id');
 	
-			return axios.post('/addtask', user).then(function (response) {
+			return axios.post('/addtask', task).then(function (response) {
 	
 				var userID = response.data.userID;
 				var HoneyDo = response.data.HoneyDo;
 				var BrowniePoints = response.data.BrowniePoints;
-				var Date = response.data.Date;
+				var CompleteBy = response.data.CompleteBy;
 			}.bind(this));
 		},
 	
@@ -30091,8 +30091,6 @@
 	
 		updateInputs: function updateInputs(event) {
 			this.setState(_defineProperty({}, event.target.id, event.target.value));
-	
-			console.log('working');
 		},
 	
 		addUserTask: function addUserTask(event) {

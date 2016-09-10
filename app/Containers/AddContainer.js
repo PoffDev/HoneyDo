@@ -29,8 +29,6 @@ var AddContainer = React.createClass({
   	updateInputs: function(event) {
 		this.setState({[event.target.id]: event.target.value});
 
-		console.log('working');
-
 	},
 
 	addUserTask: function (event){
