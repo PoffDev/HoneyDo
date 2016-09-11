@@ -106,6 +106,7 @@ module.exports = function(app) {
 
     });
   });
+
   app.post('/add', function(req, res){
     console.log('hit')
     
@@ -120,10 +121,23 @@ module.exports = function(app) {
 
         if (err) throw err;
 
-        console.log('pushed to db');
+        console.log('task pushed to db');
         res.send(docs)
 
       })
-  })
+  });
 
+  app.post('/reward', function (req, res) {
+
+    console.log('reward hit');
+
+      db.users.update({"_id": mongojs.ObjectId(req.body.user)}, { $push: {"reward": req.body.reward} }, function (err, docs) {
+
+      if (err) throw err;
+
+      console.log('reward pushed to db');
+
+      res.send(docs)
+    })
+  });
 }

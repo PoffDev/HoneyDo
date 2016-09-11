@@ -23,6 +23,23 @@ var helpers = {
 
 	},
 
+	reward: function (Reward, PointValue, Redeemed){
+
+		var reward = {
+			Reward: Reward,
+			PointValue: PointValue,
+			Redeemed: false
+		};
+
+		var user = localStorage.getItem('_id')
+
+		return axios.post('/reward', {reward: reward, user: user})
+			.then(function(response) {
+
+				console.log(response)
+			}.bind(this));
+	},
+
 	//populate tasks by user
 	//add task by user
 		//add point value by user
