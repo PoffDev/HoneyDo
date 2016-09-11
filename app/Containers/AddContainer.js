@@ -18,7 +18,6 @@ var AddContainer = React.createClass({
 
   	getInitialState: function (){
   		return {
-  			//userID: localStorage.getItem('_id'),
   			HoneyDo: '',
   			BrowniePoints: '',
   			CompleteBy: '',
@@ -39,7 +38,6 @@ var AddContainer = React.createClass({
 
 			pathname:'/add',
 			state:{
-				//userID: this.state.userID,
 				HoneyDo: this.state.HoneyDo,
 				BrowniePoints: this.state.BrowniePoints,
 				CompleteBy: this.state.CompleteBy,
@@ -48,9 +46,6 @@ var AddContainer = React.createClass({
 	},
 
 	render: function() {
-		// console.log(this.state.HoneyDo);
-		// console.log(this.state.BrowniePoints);
-		// console.log(this.state.CompleteBy);
 		return (
 			<Add 
 				updateInputs = {this.updateInputs}

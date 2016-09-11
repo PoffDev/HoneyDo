@@ -17,7 +17,6 @@ var helpers = {
 		return axios.post('/add', {task: task, user: user})
 			.then(function(response) {
 
-				//var userID = response.data.userID;
 				console.log(response)
 
 			}.bind(this));

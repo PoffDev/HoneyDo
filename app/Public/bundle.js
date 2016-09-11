@@ -28401,7 +28401,6 @@
 	
 		getInitialState: function getInitialState() {
 			return {
-				//userID: localStorage.getItem('_id'),
 				HoneyDo: '',
 				BrowniePoints: '',
 				CompleteBy: ''
@@ -28421,7 +28420,6 @@
 	
 				pathname: '/add',
 				state: {
-					//userID: this.state.userID,
 					HoneyDo: this.state.HoneyDo,
 					BrowniePoints: this.state.BrowniePoints,
 					CompleteBy: this.state.CompleteBy
@@ -28430,9 +28428,6 @@
 		},
 	
 		render: function render() {
-			// console.log(this.state.HoneyDo);
-			// console.log(this.state.BrowniePoints);
-			// console.log(this.state.CompleteBy);
 			return React.createElement(Add, {
 				updateInputs: this.updateInputs,
 				addUserTask: this.addUserTask });
@@ -28453,20 +28448,19 @@
 	
 	var helpers = {
 	
-		addTask: function addTask(HoneyDo, BrowniePoints, CompleteBy) {
+		addTask: function addTask(HoneyDo, BrowniePoints, CompleteBy, Done) {
 	
 			var task = {
 				HoneyDo: HoneyDo,
 				BrowniePoints: BrowniePoints,
 				CompleteBy: CompleteBy,
-				Completed: false
+				Done: false
 			};
 	
 			var user = localStorage.getItem('_id');
 	
 			return axios.post('/add', { task: task, user: user }).then(function (response) {
 	
-				//var userID = response.data.userID;
 				console.log(response);
 			}.bind(this));
 		},
@@ -30125,12 +30119,22 @@
 	'use strict';
 	
 	var React = __webpack_require__(1);
-	var helpers = __webpack_require__(247);
 	var View = __webpack_require__(245);
+	var helpers = __webpack_require__(247);
 	
 	var ViewContainer = React.createClass({
 	  displayName: 'ViewContainer',
 	
+	
+	  contextTypes: {
+	    router: React.PropTypes.object
+	  },
+	
+	  getInitialState: function getInitialState() {
+	    return {
+	      userID: localStorage.getItem('_id')
+	    };
+	  },
 	
 	  componentWillMount: function componentWillMount() {
 	    if (this.state.userID === null) {
@@ -30139,6 +30143,12 @@
 	      });
 	    }
 	  },
+	
+	  //find all HoneyDo
+	  //db.users.find({"email": "hello@hello.com"}, {"task.HoneyDo" : ""});
+	
+	  //update task.done == true
+	
 	
 	  //correct syntax to remove a task.
 	  //db.users.update({"email": "hello@hello.com"}, {$pull: {'task': {'HoneyDo': "Do the Dishes"}}} );
