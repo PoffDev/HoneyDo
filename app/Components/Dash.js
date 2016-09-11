@@ -77,7 +77,7 @@ var Dash = React.createClass({
 
 			    			<div className="well well-lg">
 
-			    				<div> {self.props.message} </div>
+			    				<div> <h5>{self.props.message}</h5> </div>
 
 			    			</div>
 
