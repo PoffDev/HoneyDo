@@ -3,11 +3,9 @@ var ReactRouter = require('react-router');
 var Footer = require('./Children/Footer')
 var Link = ReactRouter.Link;
 
-var Dash = React.createClass({
-	render: function(){
-		var self = this;
-		
-	    return (
+function Dash(props) {
+
+	return (
 
 	    	<div>
 
@@ -77,7 +75,7 @@ var Dash = React.createClass({
 
 			    			<div className="well well-lg">
 
-			    				<div> <h5>{self.props.message}</h5> </div>
+			    				<div> <h5>{props.message}</h5> </div>
 
 			    			</div>
 
@@ -90,7 +88,7 @@ var Dash = React.createClass({
 		    			<div className = "col-md-2 col-md-offset-5">
 
 
-			    				<button type="button" className="btn btn-primary form-control" onClick={self.props.onClick}>More Tips</button>
+			    				<button type="button" className="btn btn-primary form-control" onClick={props.onClick}>More Tips</button>
 
 
 			    		</div>
@@ -112,7 +110,7 @@ var Dash = React.createClass({
 	    	</div>
 
 	    	)
-	  	}
-	})
+	  	};
+	
 
 module.exports = Dash;

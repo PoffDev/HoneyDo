@@ -27442,189 +27442,184 @@
 	var Footer = __webpack_require__(239);
 	var Link = ReactRouter.Link;
 	
-	var Dash = React.createClass({
-		displayName: 'Dash',
+	function Dash(props) {
 	
-		render: function render() {
-			var self = this;
-	
-			return React.createElement(
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
 				'div',
-				null,
+				{ className: 'container' },
 				React.createElement(
 					'div',
-					{ className: 'container' },
+					{ className: 'row' },
 					React.createElement(
 						'div',
-						{ className: 'row' },
+						{ className: 'col-md-2 col-md-offset-1' },
 						React.createElement(
 							'div',
-							{ className: 'col-md-2 col-md-offset-1' },
+							{ className: 'panel panel-default text-center' },
 							React.createElement(
 								'div',
-								{ className: 'panel panel-default text-center' },
+								{ className: 'panel-heading' },
 								React.createElement(
-									'div',
-									{ className: 'panel-heading' },
-									React.createElement(
-										'h3',
-										{ className: 'panel-title' },
-										'Brownie Points'
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'panel-body' },
-									React.createElement(
-										'span',
-										null,
-										React.createElement(
-											'h1',
-											null,
-											'100'
-										),
-										React.createElement(
-											'p',
-											null,
-											'pts'
-										)
-									)
+									'h3',
+									{ className: 'panel-title' },
+									'Brownie Points'
 								)
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'col-md-6 col-md-offset-2' },
+							),
 							React.createElement(
 								'div',
-								{ className: 'panel panel-default text-center' },
+								{ className: 'panel-body' },
 								React.createElement(
-									'div',
-									{ className: 'panel-heading' },
-									React.createElement(
-										'h3',
-										{ className: 'panel-title' },
-										'Available Rewards'
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'panel-body' },
-									React.createElement(
-										'span',
-										null,
-										React.createElement(
-											'p',
-											null,
-											'rewards populate here'
-										)
-									)
-								)
-							)
-						)
-					),
-					React.createElement('br', null),
-					React.createElement(
-						'div',
-						{ className: 'row' },
-						React.createElement(
-							'div',
-							{ className: 'col-md-2 col-md-offset-1' },
-							React.createElement(
-								Link,
-								{ to: '/add' },
-								React.createElement(
-									'button',
-									{ type: 'button', className: 'btn btn-primary form-control' },
-									'Add Tasks'
-								)
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'col-md-2 col-md-offset-2' },
-							React.createElement(
-								Link,
-								{ to: '/view' },
-								React.createElement(
-									'button',
-									{ type: 'button', className: 'btn btn-primary form-control' },
-									'View Tasks'
-								)
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'col-md-2 col-md-offset-2' },
-							React.createElement(
-								Link,
-								{ to: '/reward' },
-								React.createElement(
-									'button',
-									{ type: 'button', className: 'btn btn-primary form-control' },
-									'Add Rewards'
-								)
-							)
-						)
-					),
-					React.createElement('br', null),
-					React.createElement(
-						'div',
-						{ className: 'row' },
-						React.createElement(
-							'div',
-							{ className: 'col-md-6 col-md-offset-3' },
-							React.createElement(
-								'div',
-								{ className: 'well well-lg' },
-								React.createElement(
-									'div',
+									'span',
 									null,
-									' ',
 									React.createElement(
-										'h5',
+										'h1',
 										null,
-										self.props.message
+										'100'
 									),
-									' '
+									React.createElement(
+										'p',
+										null,
+										'pts'
+									)
 								)
 							)
 						)
 					),
 					React.createElement(
 						'div',
-						{ className: 'row' },
+						{ className: 'col-md-6 col-md-offset-2' },
 						React.createElement(
 							'div',
-							{ className: 'col-md-2 col-md-offset-5' },
+							{ className: 'panel panel-default text-center' },
 							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-primary form-control', onClick: self.props.onClick },
-								'More Tips'
-							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'row' },
-						React.createElement(
-							'div',
-							{ className: 'col-md-1' },
-							React.createElement(
-								Link,
-								{ to: '/Home' },
+								'div',
+								{ className: 'panel-heading' },
 								React.createElement(
-									'button',
-									{ type: 'button', className: 'btn btn-danger' },
-									'Log Out'
+									'h3',
+									{ className: 'panel-title' },
+									'Available Rewards'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'panel-body' },
+								React.createElement(
+									'span',
+									null,
+									React.createElement(
+										'p',
+										null,
+										'rewards populate here'
+									)
 								)
 							)
 						)
 					)
+				),
+				React.createElement('br', null),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-2 col-md-offset-1' },
+						React.createElement(
+							Link,
+							{ to: '/add' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-primary form-control' },
+								'Add Tasks'
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-md-2 col-md-offset-2' },
+						React.createElement(
+							Link,
+							{ to: '/view' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-primary form-control' },
+								'View Tasks'
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-md-2 col-md-offset-2' },
+						React.createElement(
+							Link,
+							{ to: '/reward' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-primary form-control' },
+								'Add Rewards'
+							)
+						)
+					)
+				),
+				React.createElement('br', null),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'div',
+							{ className: 'well well-lg' },
+							React.createElement(
+								'div',
+								null,
+								' ',
+								React.createElement(
+									'h5',
+									null,
+									props.message
+								),
+								' '
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-2 col-md-offset-5' },
+						React.createElement(
+							'button',
+							{ type: 'button', className: 'btn btn-primary form-control', onClick: props.onClick },
+							'More Tips'
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-1' },
+						React.createElement(
+							Link,
+							{ to: '/Home' },
+							React.createElement(
+								'button',
+								{ type: 'button', className: 'btn btn-danger' },
+								'Log Out'
+							)
+						)
+					)
 				)
-			);
-		}
-	});
+			)
+		);
+	};
 	
 	module.exports = Dash;
 
