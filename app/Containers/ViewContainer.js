@@ -1,4 +1,4 @@
-var React = require('react');
+ var React = require('react');
 var View = require('../Components/View');
 var helpers = require('../utilites/helpers');
 
@@ -16,6 +16,19 @@ var ViewContainer = React.createClass({
 
   	},
 
+    getHoneyDo: function (){
+      event.preventDefault();
+
+      helpers.findHoneyDo(this.state.userID);
+
+      this.context.router.push({
+        pathname: '/View',
+        state:{
+          userID: userID
+        }
+      })
+    },
+
 	componentWillMount: function (){
   		if (this.state.userID === null){
   			this.context.router.push({
@@ -24,8 +37,9 @@ var ViewContainer = React.createClass({
   		}
   	},
 
+
   	//find all HoneyDo
-  	//db.users.find({"email": "hello@hello.com"}, {"task.HoneyDo" : ""});
+  	//db.users.find({}, {"task.HoneyDo": 1});
 
   	//update task.done == true
 
@@ -37,7 +51,8 @@ var ViewContainer = React.createClass({
 
 		return (
 
-			<View />
+			<View 
+        getHoneyDo = {this.getHoneyDo}/>
 
 		)
 	}

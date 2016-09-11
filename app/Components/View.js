@@ -21,65 +21,15 @@ function View(props) {
 		  					<div className="panel-body">
 
 								<div className = "row">
-				  					<div className = "col-md-7 col-md-offset-1">
+				  					<div className = "col-md-12">
 					  					<div className="well">
 
-					  						<ul>
-					    						<li>This is a HoneyDo:
-					    							<ul>
-					    								<li><i>time remaining for bonus</i></li>
-					    							</ul>
-					    						</li>
-					    						
-					    						<li>This is a HoneyDo:
-					    							<ul>
-					    								<li><i>time remaining for bonus</i></li>
-					    							</ul>
-					    						</li>
+					  						<p>{props.getHoneyDo}</p>
 
-					    						<li>This is a HoneyDo:
-					    							<ul>
-					    								<li><i>time remaining for bonus</i></li>
-					    							</ul>
-					    						</li>
+					  						<p>HoneyDo Item</p>
 
-					    						<li>This is a HoneyDo:
-					    							<ul>
-					    								<li><i>time remaining for bonus</i></li>
-					    							</ul>
-					    						</li>
-
-					    					</ul>
+					  						<p>HoneyDo Item</p>
 										</div>
-									</div>
-
-									<div className = "col-md-3">
-					  					
-					  					<div className="well">
-											<ul>
-												<li><input type="checkbox"></input>
-					    							<ul>
-					    								<li></li>
-					    							</ul>
-					    						</li>
-												<li><input type="checkbox"></input>
-					    							<ul>
-					    								<li></li>
-					    							</ul>
-					    						</li>
-					    						<li><input type="checkbox"></input>
-					    							<ul>
-					    								<li></li>
-					    							</ul>
-					    						</li>
-					    						<li><input type="checkbox"></input>
-					    							<ul>
-					    								<li></li>
-					    							</ul>
-					    						</li>
-											</ul>
-										</div>
-
 									</div>
 
 

@@ -28280,137 +28280,24 @@
 								{ className: 'row' },
 								React.createElement(
 									'div',
-									{ className: 'col-md-7 col-md-offset-1' },
+									{ className: 'col-md-12' },
 									React.createElement(
 										'div',
 										{ className: 'well' },
 										React.createElement(
-											'ul',
+											'p',
 											null,
-											React.createElement(
-												'li',
-												null,
-												'This is a HoneyDo:',
-												React.createElement(
-													'ul',
-													null,
-													React.createElement(
-														'li',
-														null,
-														React.createElement(
-															'i',
-															null,
-															'time remaining for bonus'
-														)
-													)
-												)
-											),
-											React.createElement(
-												'li',
-												null,
-												'This is a HoneyDo:',
-												React.createElement(
-													'ul',
-													null,
-													React.createElement(
-														'li',
-														null,
-														React.createElement(
-															'i',
-															null,
-															'time remaining for bonus'
-														)
-													)
-												)
-											),
-											React.createElement(
-												'li',
-												null,
-												'This is a HoneyDo:',
-												React.createElement(
-													'ul',
-													null,
-													React.createElement(
-														'li',
-														null,
-														React.createElement(
-															'i',
-															null,
-															'time remaining for bonus'
-														)
-													)
-												)
-											),
-											React.createElement(
-												'li',
-												null,
-												'This is a HoneyDo:',
-												React.createElement(
-													'ul',
-													null,
-													React.createElement(
-														'li',
-														null,
-														React.createElement(
-															'i',
-															null,
-															'time remaining for bonus'
-														)
-													)
-												)
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-3' },
-									React.createElement(
-										'div',
-										{ className: 'well' },
+											props.getHoneyDo
+										),
 										React.createElement(
-											'ul',
+											'p',
 											null,
-											React.createElement(
-												'li',
-												null,
-												React.createElement('input', { type: 'checkbox' }),
-												React.createElement(
-													'ul',
-													null,
-													React.createElement('li', null)
-												)
-											),
-											React.createElement(
-												'li',
-												null,
-												React.createElement('input', { type: 'checkbox' }),
-												React.createElement(
-													'ul',
-													null,
-													React.createElement('li', null)
-												)
-											),
-											React.createElement(
-												'li',
-												null,
-												React.createElement('input', { type: 'checkbox' }),
-												React.createElement(
-													'ul',
-													null,
-													React.createElement('li', null)
-												)
-											),
-											React.createElement(
-												'li',
-												null,
-												React.createElement('input', { type: 'checkbox' }),
-												React.createElement(
-													'ul',
-													null,
-													React.createElement('li', null)
-												)
-											)
+											'HoneyDo Item'
+										),
+										React.createElement(
+											'p',
+											null,
+											'HoneyDo Item'
 										)
 									)
 								)
@@ -28580,12 +28467,13 @@
 	
 		reward: function reward(Reward, PointValue, Redeemed) {
 	
-			var user = localStorage.getItem('_id');
 			var reward = {
 				Reward: Reward,
 				PointValue: PointValue,
 				Redeemed: false
 			};
+	
+			var user = localStorage.getItem('_id');
 	
 			return axios.post('/reward', { reward: reward, user: user }).then(function (response) {
 	
@@ -30326,6 +30214,19 @@
 	    };
 	  },
 	
+	  getHoneyDo: function getHoneyDo() {
+	    event.preventDefault();
+	
+	    helpers.findHoneyDo(this.state.userID);
+	
+	    this.context.router.push({
+	      pathname: '/View',
+	      state: {
+	        userID: userID
+	      }
+	    });
+	  },
+	
 	  componentWillMount: function componentWillMount() {
 	    if (this.state.userID === null) {
 	      this.context.router.push({
@@ -30335,7 +30236,7 @@
 	  },
 	
 	  //find all HoneyDo
-	  //db.users.find({"email": "hello@hello.com"}, {"task.HoneyDo" : ""});
+	  //db.users.find({}, {"task.HoneyDo": 1});
 	
 	  //update task.done == true
 	
@@ -30345,7 +30246,8 @@
 	
 	  render: function render() {
 	
-	    return React.createElement(View, null);
+	    return React.createElement(View, {
+	      getHoneyDo: this.getHoneyDo });
 	  }
 	});
 	

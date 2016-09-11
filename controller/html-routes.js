@@ -66,6 +66,15 @@ module.exports = function(app) {
     res.sendFile('./App/Public/index.html');
   });
 
+  app.get('/findHoneyDo', function(req, res) {
+
+    db.users.find({}, {"task.HoneyDo": 1}, function(err, docs){
+
+      console.log('HoneyDo task found')
+      if (err) throw err;
+    })
+  });
+
   // signup a user
   app.post('/Signup', function(req, res) {
     var user = req.body;

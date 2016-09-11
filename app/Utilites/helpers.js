@@ -3,6 +3,17 @@ var UserModel = require('../../models/User')
 
 var helpers = {
 
+	findHoneyDo: function () {
+
+		var user = localStorage.getItem('_id')
+
+		return axios.get('/findHoneyDo', {user: user})
+			.then(function(response){
+
+				console.log(response)
+			}.bind(this));
+	},
+
 	addTask: function (HoneyDo, BrowniePoints, CompleteBy, Done) {
 
 		var task = {
