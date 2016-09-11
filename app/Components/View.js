@@ -1,13 +1,9 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-var Nav = require('./Children/Nav');
-var Footer = require('./Children/Footer')
 var Link = ReactRouter.Link;
 
 
-var View = React.createClass({
-
-    render: function() {
+function View(props) {
 
     return (
 
@@ -133,6 +129,5 @@ var View = React.createClass({
 
     	)
   	}
-});
 
 module.exports = View;

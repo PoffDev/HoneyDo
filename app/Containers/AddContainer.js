@@ -42,7 +42,7 @@ var AddContainer = React.createClass({
 				//userID: this.state.userID,
 				HoneyDo: this.state.HoneyDo,
 				BrowniePoints: this.state.BrowniePoints,
-				CompleteBy: this.state.CompleteBy
+				CompleteBy: this.state.CompleteBy,
 			}
 		});
 	},

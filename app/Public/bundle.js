@@ -27079,7 +27079,6 @@
 	var Login = __webpack_require__(242);
 	var Main = __webpack_require__(243);
 	var Redeem = __webpack_require__(244);
-	// var SignUp = require('../Components/SignUp')
 	var View = __webpack_require__(245);
 	
 	//Containers
@@ -27087,6 +27086,7 @@
 	var DashContainer = __webpack_require__(271);
 	var LoginContainer = __webpack_require__(272);
 	var SignupContainer = __webpack_require__(273);
+	var ViewContainer = __webpack_require__(275);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27104,7 +27104,7 @@
 				React.createElement(Route, { path: '/Login', component: LoginContainer }),
 				React.createElement(Route, { path: '/Redeem', component: Redeem }),
 				React.createElement(Route, { path: '/SignUp', component: SignupContainer }),
-				React.createElement(Route, { path: '/View', component: View })
+				React.createElement(Route, { path: '/View', component: ViewContainer })
 			);
 		}
 	
@@ -28134,174 +28134,115 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(238);
-	var Footer = __webpack_require__(239);
 	var Link = ReactRouter.Link;
 	
-	var View = React.createClass({
-		displayName: 'View',
+	function View(props) {
 	
-	
-		render: function render() {
-	
-			return React.createElement(
+		return React.createElement(
+			'div',
+			{ id: 'Add' },
+			React.createElement(
 				'div',
-				{ id: 'Add' },
+				{ className: 'container' },
 				React.createElement(
 					'div',
-					{ className: 'container' },
+					{ className: 'col-md-6 col-md-offset-3' },
 					React.createElement(
 						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
+						{ className: 'panel panel-default' },
 						React.createElement(
 							'div',
-							{ className: 'panel panel-default' },
+							{ className: 'panel-heading text-center' },
+							React.createElement(
+								'h3',
+								{ className: 'panel-title' },
+								'Remaining HoneyDo\'s'
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'panel-body' },
 							React.createElement(
 								'div',
-								{ className: 'panel-heading text-center' },
-								React.createElement(
-									'h3',
-									{ className: 'panel-title' },
-									'Remaining HoneyDo\'s'
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'panel-body' },
+								{ className: 'row' },
 								React.createElement(
 									'div',
-									{ className: 'row' },
+									{ className: 'col-md-7 col-md-offset-1' },
 									React.createElement(
 										'div',
-										{ className: 'col-md-7 col-md-offset-1' },
+										{ className: 'well' },
 										React.createElement(
-											'div',
-											{ className: 'well' },
+											'ul',
+											null,
 											React.createElement(
-												'ul',
+												'li',
 												null,
+												'This is a HoneyDo:',
 												React.createElement(
-													'li',
+													'ul',
 													null,
-													'This is a HoneyDo:',
 													React.createElement(
-														'ul',
+														'li',
 														null,
 														React.createElement(
-															'li',
+															'i',
 															null,
-															React.createElement(
-																'i',
-																null,
-																'time remaining for bonus'
-															)
-														)
-													)
-												),
-												React.createElement(
-													'li',
-													null,
-													'This is a HoneyDo:',
-													React.createElement(
-														'ul',
-														null,
-														React.createElement(
-															'li',
-															null,
-															React.createElement(
-																'i',
-																null,
-																'time remaining for bonus'
-															)
-														)
-													)
-												),
-												React.createElement(
-													'li',
-													null,
-													'This is a HoneyDo:',
-													React.createElement(
-														'ul',
-														null,
-														React.createElement(
-															'li',
-															null,
-															React.createElement(
-																'i',
-																null,
-																'time remaining for bonus'
-															)
-														)
-													)
-												),
-												React.createElement(
-													'li',
-													null,
-													'This is a HoneyDo:',
-													React.createElement(
-														'ul',
-														null,
-														React.createElement(
-															'li',
-															null,
-															React.createElement(
-																'i',
-																null,
-																'time remaining for bonus'
-															)
+															'time remaining for bonus'
 														)
 													)
 												)
-											)
-										)
-									),
-									React.createElement(
-										'div',
-										{ className: 'col-md-3' },
-										React.createElement(
-											'div',
-											{ className: 'well' },
+											),
 											React.createElement(
-												'ul',
+												'li',
 												null,
+												'This is a HoneyDo:',
 												React.createElement(
-													'li',
+													'ul',
 													null,
-													React.createElement('input', { type: 'checkbox' }),
 													React.createElement(
-														'ul',
+														'li',
 														null,
-														React.createElement('li', null)
+														React.createElement(
+															'i',
+															null,
+															'time remaining for bonus'
+														)
 													)
-												),
+												)
+											),
+											React.createElement(
+												'li',
+												null,
+												'This is a HoneyDo:',
 												React.createElement(
-													'li',
+													'ul',
 													null,
-													React.createElement('input', { type: 'checkbox' }),
 													React.createElement(
-														'ul',
+														'li',
 														null,
-														React.createElement('li', null)
+														React.createElement(
+															'i',
+															null,
+															'time remaining for bonus'
+														)
 													)
-												),
+												)
+											),
+											React.createElement(
+												'li',
+												null,
+												'This is a HoneyDo:',
 												React.createElement(
-													'li',
+													'ul',
 													null,
-													React.createElement('input', { type: 'checkbox' }),
 													React.createElement(
-														'ul',
+														'li',
 														null,
-														React.createElement('li', null)
-													)
-												),
-												React.createElement(
-													'li',
-													null,
-													React.createElement('input', { type: 'checkbox' }),
-													React.createElement(
-														'ul',
-														null,
-														React.createElement('li', null)
+														React.createElement(
+															'i',
+															null,
+															'time remaining for bonus'
+														)
 													)
 												)
 											)
@@ -28310,71 +28251,123 @@
 								),
 								React.createElement(
 									'div',
-									{ className: 'row' },
+									{ className: 'col-md-3' },
 									React.createElement(
 										'div',
-										{ className: 'col-md-3 col-md-offset-1' },
+										{ className: 'well' },
 										React.createElement(
-											Link,
-											{ to: '/dash' },
+											'ul',
+											null,
 											React.createElement(
-												'button',
-												{ type: 'button', className: 'btn btn-warning form-control' },
-												'Dashboard'
+												'li',
+												null,
+												React.createElement('input', { type: 'checkbox' }),
+												React.createElement(
+													'ul',
+													null,
+													React.createElement('li', null)
+												)
+											),
+											React.createElement(
+												'li',
+												null,
+												React.createElement('input', { type: 'checkbox' }),
+												React.createElement(
+													'ul',
+													null,
+													React.createElement('li', null)
+												)
+											),
+											React.createElement(
+												'li',
+												null,
+												React.createElement('input', { type: 'checkbox' }),
+												React.createElement(
+													'ul',
+													null,
+													React.createElement('li', null)
+												)
+											),
+											React.createElement(
+												'li',
+												null,
+												React.createElement('input', { type: 'checkbox' }),
+												React.createElement(
+													'ul',
+													null,
+													React.createElement('li', null)
+												)
 											)
 										)
-									),
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-3 col-md-offset-1' },
 									React.createElement(
-										'div',
-										{ className: 'col-md-3 col-md-offset-1' },
+										Link,
+										{ to: '/dash' },
 										React.createElement(
-											Link,
-											{ to: '/completed' },
-											React.createElement(
-												'button',
-												{ type: 'button', className: 'btn btn-primary form-control' },
-												'Completed'
-											)
+											'button',
+											{ type: 'button', className: 'btn btn-warning form-control' },
+											'Dashboard'
 										)
-									),
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-3 col-md-offset-1' },
 									React.createElement(
-										'div',
-										{ className: 'col-md-3' },
+										Link,
+										{ to: '/completed' },
 										React.createElement(
-											Link,
-											{ to: '/redeem' },
-											React.createElement(
-												'button',
-												{ type: 'button', className: 'btn btn-danger form-control' },
-												'Finished'
-											)
+											'button',
+											{ type: 'button', className: 'btn btn-primary form-control' },
+											'Completed'
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-3' },
+									React.createElement(
+										Link,
+										{ to: '/redeem' },
+										React.createElement(
+											'button',
+											{ type: 'button', className: 'btn btn-danger form-control' },
+											'Finished'
 										)
 									)
 								)
 							)
 						)
 					)
-				),
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'row' },
 				React.createElement(
 					'div',
-					{ className: 'row' },
+					{ className: 'col-md-1' },
 					React.createElement(
-						'div',
-						{ className: 'col-md-1' },
+						Link,
+						{ to: '/Home' },
 						React.createElement(
-							Link,
-							{ to: '/Home' },
-							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-danger' },
-								'Log Out'
-							)
+							'button',
+							{ type: 'button', className: 'btn btn-danger' },
+							'Log Out'
 						)
 					)
 				)
-			);
-		}
-	});
+			)
+		);
+	}
 	
 	module.exports = View;
 
@@ -28465,7 +28458,8 @@
 			var task = {
 				HoneyDo: HoneyDo,
 				BrowniePoints: BrowniePoints,
-				CompleteBy: CompleteBy
+				CompleteBy: CompleteBy,
+				Completed: false
 			};
 	
 			var user = localStorage.getItem('_id');
@@ -29892,7 +29886,6 @@
 	
 	var React = __webpack_require__(1);
 	var helpers = __webpack_require__(247);
-	var axios = __webpack_require__(248);
 	var Dash = __webpack_require__(240);
 	
 	var DashContainer = React.createClass({
@@ -30124,6 +30117,39 @@
 	};
 	
 	module.exports = Signup;
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var helpers = __webpack_require__(247);
+	var View = __webpack_require__(245);
+	
+	var ViewContainer = React.createClass({
+	  displayName: 'ViewContainer',
+	
+	
+	  componentWillMount: function componentWillMount() {
+	    if (this.state.userID === null) {
+	      this.context.router.push({
+	        pathname: '/'
+	      });
+	    }
+	  },
+	
+	  //correct syntax to remove a task.
+	  //db.users.update({"email": "hello@hello.com"}, {$pull: {'task': {'HoneyDo': "Do the Dishes"}}} );
+	
+	  render: function render() {
+	
+	    return React.createElement(View, null);
+	  }
+	});
+	
+	module.exports = ViewContainer;
 
 /***/ }
 /******/ ]);

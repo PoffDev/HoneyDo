@@ -3,12 +3,13 @@ var UserModel = require('../../models/User')
 
 var helpers = {
 
-	addTask: function (HoneyDo, BrowniePoints, CompleteBy) {
+	addTask: function (HoneyDo, BrowniePoints, CompleteBy, Done) {
 
 		var task = {
 			HoneyDo: HoneyDo,
 			BrowniePoints: BrowniePoints,
-			CompleteBy: CompleteBy
+			CompleteBy: CompleteBy,
+			Done: false
 		};
 
 		var user = localStorage.getItem('_id')

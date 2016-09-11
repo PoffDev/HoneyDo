@@ -15,7 +15,6 @@ var Home = require('../Components/Home');
 var Login = require('../Components/Login');
 var Main = require('../Components/Main');
 var Redeem = require('../Components/Redeem');
-// var SignUp = require('../Components/SignUp')
 var View = require('../Components/View')
 
 
@@ -24,7 +23,7 @@ var AddContainer = require('../Containers/AddContainer');
 var DashContainer = require('../Containers/DashContainer');
 var LoginContainer = require('../Containers/LoginContainer');
 var SignupContainer = require('../Containers/SignupContainer');
-
+var ViewContainer = require('../Containers/ViewContainer');
 
 
 
@@ -42,7 +41,7 @@ var Routes = React.createClass({
 				<Route path= "/Login" component={LoginContainer}/>
 				<Route path= "/Redeem" component={Redeem} />
 				<Route path= "/SignUp" component={SignupContainer} />
-				<Route path= "/View" component={View} />
+				<Route path= "/View" component={ViewContainer} />
 
 			</Router>
 		)
