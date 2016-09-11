@@ -27459,7 +27459,7 @@
 						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'col-md-2 col-md-offset-5' },
+							{ className: 'col-md-2 col-md-offset-1' },
 							React.createElement(
 								'div',
 								{ className: 'panel panel-default text-center' },
@@ -27491,6 +27491,36 @@
 									)
 								)
 							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'col-md-6 col-md-offset-2' },
+							React.createElement(
+								'div',
+								{ className: 'panel panel-default text-center' },
+								React.createElement(
+									'div',
+									{ className: 'panel-heading' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'Available Rewards'
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									React.createElement(
+										'span',
+										null,
+										React.createElement(
+											'p',
+											null,
+											'rewards populate here'
+										)
+									)
+								)
+							)
 						)
 					),
 					React.createElement('br', null),
@@ -27499,7 +27529,7 @@
 						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'col-md-4 col-md-offset-1' },
+							{ className: 'col-md-2 col-md-offset-1' },
 							React.createElement(
 								Link,
 								{ to: '/add' },
@@ -27512,7 +27542,7 @@
 						),
 						React.createElement(
 							'div',
-							{ className: 'col-md-4 col-md-offset-2' },
+							{ className: 'col-md-2 col-md-offset-2' },
 							React.createElement(
 								Link,
 								{ to: '/view' },
@@ -27520,6 +27550,19 @@
 									'button',
 									{ type: 'button', className: 'btn btn-primary form-control' },
 									'View Tasks'
+								)
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'col-md-2 col-md-offset-2' },
+							React.createElement(
+								Link,
+								{ to: '/reward' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-primary form-control' },
+									'Add Rewards'
 								)
 							)
 						)
