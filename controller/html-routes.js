@@ -75,6 +75,15 @@ module.exports = function(app) {
     })
   });
 
+  app.get('/findReward', function(req, res) {
+
+    db.users.find({}, {"reward.Reward": 1}, function(err, docs){
+
+      res.send(docs);
+      if (err) throw err;
+    })
+  });
+
   // signup a user
   app.post('/Signup', function(req, res) {
     var user = req.body;

@@ -28251,15 +28251,19 @@
 	
 	function View(props) {
 	
+		var getHoneyDo = props.getHoneyDo;
+	
+		var getRewards = props.getRewards;
+	
 		return React.createElement(
 			'div',
 			{ id: 'Add' },
 			React.createElement(
 				'div',
-				{ className: 'container' },
+				{ className: 'container-fluid' },
 				React.createElement(
 					'div',
-					{ className: 'col-md-6 col-md-offset-3' },
+					{ className: 'col-md-4 col-md-offset-1' },
 					React.createElement(
 						'div',
 						{ className: 'panel panel-default' },
@@ -28285,19 +28289,108 @@
 										'div',
 										{ className: 'well' },
 										React.createElement(
-											'p',
+											'ul',
 											null,
-											props.getHoneyDo
-										),
+											getHoneyDo.map(function (task, i) {
+	
+												return React.createElement(
+													'li',
+													{ key: i },
+													' ',
+													task.HoneyDo,
+													' '
+												);
+											})
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-3 col-md-offset-1' },
+									React.createElement(
+										Link,
+										{ to: '/dash' },
 										React.createElement(
-											'p',
-											null,
-											'HoneyDo Item'
-										),
+											'button',
+											{ type: 'button', className: 'btn btn-warning form-control' },
+											'Dashboard'
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-3 col-md-offset-1' },
+									React.createElement(
+										Link,
+										{ to: '/completed' },
 										React.createElement(
-											'p',
+											'button',
+											{ type: 'button', className: 'btn btn-primary form-control' },
+											'Completed'
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-3' },
+									React.createElement(
+										Link,
+										{ to: '/redeem' },
+										React.createElement(
+											'button',
+											{ type: 'button', className: 'btn btn-danger form-control' },
+											'Finished'
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'col-md-4 col-md-offset-2' },
+					React.createElement(
+						'div',
+						{ className: 'panel panel-default' },
+						React.createElement(
+							'div',
+							{ className: 'panel-heading text-center' },
+							React.createElement(
+								'h3',
+								{ className: 'panel-title' },
+								'Remaining Rewards'
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'panel-body' },
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-12' },
+									React.createElement(
+										'div',
+										{ className: 'well' },
+										React.createElement(
+											'ul',
 											null,
-											'HoneyDo Item'
+											getRewards.map(function (reward, i) {
+	
+												return React.createElement(
+													'li',
+													{ key: i },
+													' ',
+													reward.Reward,
+													' '
+												);
+											})
 										)
 									)
 								)
@@ -28458,8 +28551,27 @@
 	
 					var tasks = response.data[0].task[i].HoneyDo;
 	
-					console.log(tasks);
+					// console.log(tasks)
 				};
+	
+				return response;
+			}.bind(this));
+		},
+	
+		findReward: function findReward() {
+	
+			var user = localStorage.getItem('_id');
+	
+			return axios.get('/findReward', { user: user }).then(function (response) {
+	
+				for (var i = 0; i < response.data[0].reward.length; i++) {
+	
+					var reward = response.data[0].reward[i].Reward;
+	
+					//console.log('find helper ' + reward)
+				};
+	
+				return response;
 			}.bind(this));
 		},
 	
@@ -30225,22 +30337,11 @@
 	
 	  getInitialState: function getInitialState() {
 	    return {
-	      userID: localStorage.getItem('_id')
+	      userID: localStorage.getItem('_id'),
+	      tasks: [],
+	      rewards: []
 	    };
 	  },
-	
-	  // getHoneyDo: function (){
-	  //   event.preventDefault();
-	
-	  //   helpers.findHoneyDo(this.state.userID);
-	
-	  //   this.context.router.push({
-	  //     pathname: '/View',
-	  //     state:{
-	  //       userID: userID
-	  //     }
-	  //   })
-	  // },
 	
 	  componentWillMount: function componentWillMount() {
 	    if (this.state.userID === null) {
@@ -30249,7 +30350,27 @@
 	      });
 	    } else {
 	
-	      helpers.findHoneyDo(this.state.task);
+	      var self = this;
+	
+	      //HoneyDo's
+	      helpers.findHoneyDo().then(function (response) {
+	
+	        //console.log(response.data[0].task)
+	
+	        self.setState({
+	          tasks: response.data[0].task
+	        });
+	      });
+	
+	      //Reward
+	      helpers.findReward().then(function (response) {
+	
+	        //console.log(response.data[0].reward)
+	
+	        self.setState({
+	          rewards: response.data[0].reward
+	        });
+	      });
 	
 	      this.context.router.push({
 	        pathname: '/View'
@@ -30269,8 +30390,12 @@
 	
 	  render: function render() {
 	
-	    return React.createElement(View, {
-	      getHoneyDo: this.getHoneyDo });
+	    return (
+	      //map out this.state.tasks.map(function(task){})
+	      React.createElement(View, {
+	        getHoneyDo: this.state.tasks,
+	        getRewards: this.state.rewards })
+	    );
 	  }
 	});
 	

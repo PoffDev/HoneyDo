@@ -14,9 +14,31 @@ var helpers = {
 					
 					var tasks = response.data[0].task[i].HoneyDo;
 
-					console.log(tasks)
+					// console.log(tasks)
 						
 					};
+
+				return response;
+				
+			}.bind(this));
+	},
+
+	findReward: function () {
+
+		var user = localStorage.getItem('_id')
+
+		return axios.get('/findReward', {user: user})
+			.then(function(response){
+
+				for (var i = 0; i < response.data[0].reward.length; i++) {
+					
+					var reward = response.data[0].reward[i].Reward;
+
+					//console.log('find helper ' + reward)
+						
+					};
+
+				return response;
 				
 			}.bind(this));
 	},

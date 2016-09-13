@@ -5,29 +5,18 @@ var helpers = require('../utilites/helpers');
 
 var ViewContainer = React.createClass({
 
-	contextTypes: {
+    contextTypes: {
     	router: React.PropTypes.object
   	},
 
   	getInitialState: function() {
     	return { 
-    		userID: localStorage.getItem('_id')
+    		userID: localStorage.getItem('_id'),
+        tasks: [],
+        rewards: [],
     	};
 
   	},
-
-    // getHoneyDo: function (){
-    //   event.preventDefault();
-
-    //   helpers.findHoneyDo(this.state.userID);
-
-    //   this.context.router.push({
-    //     pathname: '/View',
-    //     state:{
-    //       userID: userID
-    //     }
-    //   })
-    // },
 
 	componentWillMount: function (){
   		if (this.state.userID === null){
@@ -36,7 +25,30 @@ var ViewContainer = React.createClass({
   			})
   		} else {
 
-        helpers.findHoneyDo(this.state.task);
+        var self = this
+
+        
+        //HoneyDo's
+        helpers.findHoneyDo().then(function(response){
+
+          //console.log(response.data[0].task)
+
+          self.setState({
+            tasks: response.data[0].task
+          });
+
+        });
+
+        //Reward
+        helpers.findReward().then(function(response){
+
+          //console.log(response.data[0].reward)
+
+          self.setState({
+            rewards: response.data[0].reward
+          });
+
+        });
 
         this.context.router.push({
         pathname: '/View',
@@ -57,12 +69,14 @@ var ViewContainer = React.createClass({
 
 	render: function (){
 
-		return (
 
-			<View 
-        getHoneyDo = {this.getHoneyDo}/>
+      return (
+      //map out this.state.tasks.map(function(task){})
+      <View 
+        getHoneyDo = {this.state.tasks}
+        getRewards = {this.state.rewards} />
 
-		)
+    )
 	}
 });
 
