@@ -16,26 +16,34 @@ var ViewContainer = React.createClass({
 
   	},
 
-    getHoneyDo: function (){
-      event.preventDefault();
+    // getHoneyDo: function (){
+    //   event.preventDefault();
 
-      helpers.findHoneyDo(this.state.userID);
+    //   helpers.findHoneyDo(this.state.userID);
 
-      this.context.router.push({
-        pathname: '/View',
-        state:{
-          userID: userID
-        }
-      })
-    },
+    //   this.context.router.push({
+    //     pathname: '/View',
+    //     state:{
+    //       userID: userID
+    //     }
+    //   })
+    // },
 
 	componentWillMount: function (){
   		if (this.state.userID === null){
   			this.context.router.push({
   				pathname: '/'
   			})
-  		}
-  	},
+  		} else {
+
+        helpers.findHoneyDo(this.state.userID);
+
+        this.context.router.push({
+        pathname: '/View',
+        
+        })
+      }
+  },
 
 
   	//find all HoneyDo

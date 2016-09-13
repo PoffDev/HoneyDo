@@ -28448,6 +28448,24 @@
 	
 	var helpers = {
 	
+		findHoneyDo: function findHoneyDo() {
+	
+			var user = localStorage.getItem('_id');
+	
+			return axios.get('/findHoneyDo', { user: user }).then(function (response) {
+	
+				//console.log(response.data[0].task)
+	
+				for (var i = 0; i < response.data[0].task.length; i++) {
+	
+					console.log(response.data[0].task[i].HoneyDo);
+					// response.data.task[i]
+				}
+	
+				// console.log(response.data[0].task)
+			}.bind(this));
+		},
+	
 		addTask: function addTask(HoneyDo, BrowniePoints, CompleteBy, Done) {
 	
 			var task = {
@@ -30214,23 +30232,31 @@
 	    };
 	  },
 	
-	  getHoneyDo: function getHoneyDo() {
-	    event.preventDefault();
+	  // getHoneyDo: function (){
+	  //   event.preventDefault();
 	
-	    helpers.findHoneyDo(this.state.userID);
+	  //   helpers.findHoneyDo(this.state.userID);
 	
-	    this.context.router.push({
-	      pathname: '/View',
-	      state: {
-	        userID: userID
-	      }
-	    });
-	  },
+	  //   this.context.router.push({
+	  //     pathname: '/View',
+	  //     state:{
+	  //       userID: userID
+	  //     }
+	  //   })
+	  // },
 	
 	  componentWillMount: function componentWillMount() {
 	    if (this.state.userID === null) {
 	      this.context.router.push({
 	        pathname: '/'
+	      });
+	    } else {
+	
+	      helpers.findHoneyDo(this.state.userID);
+	
+	      this.context.router.push({
+	        pathname: '/View'
+	
 	      });
 	    }
 	  },

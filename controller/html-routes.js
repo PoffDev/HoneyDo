@@ -71,6 +71,8 @@ module.exports = function(app) {
     db.users.find({}, {"task.HoneyDo": 1}, function(err, docs){
 
       console.log('HoneyDo task found')
+      console.log('docs console' + docs)
+      res.send(docs);
       if (err) throw err;
     })
   });
