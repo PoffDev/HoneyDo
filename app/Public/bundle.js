@@ -28454,15 +28454,12 @@
 	
 			return axios.get('/findHoneyDo', { user: user }).then(function (response) {
 	
-				//console.log(response.data[0].task)
-	
 				for (var i = 0; i < response.data[0].task.length; i++) {
 	
-					console.log(response.data[0].task[i].HoneyDo);
-					// response.data.task[i]
-				}
+					var tasks = response.data[0].task[i].HoneyDo;
 	
-				// console.log(response.data[0].task)
+					console.log(tasks);
+				};
 			}.bind(this));
 		},
 	
@@ -30252,7 +30249,7 @@
 	      });
 	    } else {
 	
-	      helpers.findHoneyDo(this.state.userID);
+	      helpers.findHoneyDo(this.state.task);
 	
 	      this.context.router.push({
 	        pathname: '/View'

@@ -10,11 +10,13 @@ var helpers = {
 		return axios.get('/findHoneyDo', {user: user})
 			.then(function(response){
 
-					for (var i = 0; i < response.data[0].task.length; i++) {
+				for (var i = 0; i < response.data[0].task.length; i++) {
+					
+					var tasks = response.data[0].task[i].HoneyDo;
 
-						console.log(response.data[0].task[i].HoneyDo);
+					console.log(tasks)
 						
-					}
+					};
 				
 			}.bind(this));
 	},

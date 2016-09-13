@@ -36,7 +36,7 @@ var ViewContainer = React.createClass({
   			})
   		} else {
 
-        helpers.findHoneyDo(this.state.userID);
+        helpers.findHoneyDo(this.state.task);
 
         this.context.router.push({
         pathname: '/View',
