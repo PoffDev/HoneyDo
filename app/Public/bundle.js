@@ -28298,52 +28298,13 @@
 													{ key: i },
 													' ',
 													task.HoneyDo,
-													' '
+													React.createElement(
+														'button',
+														{ type: 'button', className: 'btn btn-link' },
+														'Delete'
+													)
 												);
 											})
-										)
-									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'row' },
-								React.createElement(
-									'div',
-									{ className: 'col-md-3 col-md-offset-1' },
-									React.createElement(
-										Link,
-										{ to: '/dash' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-warning form-control' },
-											'Dashboard'
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-3 col-md-offset-1' },
-									React.createElement(
-										Link,
-										{ to: '/completed' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-primary form-control' },
-											'Completed'
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-3' },
-									React.createElement(
-										Link,
-										{ to: '/redeem' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-danger form-control' },
-											'Finished'
 										)
 									)
 								)
@@ -28388,52 +28349,13 @@
 													{ key: i },
 													' ',
 													reward.Reward,
-													' '
+													React.createElement(
+														'button',
+														{ type: 'button', className: 'btn btn-link' },
+														'Redeem'
+													)
 												);
 											})
-										)
-									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'row' },
-								React.createElement(
-									'div',
-									{ className: 'col-md-3 col-md-offset-1' },
-									React.createElement(
-										Link,
-										{ to: '/dash' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-warning form-control' },
-											'Dashboard'
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-3 col-md-offset-1' },
-									React.createElement(
-										Link,
-										{ to: '/completed' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-primary form-control' },
-											'Completed'
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-3' },
-									React.createElement(
-										Link,
-										{ to: '/redeem' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-danger form-control' },
-											'Finished'
 										)
 									)
 								)

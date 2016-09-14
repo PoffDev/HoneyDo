@@ -31,35 +31,15 @@ function View(props) {
 
 					  						{getHoneyDo.map( function (task,i){
                            						
-                           						return(<li key={i}> {task.HoneyDo} </li>)
+                           						return(<li key={i}> {task.HoneyDo} 
+                           							<button type="button" className="btn btn-link">Delete</button>
+
+                           							</li>)
         					                	})}
 
 					  						</ul>
 
 										</div>
-									</div>
-
-
-								</div>
-
-								<div className = "row">
-
-									<div className = "col-md-3 col-md-offset-1">
-
-										<Link to="/dash"><button type="button" className="btn btn-warning form-control">Dashboard</button></Link>
-
-									</div>
-
-									<div className = "col-md-3 col-md-offset-1">
-
-										<Link to="/completed"><button type="button" className="btn btn-primary form-control">Completed</button></Link>
-
-									</div>
-
-									<div className = "col-md-3">
-
-										<Link to="/redeem"><button type="button" className="btn btn-danger form-control">Finished</button></Link>
-
 									</div>
 
 								</div>
@@ -86,35 +66,14 @@ function View(props) {
 
 					  						{getRewards.map( function (reward,i){
                            						
-                           						return(<li key={i}> {reward.Reward} </li>)
+                           						return(<li key={i}> {reward.Reward}
+                           							<button type="button" className="btn btn-link">Redeem</button>
+                           						</li>)
         					                	})}
 
 					  						</ul>
 
 										</div>
-									</div>
-
-
-								</div>
-
-								<div className = "row">
-
-									<div className = "col-md-3 col-md-offset-1">
-
-										<Link to="/dash"><button type="button" className="btn btn-warning form-control">Dashboard</button></Link>
-
-									</div>
-
-									<div className = "col-md-3 col-md-offset-1">
-
-										<Link to="/completed"><button type="button" className="btn btn-primary form-control">Completed</button></Link>
-
-									</div>
-
-									<div className = "col-md-3">
-
-										<Link to="/redeem"><button type="button" className="btn btn-danger form-control">Finished</button></Link>
-
 									</div>
 
 								</div>
