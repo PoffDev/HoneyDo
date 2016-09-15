@@ -1,7 +1,6 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-var Nav = require('./Children/Nav');
-var Footer = require('./Children/Footer')
+var LoginNav = require('./Children/LoginNav');
 var Link = ReactRouter.Link;
 
 var Completed = React.createClass({
@@ -11,6 +10,8 @@ var Completed = React.createClass({
     return (
 
     	<div id = 'Add'>
+
+    		<LoginNav />
 
             	<div className = "container">
 

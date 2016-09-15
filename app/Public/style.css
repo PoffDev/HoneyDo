@@ -3,17 +3,26 @@ body {
   /*background: url(/images/background.jpg);*/ }
 
 #home {
-  background-color: #29B429;
+  background-color: #2FD620;
   height: 525px;
   color: #FFFFFF; }
 
 #jumbo {
-  margin-top: 25%;
-  margin-left: 25%;
-  background: rgba(255, 255, 255, 0.5); }
+  background: #425052; 
+  margin-top: 145px}
+
+#colorbutton{
+  background-color: #FFFFFF !important;
+  color: #CACECF;
+}
+
+#panel {
+  background-color: #7EC478;
+  color: #FFFFFF;
+}
 
 #about {
-  background-color: #FFFFFF;
+  background-color: #425052;
   height: 525px; }
 
 #aboutRow {
@@ -21,7 +30,7 @@ body {
   text-align: center; }
 
 #preview {
-  background-color: #29B429;
+  background-color: #2FD620;
   height: 525px; }
 
 #previewImage {

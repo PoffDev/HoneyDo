@@ -8,6 +8,15 @@ var Home = React.createClass({
 
     render: function() {
 
+    	var style = {
+			marginTop: "20px",
+		
+		}
+
+		var align = {
+			textAlign: "center"
+		}
+
     return (
 
     	<div>
@@ -16,44 +25,48 @@ var Home = React.createClass({
 
     	<div className = "containter">
 
-    			<div id = 'home'>
-					<div className = 'container-fluid'>
-						<div className = 'container'>
-							<div className = 'row'>
-								<div className = 'col-md-10 col-md-offset-2'>
+    			<div className = 'container-fluid'>
+    				<div id = 'home'>
+							
+							<div className = "row">
+
+								<div className = "col-md-8 col-md-offset-2">
 									<div className = 'jumbotron' id = 'jumbo'>
-										<h1>HoneyDo</h1>
+
+										<img src="pics/greenright.png" alt="Big Logo" height="82" width="400" style={style} />
 										
-										<div id = 'catchPhrase'>
-										<p>The only way to get what either of you want</p></div>
+											<div id = 'catchPhrase' id={align}>
+											<p>The only way to get what either of you want</p>
+											</div>
 
 										<div className="row">
 
-											<div className = "col-md-1 col-md-offset-5">
+											<div className = "col-md-1 col-md-offset-4">
 
-												<Link to="/login"><button type="button" className="btn btn-primary">Login</button></Link>
+												<Link to="/login"><button type="button" id="colorbutton" className="btn">Login</button></Link>
 
 											</div>
 
-											<div className = "col-md-1 col-md-offset-2">
+											<div className = "col-md-1 col-md-offset-1">
 
-												<Link to="/SignUp"><button type="button" className="btn btn-warning">Sign Up</button></Link>
+												<Link to="/SignUp"><button type="button" id="colorbutton" className="btn">Sign Up</button></Link>
 
 											</div>
 
 										</div>
+										
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<div className = 'container'>
+								</div>
+
+							</div>	
+						
+					</div>
+				
 					<div id = 'about'>
 						<div className = 'row' id = 'aboutRow'>
 							<div className = 'col-md-4'>
-								<div className="panel panel-default">
+								<div className="panel panel-default" id="panel">
 				  					<div className="panel-body">
 										<i className="fa fa-list-ul fa-5x" aria-hidden="true"></i>
 										<h1>Assign</h1>
@@ -62,7 +75,7 @@ var Home = React.createClass({
 								</div>
 							</div>
 							<div className = 'col-md-4'>
-								<div className="panel panel-default">
+								<div className="panel panel-default" id="panel">
 				  					<div className="panel-body">
 										<i className="fa fa-check fa-5x" aria-hidden="true"></i>
 										<h1>Complete</h1>
@@ -71,7 +84,7 @@ var Home = React.createClass({
 								</div>
 							</div>
 							<div className = 'col-md-4'>
-								<div className="panel panel-default">
+								<div className="panel panel-default" id="panel">
 				  					<div className="panel-body">
 										<i className="fa fa-gift fa-5x" aria-hidden="true"></i>
 										<h1>Redeem</h1>
@@ -81,19 +94,17 @@ var Home = React.createClass({
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div id = 'preview'>
-					<div className = 'container-fluid'>
-						<div className = 'row'>
-							<div className = 'col-md-10 col-md-offset-1'>
-								<div id = 'previewImage'>
+					<div id = 'preview'>
+							<div className = 'row'>
+								<div className = 'col-md-10 col-md-offset-1'>
+									<div id = 'previewImage'>
 
-									<img src="http://placehold.it/950x425" />
+										<img src="http://placehold.it/950x425" />
 
+									</div>
 								</div>
 							</div>
-						</div>
 					</div>
 				</div>
 

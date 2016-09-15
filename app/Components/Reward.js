@@ -9,6 +9,8 @@ function Reward(props) {
 
     	<div id = 'Reward'>
 
+    		<LoginNav />
+
             	<div className = "container text-center">
 
 	            	<div className = "row">

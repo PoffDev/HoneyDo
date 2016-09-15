@@ -13,7 +13,9 @@ var ViewContainer = React.createClass({
     	return { 
     		userID: localStorage.getItem('_id'),
         tasks: [],
+        points: [],
         rewards: [],
+        rPointValue: [],
     	};
 
   	},
@@ -34,7 +36,8 @@ var ViewContainer = React.createClass({
           //console.log(response.data[0].task)
 
           self.setState({
-            tasks: response.data[0].task
+            tasks: response.data[0].task,
+            points: response.data[0].task
           });
 
         });
@@ -45,7 +48,8 @@ var ViewContainer = React.createClass({
           //console.log(response.data[0].reward)
 
           self.setState({
-            rewards: response.data[0].reward
+            rewards: response.data[0].reward,
+            rPointValue: response.data[0].reward
           });
 
         });
@@ -74,7 +78,9 @@ var ViewContainer = React.createClass({
       //map out this.state.tasks.map(function(task){})
       <View 
         getHoneyDo = {this.state.tasks}
-        getRewards = {this.state.rewards} />
+        getPoints = {this.state.tasks}
+        getRewards = {this.state.rewards}
+        getRewardPoints = {this.state.rewards} />
 
     )
 	}

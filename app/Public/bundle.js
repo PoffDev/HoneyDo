@@ -50,7 +50,7 @@
 	var ReactDom = __webpack_require__(34);
 	var Router = __webpack_require__(172).Router;
 	var Routes = __webpack_require__(235);
-	var Main = __webpack_require__(243);
+	var Main = __webpack_require__(244);
 	
 	//require('css file here');
 	
@@ -27073,22 +27073,22 @@
 	
 	//Components
 	var Add = __webpack_require__(236);
-	var Completed = __webpack_require__(237);
-	var Dash = __webpack_require__(240);
-	var Home = __webpack_require__(241);
-	var Login = __webpack_require__(242);
-	var Main = __webpack_require__(243);
-	var Redeem = __webpack_require__(244);
-	var Reward = __webpack_require__(245);
-	var View = __webpack_require__(246);
+	var Completed = __webpack_require__(238);
+	var Dash = __webpack_require__(239);
+	var Home = __webpack_require__(240);
+	var Login = __webpack_require__(243);
+	var Main = __webpack_require__(244);
+	var Redeem = __webpack_require__(245);
+	var Reward = __webpack_require__(246);
+	var View = __webpack_require__(247);
 	
 	//Containers
-	var AddContainer = __webpack_require__(247);
-	var DashContainer = __webpack_require__(272);
-	var LoginContainer = __webpack_require__(273);
-	var RewardContainer = __webpack_require__(274);
-	var SignupContainer = __webpack_require__(275);
-	var ViewContainer = __webpack_require__(277);
+	var AddContainer = __webpack_require__(248);
+	var DashContainer = __webpack_require__(273);
+	var LoginContainer = __webpack_require__(274);
+	var RewardContainer = __webpack_require__(275);
+	var SignupContainer = __webpack_require__(276);
+	var ViewContainer = __webpack_require__(278);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27123,6 +27123,7 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
+	var LoginNav = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	function Add(props) {
@@ -27130,6 +27131,7 @@
 		return React.createElement(
 			'div',
 			{ id: 'Add' },
+			React.createElement(LoginNav, null),
 			React.createElement(
 				'div',
 				{ className: 'container text-center' },
@@ -27196,8 +27198,59 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(238);
-	var Footer = __webpack_require__(239);
+	var Link = ReactRouter.Link;
+	
+	var LoginNav = React.createClass({
+		displayName: 'LoginNav',
+	
+	
+		render: function render() {
+	
+			var style = {
+				marginTop: "2px",
+				marginLeft: "30px"
+			};
+	
+			return React.createElement(
+				'div',
+				{ className: 'container-fluid' },
+				React.createElement(
+					'nav',
+					{ className: 'navbar navbar-default navbar-fixed-top' },
+					React.createElement(
+						'ul',
+						{ className: 'nav navbar-nav navbar-left' },
+						React.createElement(
+							Link,
+							{ to: '/Dash' },
+							React.createElement('img', { src: 'pics/allBlack.png', alt: 'Smiley face', height: '45', width: '45', style: style })
+						)
+					),
+					React.createElement(
+						'ul',
+						{ className: 'nav navbar-nav navbar-right' },
+						React.createElement(
+							Link,
+							{ to: '/Dash' },
+							'Sign Out'
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = LoginNav;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var LoginNav = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	var Completed = React.createClass({
@@ -27209,6 +27262,7 @@
 			return React.createElement(
 				'div',
 				{ id: 'Add' },
+				React.createElement(LoginNav, null),
 				React.createElement(
 					'div',
 					{ className: 'container' },
@@ -27320,126 +27374,14 @@
 	module.exports = Completed;
 
 /***/ },
-/* 238 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var ReactRouter = __webpack_require__(172);
-	var Link = ReactRouter.Link;
-	
-	var Nav = React.createClass({
-		displayName: 'Nav',
-	
-	
-		render: function render() {
-	
-			return React.createElement(
-				'div',
-				{ className: 'container-fluid' },
-				React.createElement(
-					'nav',
-					{ className: 'navbar navbar-default navbar-fixed-top' },
-					React.createElement(
-						'div',
-						{ className: 'container' },
-						React.createElement(
-							'ul',
-							{ className: 'nav navbar-nav navbar-right' },
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'Home'
-								)
-							),
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'About'
-								)
-							),
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'Sign Up'
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-	
-	module.exports = Nav;
-
-/***/ },
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	
-	var React = __webpack_require__(1);
-	
-	var Footer = React.createClass({
-		displayName: "Footer",
-	
-	
-		render: function render() {
-	
-			return React.createElement(
-				"div",
-				{ className: "container-fluid" },
-				React.createElement(
-					"div",
-					{ id: "footer" },
-					React.createElement(
-						"nav",
-						{ className: "navbar navbar-default" },
-						React.createElement(
-							"div",
-							{ className: "container" },
-							React.createElement(
-								"ul",
-								{ className: "nav navbar-nav navbar-right" },
-								React.createElement(
-									"li",
-									{ role: "presentation" },
-									React.createElement(
-										"a",
-										{ href: "http://www.github.com/PoffDev" },
-										"Designed and Created with Love from PoffDev"
-									)
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-	
-	module.exports = Footer;
-
-/***/ },
-/* 240 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Footer = __webpack_require__(239);
+	var LoginNav = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	function Dash(props) {
@@ -27447,6 +27389,7 @@
 		return React.createElement(
 			'div',
 			null,
+			React.createElement(LoginNav, null),
 			React.createElement(
 				'div',
 				{ className: 'container' },
@@ -27624,15 +27567,17 @@
 	module.exports = Dash;
 
 /***/ },
-/* 241 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(238);
-	var Footer = __webpack_require__(239);
+	var Nav = __webpack_require__(241);
+	var Footer = __webpack_require__(242);
 	var Link = ReactRouter.Link;
 	
 	var Home = React.createClass({
@@ -27640,6 +27585,15 @@
 	
 	
 		render: function render() {
+	
+			var style = {
+				marginTop: "20px"
+	
+			};
+	
+			var align = {
+				textAlign: "center"
+			};
 	
 			return React.createElement(
 				'div',
@@ -27650,63 +27604,55 @@
 					{ className: 'containter' },
 					React.createElement(
 						'div',
-						{ id: 'home' },
+						{ className: 'container-fluid' },
 						React.createElement(
 							'div',
-							{ className: 'container-fluid' },
+							{ id: 'home' },
 							React.createElement(
 								'div',
-								{ className: 'container' },
+								{ className: 'row' },
 								React.createElement(
 									'div',
-									{ className: 'row' },
+									{ className: 'col-md-8 col-md-offset-2' },
 									React.createElement(
 										'div',
-										{ className: 'col-md-10 col-md-offset-2' },
+										{ className: 'jumbotron', id: 'jumbo' },
+										React.createElement('img', { src: 'pics/greenright.png', alt: 'Big Logo', height: '82', width: '400', style: style }),
 										React.createElement(
 											'div',
-											{ className: 'jumbotron', id: 'jumbo' },
+											_defineProperty({ id: 'catchPhrase' }, 'id', align),
 											React.createElement(
-												'h1',
+												'p',
 												null,
-												'HoneyDo'
-											),
+												'The only way to get what either of you want'
+											)
+										),
+										React.createElement(
+											'div',
+											{ className: 'row' },
 											React.createElement(
 												'div',
-												{ id: 'catchPhrase' },
+												{ className: 'col-md-1 col-md-offset-4' },
 												React.createElement(
-													'p',
-													null,
-													'The only way to get what either of you want'
+													Link,
+													{ to: '/login' },
+													React.createElement(
+														'button',
+														{ type: 'button', id: 'colorbutton', className: 'btn' },
+														'Login'
+													)
 												)
 											),
 											React.createElement(
 												'div',
-												{ className: 'row' },
+												{ className: 'col-md-1 col-md-offset-1' },
 												React.createElement(
-													'div',
-													{ className: 'col-md-1 col-md-offset-5' },
+													Link,
+													{ to: '/SignUp' },
 													React.createElement(
-														Link,
-														{ to: '/login' },
-														React.createElement(
-															'button',
-															{ type: 'button', className: 'btn btn-primary' },
-															'Login'
-														)
-													)
-												),
-												React.createElement(
-													'div',
-													{ className: 'col-md-1 col-md-offset-2' },
-													React.createElement(
-														Link,
-														{ to: '/SignUp' },
-														React.createElement(
-															'button',
-															{ type: 'button', className: 'btn btn-warning' },
-															'Sign Up'
-														)
+														'button',
+														{ type: 'button', id: 'colorbutton', className: 'btn' },
+														'Sign Up'
 													)
 												)
 											)
@@ -27714,11 +27660,7 @@
 									)
 								)
 							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'container' },
+						),
 						React.createElement(
 							'div',
 							{ id: 'about' },
@@ -27730,7 +27672,7 @@
 									{ className: 'col-md-4' },
 									React.createElement(
 										'div',
-										{ className: 'panel panel-default' },
+										{ className: 'panel panel-default', id: 'panel' },
 										React.createElement(
 											'div',
 											{ className: 'panel-body' },
@@ -27753,7 +27695,7 @@
 									{ className: 'col-md-4' },
 									React.createElement(
 										'div',
-										{ className: 'panel panel-default' },
+										{ className: 'panel panel-default', id: 'panel' },
 										React.createElement(
 											'div',
 											{ className: 'panel-body' },
@@ -27776,7 +27718,7 @@
 									{ className: 'col-md-4' },
 									React.createElement(
 										'div',
-										{ className: 'panel panel-default' },
+										{ className: 'panel panel-default', id: 'panel' },
 										React.createElement(
 											'div',
 											{ className: 'panel-body' },
@@ -27795,14 +27737,10 @@
 									)
 								)
 							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ id: 'preview' },
+						),
 						React.createElement(
 							'div',
-							{ className: 'container-fluid' },
+							{ id: 'preview' },
 							React.createElement(
 								'div',
 								{ className: 'row' },
@@ -27827,7 +27765,119 @@
 	module.exports = Home;
 
 /***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Link = ReactRouter.Link;
+	
+	var Nav = React.createClass({
+		displayName: 'Nav',
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				'div',
+				{ className: 'container-fluid' },
+				React.createElement(
+					'nav',
+					{ className: 'navbar navbar-default navbar-fixed-top' },
+					React.createElement(
+						'div',
+						{ className: 'container' },
+						React.createElement(
+							'ul',
+							{ className: 'nav navbar-nav navbar-right' },
+							React.createElement(
+								'li',
+								{ role: 'presentation' },
+								React.createElement(
+									Link,
+									{ to: '/SignUp' },
+									'Home'
+								)
+							),
+							React.createElement(
+								'li',
+								{ role: 'presentation' },
+								React.createElement(
+									Link,
+									{ to: '/SignUp' },
+									'About'
+								)
+							),
+							React.createElement(
+								'li',
+								{ role: 'presentation' },
+								React.createElement(
+									Link,
+									{ to: '/SignUp' },
+									'Sign Up'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = Nav;
+
+/***/ },
 /* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var React = __webpack_require__(1);
+	
+	var Footer = React.createClass({
+		displayName: "Footer",
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				"div",
+				{ className: "container-fluid" },
+				React.createElement(
+					"div",
+					{ id: "footer" },
+					React.createElement(
+						"nav",
+						{ className: "navbar navbar-default" },
+						React.createElement(
+							"div",
+							{ className: "container" },
+							React.createElement(
+								"ul",
+								{ className: "nav navbar-nav navbar-right" },
+								React.createElement(
+									"li",
+									{ role: "presentation" },
+									React.createElement(
+										"a",
+										{ href: "http://www.github.com/PoffDev" },
+										"Designed and Created with Love from PoffDev"
+									)
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = Footer;
+
+/***/ },
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27874,7 +27924,7 @@
 	module.exports = Login;
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27969,15 +28019,15 @@
 	module.exports = Main;
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(238);
-	var Footer = __webpack_require__(239);
+	var Nav = __webpack_require__(241);
+	var Footer = __webpack_require__(242);
 	var Link = ReactRouter.Link;
 	
 	var Redeem = React.createClass({
@@ -28172,7 +28222,7 @@
 	module.exports = Redeem;
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28183,70 +28233,72 @@
 	
 	function Reward(props) {
 	
-		return React.createElement(
-			'div',
-			{ id: 'Reward' },
-			React.createElement(
-				'div',
-				{ className: 'container text-center' },
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
-						React.createElement(
-							'form',
-							{ className: 'contact-form', onSubmit: props.reward },
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'Reward', placeholder: '1 Day of watching Football Uninterupted', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'PointValue', placeholder: '100 BrowniePoints', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'button',
-								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
-								'Add Reward'
-							)
-						)
-					)
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(
-					'div',
-					{ className: 'col-md-1' },
-					React.createElement(
-						Link,
-						{ to: '/Home' },
-						React.createElement(
-							'button',
-							{ type: 'button', className: 'btn btn-danger' },
-							'Log Out'
-						)
-					)
-				)
-			)
-		);
+	  return React.createElement(
+	    'div',
+	    { id: 'Reward' },
+	    React.createElement(LoginNav, null),
+	    React.createElement(
+	      'div',
+	      { className: 'container text-center' },
+	      React.createElement(
+	        'div',
+	        { className: 'row' },
+	        React.createElement(
+	          'div',
+	          { className: 'col-md-6 col-md-offset-3' },
+	          React.createElement(
+	            'form',
+	            { className: 'contact-form', onSubmit: props.reward },
+	            React.createElement(
+	              'div',
+	              { className: 'form-group' },
+	              React.createElement('input', { type: 'text', className: 'form-control', id: 'Reward', placeholder: '1 Day of watching Football Uninterupted', onChange: props.updateInputs })
+	            ),
+	            React.createElement(
+	              'div',
+	              { className: 'form-group' },
+	              React.createElement('input', { type: 'text', className: 'form-control', id: 'PointValue', placeholder: '100 BrowniePoints', onChange: props.updateInputs })
+	            ),
+	            React.createElement(
+	              'button',
+	              { type: 'submit', className: 'btn btn-lg btn-block btn-default' },
+	              'Add Reward'
+	            )
+	          )
+	        )
+	      )
+	    ),
+	    React.createElement(
+	      'div',
+	      { className: 'row' },
+	      React.createElement(
+	        'div',
+	        { className: 'col-md-1' },
+	        React.createElement(
+	          Link,
+	          { to: '/Home' },
+	          React.createElement(
+	            'button',
+	            { type: 'button', className: 'btn btn-danger' },
+	            'Log Out'
+	          )
+	        )
+	      )
+	    )
+	  );
 	};
 	
 	module.exports = Reward;
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
+	var LoginNav = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	function View(props) {
@@ -28257,13 +28309,14 @@
 	
 		return React.createElement(
 			'div',
-			{ id: 'Add' },
+			{ id: 'View' },
+			React.createElement(LoginNav, null),
 			React.createElement(
 				'div',
 				{ className: 'container-fluid' },
 				React.createElement(
 					'div',
-					{ className: 'col-md-4 col-md-offset-1' },
+					{ className: 'col-md-6 col-md-offset-1' },
 					React.createElement(
 						'div',
 						{ className: 'panel panel-default' },
@@ -28298,10 +28351,13 @@
 													{ key: i },
 													' ',
 													task.HoneyDo,
+													' (',
+													task.BrowniePoints,
+													' BP\'s)',
 													React.createElement(
 														'button',
 														{ type: 'button', className: 'btn btn-link' },
-														'Delete'
+														'Honey, I\'m Done!'
 													)
 												);
 											})
@@ -28314,7 +28370,7 @@
 				),
 				React.createElement(
 					'div',
-					{ className: 'col-md-4 col-md-offset-2' },
+					{ className: 'col-md-4' },
 					React.createElement(
 						'div',
 						{ className: 'panel panel-default' },
@@ -28349,6 +28405,9 @@
 													{ key: i },
 													' ',
 													reward.Reward,
+													' (',
+													reward.PointValue,
+													' BP\'s)',
 													React.createElement(
 														'button',
 														{ type: 'button', className: 'btn btn-link' },
@@ -28387,7 +28446,7 @@
 	module.exports = View;
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28396,7 +28455,7 @@
 	
 	var React = __webpack_require__(1);
 	var Add = __webpack_require__(236);
-	var helpers = __webpack_require__(248);
+	var helpers = __webpack_require__(249);
 	
 	var AddContainer = React.createClass({
 		displayName: 'AddContainer',
@@ -28453,13 +28512,13 @@
 	module.exports = AddContainer;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var axios = __webpack_require__(249);
-	var UserModel = __webpack_require__(271);
+	var axios = __webpack_require__(250);
+	var UserModel = __webpack_require__(272);
 	
 	var helpers = {
 	
@@ -28472,6 +28531,7 @@
 				for (var i = 0; i < response.data[0].task.length; i++) {
 	
 					var tasks = response.data[0].task[i].HoneyDo;
+					var points = response.data[0].task[i].BrowniePoints;
 	
 					// console.log(tasks)
 				};
@@ -28489,6 +28549,7 @@
 				for (var i = 0; i < response.data[0].reward.length; i++) {
 	
 					var reward = response.data[0].reward[i].Reward;
+					var points = response.data[0].reward[i].PointValue;
 	
 					//console.log('find helper ' + reward)
 				};
@@ -28579,20 +28640,20 @@
 	module.exports = helpers;
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(250);
+	module.exports = __webpack_require__(251);
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
-	var bind = __webpack_require__(252);
-	var Axios = __webpack_require__(253);
+	var utils = __webpack_require__(252);
+	var bind = __webpack_require__(253);
+	var Axios = __webpack_require__(254);
 	
 	/**
 	 * Create an instance of Axios
@@ -28628,7 +28689,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(270);
+	axios.spread = __webpack_require__(271);
 	
 	module.exports = axios;
 	
@@ -28637,12 +28698,12 @@
 
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var bind = __webpack_require__(252);
+	var bind = __webpack_require__(253);
 	
 	/*global toString:true*/
 	
@@ -28942,7 +29003,7 @@
 
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28959,17 +29020,17 @@
 
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var defaults = __webpack_require__(254);
-	var utils = __webpack_require__(251);
-	var InterceptorManager = __webpack_require__(256);
-	var dispatchRequest = __webpack_require__(257);
-	var isAbsoluteURL = __webpack_require__(268);
-	var combineURLs = __webpack_require__(269);
+	var defaults = __webpack_require__(255);
+	var utils = __webpack_require__(252);
+	var InterceptorManager = __webpack_require__(257);
+	var dispatchRequest = __webpack_require__(258);
+	var isAbsoluteURL = __webpack_require__(269);
+	var combineURLs = __webpack_require__(270);
 	
 	/**
 	 * Create a new instance of Axios
@@ -29050,13 +29111,13 @@
 
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
-	var normalizeHeaderName = __webpack_require__(255);
+	var utils = __webpack_require__(252);
+	var normalizeHeaderName = __webpack_require__(256);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -29128,12 +29189,12 @@
 
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(252);
 	
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -29146,12 +29207,12 @@
 
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(252);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -29204,13 +29265,13 @@
 
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(251);
-	var transformData = __webpack_require__(258);
+	var utils = __webpack_require__(252);
+	var transformData = __webpack_require__(259);
 	
 	/**
 	 * Dispatch a request to the server using whichever adapter
@@ -29251,10 +29312,10 @@
 	    adapter = config.adapter;
 	  } else if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(259);
+	    adapter = __webpack_require__(260);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(259);
+	    adapter = __webpack_require__(260);
 	  }
 	
 	  return Promise.resolve(config)
@@ -29286,12 +29347,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(252);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -29312,18 +29373,18 @@
 
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(251);
-	var settle = __webpack_require__(260);
-	var buildURL = __webpack_require__(263);
-	var parseHeaders = __webpack_require__(264);
-	var isURLSameOrigin = __webpack_require__(265);
-	var createError = __webpack_require__(261);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(266);
+	var utils = __webpack_require__(252);
+	var settle = __webpack_require__(261);
+	var buildURL = __webpack_require__(264);
+	var parseHeaders = __webpack_require__(265);
+	var isURLSameOrigin = __webpack_require__(266);
+	var createError = __webpack_require__(262);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(267);
 	
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -29417,7 +29478,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(267);
+	      var cookies = __webpack_require__(268);
 	
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -29481,12 +29542,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var createError = __webpack_require__(261);
+	var createError = __webpack_require__(262);
 	
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -29512,12 +29573,12 @@
 
 
 /***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var enhanceError = __webpack_require__(262);
+	var enhanceError = __webpack_require__(263);
 	
 	/**
 	 * Create an Error with the specified message, config, error code, and response.
@@ -29535,7 +29596,7 @@
 
 
 /***/ },
-/* 262 */
+/* 263 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29560,12 +29621,12 @@
 
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(252);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -29634,12 +29695,12 @@
 
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(252);
 	
 	/**
 	 * Parse headers into an object
@@ -29677,12 +29738,12 @@
 
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(252);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29751,7 +29812,7 @@
 
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29793,12 +29854,12 @@
 
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(251);
+	var utils = __webpack_require__(252);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -29852,7 +29913,7 @@
 
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29872,7 +29933,7 @@
 
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29890,7 +29951,7 @@
 
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29923,7 +29984,7 @@
 
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -29938,14 +29999,14 @@
 	module.exports = User;
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(1);
-	var helpers = __webpack_require__(248);
-	var Dash = __webpack_require__(240);
+	var helpers = __webpack_require__(249);
+	var Dash = __webpack_require__(239);
 	
 	var DashContainer = React.createClass({
 	  displayName: 'DashContainer',
@@ -29985,7 +30046,7 @@
 	module.exports = DashContainer;
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29993,9 +30054,9 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Login = __webpack_require__(242);
-	var helpers = __webpack_require__(248);
-	var axios = __webpack_require__(249);
+	var Login = __webpack_require__(243);
+	var helpers = __webpack_require__(249);
+	var axios = __webpack_require__(250);
 	
 	var LoginContainer = React.createClass({
 		displayName: 'LoginContainer',
@@ -30054,7 +30115,7 @@
 	module.exports = LoginContainer;
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30062,8 +30123,8 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Reward = __webpack_require__(245);
-	var helpers = __webpack_require__(248);
+	var Reward = __webpack_require__(246);
+	var helpers = __webpack_require__(249);
 	
 	var RewardContainer = React.createClass({
 		displayName: 'RewardContainer',
@@ -30118,7 +30179,7 @@
 	module.exports = RewardContainer;
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30126,8 +30187,8 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Signup = __webpack_require__(276);
-	var helpers = __webpack_require__(248);
+	var Signup = __webpack_require__(277);
+	var helpers = __webpack_require__(249);
 	
 	var SignupContainer = React.createClass({
 		displayName: 'SignupContainer',
@@ -30179,7 +30240,7 @@
 	module.exports = SignupContainer;
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30240,14 +30301,14 @@
 	module.exports = Signup;
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(1);
-	var View = __webpack_require__(246);
-	var helpers = __webpack_require__(248);
+	var View = __webpack_require__(247);
+	var helpers = __webpack_require__(249);
 	
 	var ViewContainer = React.createClass({
 	  displayName: 'ViewContainer',
@@ -30261,7 +30322,9 @@
 	    return {
 	      userID: localStorage.getItem('_id'),
 	      tasks: [],
-	      rewards: []
+	      points: [],
+	      rewards: [],
+	      rPointValue: []
 	    };
 	  },
 	
@@ -30280,7 +30343,8 @@
 	        //console.log(response.data[0].task)
 	
 	        self.setState({
-	          tasks: response.data[0].task
+	          tasks: response.data[0].task,
+	          points: response.data[0].task
 	        });
 	      });
 	
@@ -30290,7 +30354,8 @@
 	        //console.log(response.data[0].reward)
 	
 	        self.setState({
-	          rewards: response.data[0].reward
+	          rewards: response.data[0].reward,
+	          rPointValue: response.data[0].reward
 	        });
 	      });
 	
@@ -30316,7 +30381,9 @@
 	      //map out this.state.tasks.map(function(task){})
 	      React.createElement(View, {
 	        getHoneyDo: this.state.tasks,
-	        getRewards: this.state.rewards })
+	        getPoints: this.state.tasks,
+	        getRewards: this.state.rewards,
+	        getRewardPoints: this.state.rewards })
 	    );
 	  }
 	});

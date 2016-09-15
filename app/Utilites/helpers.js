@@ -13,6 +13,7 @@ var helpers = {
 				for (var i = 0; i < response.data[0].task.length; i++) {
 					
 					var tasks = response.data[0].task[i].HoneyDo;
+					var points = response.data[0].task[i].BrowniePoints;
 
 					// console.log(tasks)
 						
@@ -33,6 +34,7 @@ var helpers = {
 				for (var i = 0; i < response.data[0].reward.length; i++) {
 					
 					var reward = response.data[0].reward[i].Reward;
+					var points = response.data[0].reward[i].PointValue;
 
 					//console.log('find helper ' + reward)
 						

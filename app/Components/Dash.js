@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-var Footer = require('./Children/Footer')
+var LoginNav = require('./Children/LoginNav');
 var Link = ReactRouter.Link;
 
 function Dash(props) {
@@ -8,6 +8,8 @@ function Dash(props) {
 	return (
 
 	    	<div>
+
+	    		<LoginNav />
 
 	    		<div className = "container">
 

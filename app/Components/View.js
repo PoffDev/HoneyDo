@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactRouter = require('react-router');
+var LoginNav = require('./Children/LoginNav');
 var Link = ReactRouter.Link;
 
 
@@ -11,11 +12,13 @@ function View(props) {
 
     return (
 
-    	<div id = 'Add'>
+    	<div id = 'View'>
+
+    		<LoginNav />
 
             	<div className = "container-fluid">
 
-	            	<div className = "col-md-4 col-md-offset-1">
+	            	<div className = "col-md-6 col-md-offset-1">
 
 		                <div className="panel panel-default">
 							<div className="panel-heading text-center">
@@ -31,8 +34,8 @@ function View(props) {
 
 					  						{getHoneyDo.map( function (task,i){
                            						
-                           						return(<li key={i}> {task.HoneyDo} 
-                           							<button type="button" className="btn btn-link">Delete</button>
+                           						return(<li key={i}> {task.HoneyDo} ({task.BrowniePoints} BP's)
+                           							<button type="button" className="btn btn-link">Honey, I'm Done!</button>
 
                            							</li>)
         					                	})}
@@ -50,7 +53,7 @@ function View(props) {
 
 					</div>
 
-					<div className = "col-md-4 col-md-offset-2">
+					<div className = "col-md-4">
 
 		                <div className="panel panel-default">
 							<div className="panel-heading text-center">
@@ -66,7 +69,7 @@ function View(props) {
 
 					  						{getRewards.map( function (reward,i){
                            						
-                           						return(<li key={i}> {reward.Reward}
+                           						return(<li key={i}> {reward.Reward} ({reward.PointValue} BP's)
                            							<button type="button" className="btn btn-link">Redeem</button>
                            						</li>)
         					                	})}

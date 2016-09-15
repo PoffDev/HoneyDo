@@ -68,7 +68,7 @@ module.exports = function(app) {
 
   app.get('/findHoneyDo', function(req, res) {
 
-    db.users.find({}, {"task.HoneyDo": 1}, function(err, docs){
+    db.users.find({}, {"task.HoneyDo": 1, "task.BrowniePoints": 1}, function(err, docs){
 
       res.send(docs);
       if (err) throw err;
@@ -77,7 +77,7 @@ module.exports = function(app) {
 
   app.get('/findReward', function(req, res) {
 
-    db.users.find({}, {"reward.Reward": 1}, function(err, docs){
+    db.users.find({}, {"reward.Reward": 1, "reward.PointValue": 1}, function(err, docs){
 
       res.send(docs);
       if (err) throw err;
