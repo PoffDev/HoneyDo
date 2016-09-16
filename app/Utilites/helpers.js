@@ -52,7 +52,7 @@ var helpers = {
 		return axios.get('/getpoints', {user: user})
 			.then(function(response){
 
-				console.log(response.data[0].Points);
+				//console.log(response.data[0].Points);
 
 				return response;
 				

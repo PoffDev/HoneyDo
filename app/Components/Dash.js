@@ -5,9 +5,9 @@ var Link = ReactRouter.Link;
 
 function Dash(props) {
 
-	var points = props.updatePoints;
+	var getRewards = props.getRewards
 
-	console.log(points)
+	console.log(getRewards)
 
 	return (
 
@@ -41,7 +41,16 @@ function Dash(props) {
 									</div>
 								  
 								<div className="panel-body">
-									<span><p>rewards populate here</p></span>
+									<span>
+
+									{getRewards.map( function (reward,i){
+                           						
+                           						return(<li key={i}> {reward.Reward} ({reward.PointValue} BP's)
+                           							<button type="button" className="btn btn-link">Redeem</button>
+                           						</li>)
+        					        })}
+
+									</span>
 								</div>
 							</div>
 

@@ -27386,9 +27386,9 @@
 	
 	function Dash(props) {
 	
-		var points = props.updatePoints;
+		var getRewards = props.getRewards;
 	
-		console.log(points);
+		console.log(getRewards);
 	
 		return React.createElement(
 			'div',
@@ -27456,11 +27456,23 @@
 								React.createElement(
 									'span',
 									null,
-									React.createElement(
-										'p',
-										null,
-										'rewards populate here'
-									)
+									getRewards.map(function (reward, i) {
+	
+										return React.createElement(
+											'li',
+											{ key: i },
+											' ',
+											reward.Reward,
+											' (',
+											reward.PointValue,
+											' BP\'s)',
+											React.createElement(
+												'button',
+												{ type: 'button', className: 'btn btn-link' },
+												'Redeem'
+											)
+										);
+									})
 								)
 							)
 						)
@@ -28233,6 +28245,7 @@
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
+	var LoginNav = __webpack_require__(237);
 	var Link = ReactRouter.Link;
 	
 	function Reward(props) {
@@ -28575,7 +28588,7 @@
 	
 			return axios.get('/getpoints', { user: user }).then(function (response) {
 	
-				console.log(response.data[0].Points);
+				//console.log(response.data[0].Points);
 	
 				return response;
 			}.bind(this));
@@ -30053,7 +30066,8 @@
 	    return {
 	      message: 'Click to see more tips',
 	      userID: localStorage.getItem('_id'),
-	      points: 0
+	      points: 0,
+	      rewards: []
 	    };
 	  },
 	
@@ -30067,12 +30081,23 @@
 	
 	      var self = this;
 	
+	      //Pull Points
 	      helpers.getPoints().then(function (response) {
 	
-	        console.log('dash container ' + response.data[0].Points);
+	        //console.log('dash container ' + response.data[0].Points)
 	
 	        self.setState({
 	          points: response.data[0].Points
+	        });
+	      });
+	
+	      //Reward
+	      helpers.findReward().then(function (response) {
+	
+	        console.log(response.data[0].reward);
+	
+	        self.setState({
+	          rewards: response.data[0].reward
 	        });
 	      });
 	
@@ -30096,7 +30121,8 @@
 	    return React.createElement(Dash, {
 	      message: this.state.message,
 	      onClick: this.onClick,
-	      updatePoints: this.state.points });
+	      updatePoints: this.state.points,
+	      getRewards: this.state.rewards });
 	  }
 	});
 	

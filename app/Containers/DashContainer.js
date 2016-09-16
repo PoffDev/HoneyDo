@@ -12,7 +12,8 @@ var DashContainer = React.createClass({
     	return { 
     		message: 'Click to see more tips',
     		userID: localStorage.getItem('_id'),
-        points: 0
+        points: 0,
+        rewards: [],
     	};
 
   	},
@@ -27,16 +28,28 @@ var DashContainer = React.createClass({
 
         var self = this
 
+        //Pull Points
         helpers.getPoints().then(function(response){
 
-        console.log('dash container ' + response.data[0].Points)
+        //console.log('dash container ' + response.data[0].Points)
 
         self.setState({
           points: response.data[0].Points
+          })
         })
-      })
 
-      this.context.router.push({
+        //Reward
+        helpers.findReward().then(function(response){
+
+          console.log(response.data[0].reward)
+
+          self.setState({
+            rewards: response.data[0].reward
+          });
+
+        });
+
+        this.context.router.push({
         pathname: '/Dash',
         
         })
@@ -70,7 +83,8 @@ var DashContainer = React.createClass({
 			<Dash 
 				message = {this.state.message}
 				onClick = { this.onClick } 
-        updatePoints = {this.state.points}/>
+        updatePoints = {this.state.points}
+        getRewards = {this.state.rewards} />
 		)
 	}
 });
