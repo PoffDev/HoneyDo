@@ -27402,6 +27402,48 @@
 					{ className: 'row' },
 					React.createElement(
 						'div',
+						{ className: 'col-md-4' },
+						React.createElement(
+							'div',
+							{ className: 'panel panel-default text-center' },
+							React.createElement(
+								'div',
+								{ className: 'panel-heading' },
+								React.createElement(
+									'h3',
+									{ className: 'panel-title' },
+									'View Task'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'panel-body' },
+								React.createElement(
+									'span',
+									null,
+									getRewards.map(function (reward, i) {
+	
+										return React.createElement(
+											'li',
+											{ key: i },
+											' ',
+											reward.Reward,
+											' (',
+											reward.PointValue,
+											' BP\'s)',
+											React.createElement(
+												'button',
+												{ type: 'button', className: 'btn btn-link' },
+												'Redeem'
+											)
+										);
+									})
+								)
+							)
+						)
+					),
+					React.createElement(
+						'div',
 						{ className: 'col-md-2 col-md-offset-1' },
 						React.createElement(
 							'div',
@@ -27437,7 +27479,7 @@
 					),
 					React.createElement(
 						'div',
-						{ className: 'col-md-6 col-md-offset-2' },
+						{ className: 'col-md-4 col-md-offset-1' },
 						React.createElement(
 							'div',
 							{ className: 'panel panel-default text-center' },

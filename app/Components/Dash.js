@@ -19,6 +19,29 @@ function Dash(props) {
 
 	    			<div className = "row">
 
+	    				<div className = "col-md-4">
+
+	    					<div className="panel panel-default text-center">
+									<div className="panel-heading">
+										<h3 className="panel-title">View Task</h3>
+									</div>
+								  
+								<div className="panel-body">
+									<span>
+
+									{getRewards.map( function (reward,i){
+                           						
+                           						return(<li key={i}> {reward.Reward} ({reward.PointValue} BP's)
+                           							<button type="button" className="btn btn-link">Redeem</button>
+                           						</li>)
+        					        })}
+
+									</span>
+								</div>
+							</div>
+
+		    			</div>
+
 	    				<div className = "col-md-2 col-md-offset-1">
 
 	    					<div className="panel panel-default text-center">
@@ -33,7 +56,7 @@ function Dash(props) {
 
 		    			</div>
 
-		    			<div className = "col-md-6 col-md-offset-2">
+		    			<div className = "col-md-4 col-md-offset-1">
 
 	    					<div className="panel panel-default text-center">
 									<div className="panel-heading">
