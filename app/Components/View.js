@@ -38,7 +38,7 @@ function View(props) {
 					  						{getHoneyDo.map( function (task,i){
                            						
                            						return(
-                           						<li key={i}> {task.HoneyDo} ({task.BrowniePoints} BP's))
+                           						<li key={i}> {task.HoneyDo} ({task.BrowniePoints} BP's)
                            							<button 
                            								type= "button" 
                            								onClick= {function()

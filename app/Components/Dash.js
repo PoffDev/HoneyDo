@@ -35,7 +35,7 @@ function Dash(props) {
 
 									{getHoneyDo.map( function (task,i){
                            						
-                           						return(<li key={i}> {task.HoneyDo} ({task.BrowniePoints} BP's))
+                           						return(<li key={i}> {task.HoneyDo} ({task.BrowniePoints} BP's)
                            							<button 
                            								type= "button" 
                            								onClick= {function()

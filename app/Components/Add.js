@@ -44,7 +44,7 @@ function Add(props) {
 
 	    			<div className = "col-md-1">
 
-	    				<Link to="/Home"><button type="button" className="btn btn-danger">Log Out</button></Link>
+	    				<Link to="/Dash"><button type="button" className="btn btn-danger">Log Out</button></Link>
 
 	    			</div>
 

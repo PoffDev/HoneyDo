@@ -27176,7 +27176,7 @@
 					{ className: 'col-md-1' },
 					React.createElement(
 						Link,
-						{ to: '/Home' },
+						{ to: '/Dash' },
 						React.createElement(
 							'button',
 							{ type: 'button', className: 'btn btn-danger' },
@@ -27434,7 +27434,7 @@
 											task.HoneyDo,
 											' (',
 											task.BrowniePoints,
-											' BP\'s))',
+											' BP\'s)',
 											React.createElement(
 												'button',
 												{
@@ -28423,7 +28423,7 @@
 													task.HoneyDo,
 													' (',
 													task.BrowniePoints,
-													' BP\'s))',
+													' BP\'s)',
 													React.createElement(
 														'button',
 														{
@@ -28567,7 +28567,7 @@
 	
 			this.context.router.push({
 	
-				pathname: '/add',
+				pathname: '/Dash',
 				state: {
 					HoneyDo: this.state.HoneyDo,
 					BrowniePoints: this.state.BrowniePoints,

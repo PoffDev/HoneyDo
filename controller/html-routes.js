@@ -161,11 +161,11 @@ module.exports = function(app) {
     
     db.users.findAndModify({
       query: {"_id": mongojs.ObjectId(req.body.user)}, 
-      update: {$set: {"task.0.Done": false} },
+      update: {$set: {"task.0.Done": true} },
       new: true
     }, function (err, doc){
 
-        console.log('BrowniePoints = ' + typeof doc.task[0].BrowniePoints)
+        console.log('set to true fired');
         
         db.users.findAndModify({
 
@@ -175,9 +175,18 @@ module.exports = function(app) {
                           multi:true
                         }, function (err, docs){
 
-                            if (err) throw err;
+                            console.log('find and modify fired');
 
-                            res.send(docs);
+                            db.users.update({}, {$pull: {"task": {"Done": true}}}, function (err, docs) {
+
+                              console.log( 'update and delete')
+                              if (err) throw err;
+
+                             res.send(docs)
+                              
+                            });
+                            //delete an array mongo call
+                            //db.users.update({}, {$pull: {"task": {"Done": true}}});
                           });
       
       if (err) throw err;

@@ -36,7 +36,7 @@ var AddContainer = React.createClass({
 
 		this.context.router.push({
 
-			pathname:'/add',
+			pathname:'/Dash',
 			state:{
 				HoneyDo: this.state.HoneyDo,
 				BrowniePoints: this.state.BrowniePoints,
