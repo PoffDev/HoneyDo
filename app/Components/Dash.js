@@ -5,9 +5,13 @@ var Link = ReactRouter.Link;
 
 function Dash(props) {
 
+	var getHoneyDo = props.getHoneyDo;
+
+	console.log(getHoneyDo)
+
 	var getRewards = props.getRewards
 
-	console.log(getRewards)
+	//console.log(getRewards)
 
 	return (
 
@@ -29,10 +33,16 @@ function Dash(props) {
 								<div className="panel-body">
 									<span>
 
-									{getRewards.map( function (reward,i){
+									{getHoneyDo.map( function (task,i){
                            						
-                           						return(<li key={i}> {reward.Reward} ({reward.PointValue} BP's)
-                           							<button type="button" className="btn btn-link">Redeem</button>
+                           						return(<li key={i}> {task.HoneyDo} ({task.BrowniePoints} BP's))
+                           							<button 
+                           								type= "button" 
+                           								onClick= {function()
+                           									{props.completeTask(i)}} 
+                           								className="btn btn-link">Honey, I'm Done!
+                           								</button>
+
                            						</li>)
         					        })}
 

@@ -27386,9 +27386,13 @@
 	
 	function Dash(props) {
 	
+		var getHoneyDo = props.getHoneyDo;
+	
+		console.log(getHoneyDo);
+	
 		var getRewards = props.getRewards;
 	
-		console.log(getRewards);
+		//console.log(getRewards)
 	
 		return React.createElement(
 			'div',
@@ -27421,20 +27425,25 @@
 								React.createElement(
 									'span',
 									null,
-									getRewards.map(function (reward, i) {
+									getHoneyDo.map(function (task, i) {
 	
 										return React.createElement(
 											'li',
 											{ key: i },
 											' ',
-											reward.Reward,
+											task.HoneyDo,
 											' (',
-											reward.PointValue,
-											' BP\'s)',
+											task.BrowniePoints,
+											' BP\'s))',
 											React.createElement(
 												'button',
-												{ type: 'button', className: 'btn btn-link' },
-												'Redeem'
+												{
+													type: 'button',
+													onClick: function onClick() {
+														props.completeTask(i);
+													},
+													className: 'btn btn-link' },
+												'Honey, I\'m Done!'
 											)
 										);
 									})
@@ -30109,6 +30118,7 @@
 	      message: 'Click to see more tips',
 	      userID: localStorage.getItem('_id'),
 	      points: 0,
+	      tasks: [],
 	      rewards: []
 	    };
 	  },
@@ -30122,6 +30132,16 @@
 	    } else {
 	
 	      var self = this;
+	
+	      //Pull HoneyDo's
+	      helpers.findHoneyDo().then(function (response) {
+	
+	        //console.log(response.data[0].task)
+	
+	        self.setState({
+	          tasks: response.data[0].task
+	        });
+	      });
 	
 	      //Pull Points
 	      helpers.getPoints().then(function (response) {
@@ -30164,6 +30184,7 @@
 	      message: this.state.message,
 	      onClick: this.onClick,
 	      updatePoints: this.state.points,
+	      getHoneyDo: this.state.tasks,
 	      getRewards: this.state.rewards });
 	  }
 	});

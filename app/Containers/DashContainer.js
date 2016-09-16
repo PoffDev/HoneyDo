@@ -13,6 +13,7 @@ var DashContainer = React.createClass({
     		message: 'Click to see more tips',
     		userID: localStorage.getItem('_id'),
         points: 0,
+        tasks: [],
         rewards: [],
     	};
 
@@ -27,6 +28,17 @@ var DashContainer = React.createClass({
   		} else {
 
         var self = this
+
+        //Pull HoneyDo's
+        helpers.findHoneyDo().then(function(response){
+
+          //console.log(response.data[0].task)
+
+          self.setState({
+            tasks: response.data[0].task,
+          });
+
+        });
 
         //Pull Points
         helpers.getPoints().then(function(response){
@@ -84,6 +96,7 @@ var DashContainer = React.createClass({
 				message = {this.state.message}
 				onClick = { this.onClick } 
         updatePoints = {this.state.points}
+        getHoneyDo = {this.state.tasks}
         getRewards = {this.state.rewards} />
 		)
 	}
