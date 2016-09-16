@@ -27386,6 +27386,10 @@
 	
 	function Dash(props) {
 	
+		var points = props.updatePoints;
+	
+		console.log(points);
+	
 		return React.createElement(
 			'div',
 			null,
@@ -27420,7 +27424,7 @@
 									React.createElement(
 										'h1',
 										null,
-										'100'
+										props.updatePoints
 									),
 									React.createElement(
 										'p',
@@ -28565,6 +28569,18 @@
 			}.bind(this));
 		},
 	
+		getPoints: function getPoints() {
+	
+			var user = localStorage.getItem('_id');
+	
+			return axios.get('/getpoints', { user: user }).then(function (response) {
+	
+				console.log(response.data[0].Points);
+	
+				return response;
+			}.bind(this));
+		},
+	
 		addTask: function addTask(HoneyDo, BrowniePoints, CompleteBy, Done) {
 	
 			var task = {
@@ -28598,6 +28614,15 @@
 			}.bind(this));
 		},
 	
+		// completeTask: function (true) {
+	
+		// 	return axios.post('/completeTask', {completeTask: completeTask})
+		// 		.then(function(response){
+		// 			console.log('changed to true')
+	
+		// 		}.bind(this));
+		// },
+	
 		//populate tasks by user
 		//add task by user
 		//add point value by user
@@ -28613,6 +28638,7 @@
 				var partner1 = response.data.partner1;
 				var partner2 = response.data.partner2;
 				var password = response.data.password;
+				var points = 0;
 			}.bind(this));
 		},
 	
@@ -30019,17 +30045,40 @@
 	  displayName: 'DashContainer',
 	
 	
+	  contextTypes: {
+	    router: React.PropTypes.object
+	  },
+	
 	  getInitialState: function getInitialState() {
 	    return {
 	      message: 'Click to see more tips',
-	      userID: localStorage.getItem('_id')
+	      userID: localStorage.getItem('_id'),
+	      points: 0
 	    };
 	  },
 	
 	  componentWillMount: function componentWillMount() {
+	
 	    if (this.state.userID === null) {
 	      this.context.router.push({
 	        pathname: '/'
+	      });
+	    } else {
+	
+	      var self = this;
+	
+	      helpers.getPoints().then(function (response) {
+	
+	        console.log('dash container ' + response.data[0].Points);
+	
+	        self.setState({
+	          points: response.data[0].Points
+	        });
+	      });
+	
+	      this.context.router.push({
+	        pathname: '/Dash'
+	
 	      });
 	    }
 	  },
@@ -30046,7 +30095,8 @@
 	
 	    return React.createElement(Dash, {
 	      message: this.state.message,
-	      onClick: this.onClick });
+	      onClick: this.onClick,
+	      updatePoints: this.state.points });
 	  }
 	});
 	

@@ -5,6 +5,10 @@ var Link = ReactRouter.Link;
 
 function Dash(props) {
 
+	var points = props.updatePoints;
+
+	console.log(points)
+
 	return (
 
 	    	<div>
@@ -23,7 +27,7 @@ function Dash(props) {
 									</div>
 								  
 								<div className="panel-body">
-									<span><h1>100</h1><p>pts</p></span>
+									<span><h1>{props.updatePoints}</h1><p>pts</p></span>
 								</div>
 							</div>
 

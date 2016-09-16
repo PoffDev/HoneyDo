@@ -4,20 +4,43 @@ var Dash = require('../Components/Dash');
 
 var DashContainer = React.createClass({
 
+  contextTypes: {
+      router: React.PropTypes.object
+    },
+
 	getInitialState: function() {
     	return { 
     		message: 'Click to see more tips',
-    		userID: localStorage.getItem('_id')
+    		userID: localStorage.getItem('_id'),
+        points: 0
     	};
 
   	},
 
   	componentWillMount: function (){
+
   		if (this.state.userID === null){
   			this.context.router.push({
   				pathname: '/'
   			})
-  		}
+  		} else {
+
+        var self = this
+
+        helpers.getPoints().then(function(response){
+
+        console.log('dash container ' + response.data[0].Points)
+
+        self.setState({
+          points: response.data[0].Points
+        })
+      })
+
+      this.context.router.push({
+        pathname: '/Dash',
+        
+        })
+      }
   	},
   
   	onClick: function() {
@@ -46,7 +69,8 @@ var DashContainer = React.createClass({
 		return(
 			<Dash 
 				message = {this.state.message}
-				onClick = { this.onClick } />
+				onClick = { this.onClick } 
+        updatePoints = {this.state.points}/>
 		)
 	}
 });

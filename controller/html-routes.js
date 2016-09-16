@@ -184,5 +184,18 @@ module.exports = function(app) {
 
     });
 
-  })
+  });
+
+  app.get('/getpoints', function(req, res) {
+
+    //console.log('getpoints hitting');
+
+     db.users.find({},{Points:1}, function (err, docs) {
+
+        console.log('get points db query ' + docs);
+
+        res.send(docs);
+      })
+    });
+  
 }

@@ -45,6 +45,20 @@ var helpers = {
 			}.bind(this));
 	},
 
+	getPoints: function (){
+
+		var user = localStorage.getItem('_id')
+
+		return axios.get('/getpoints', {user: user})
+			.then(function(response){
+
+				console.log(response.data[0].Points);
+
+				return response;
+				
+			}.bind(this));	
+	},
+
 	addTask: function (HoneyDo, BrowniePoints, CompleteBy, Done) {
 
 		var task = {
