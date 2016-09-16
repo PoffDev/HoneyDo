@@ -8,7 +8,10 @@ function View(props) {
 
 	var getHoneyDo = props.getHoneyDo;
 
+	console.log(getHoneyDo);
+
 	var getRewards = props.getRewards;
+
 
     return (
 
@@ -34,10 +37,16 @@ function View(props) {
 
 					  						{getHoneyDo.map( function (task,i){
                            						
-                           						return(<li key={i}> {task.HoneyDo} ({task.BrowniePoints} BP's)
-                           							<button type="button" className="btn btn-link">Honey, I'm Done!</button>
+                           						return(
+                           						<li key={i}> {task.HoneyDo} ({task.BrowniePoints} BP's))
+                           							<button 
+                           								type= "button" 
+                           								onClick= {function()
+                           									{props.completeTask(i)}} 
+                           								className="btn btn-link">Honey, I'm Done!
+                           								</button>
 
-                           							</li>)
+                           						</li>)
         					                	})}
 
 					  						</ul>

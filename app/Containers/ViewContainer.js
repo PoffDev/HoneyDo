@@ -14,8 +14,8 @@ var ViewContainer = React.createClass({
     		userID: localStorage.getItem('_id'),
         tasks: [],
         points: [],
+        complete: false,
         rewards: [],
-        rPointValue: [],
     	};
 
   	},
@@ -37,7 +37,6 @@ var ViewContainer = React.createClass({
 
           self.setState({
             tasks: response.data[0].task,
-            points: response.data[0].task
           });
 
         });
@@ -48,8 +47,7 @@ var ViewContainer = React.createClass({
           //console.log(response.data[0].reward)
 
           self.setState({
-            rewards: response.data[0].reward,
-            rPointValue: response.data[0].reward
+            rewards: response.data[0].reward
           });
 
         });
@@ -59,6 +57,23 @@ var ViewContainer = React.createClass({
         
         })
       }
+  },
+
+  completeTask: function(i){
+
+    console.log('task is: ' + i)
+
+    var self = this
+
+    self.setState({
+      complete: true,
+
+    })
+
+    console.log('state =' + this.state.complete)
+
+    //axios call update 
+
   },
 
 
@@ -75,12 +90,10 @@ var ViewContainer = React.createClass({
 
 
       return (
-      //map out this.state.tasks.map(function(task){})
       <View 
         getHoneyDo = {this.state.tasks}
-        getPoints = {this.state.tasks}
         getRewards = {this.state.rewards}
-        getRewardPoints = {this.state.rewards} />
+        completeTask = {this.completeTask} />
 
     )
 	}

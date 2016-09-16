@@ -68,7 +68,7 @@ module.exports = function(app) {
 
   app.get('/findHoneyDo', function(req, res) {
 
-    db.users.find({}, {"task.HoneyDo": 1, "task.BrowniePoints": 1}, function(err, docs){
+    db.users.find({}, {"task.HoneyDo": 1, "task.BrowniePoints": 1, "task.Completed": 1,}, function(err, docs){
 
       res.send(docs);
       if (err) throw err;
@@ -128,12 +128,6 @@ module.exports = function(app) {
   app.post('/add', function(req, res){
     console.log('hit')
     
-    //console.log("Body: " + req.body);
-    
-    //console.log("HoneyDo = " + req.body.HoneyDo);
-    
-    //var task = req.body.HoneyDo;
-    
 
       db.users.update({"_id": mongojs.ObjectId(req.body.user)}, { $push: {"task": req.body.task} }, function(err, docs) {
 
@@ -158,4 +152,37 @@ module.exports = function(app) {
       res.send(docs)
     })
   });
+
+  app.post('/completetask', function (req, res) {
+
+    console.log('complete task hit route');
+
+    console.log(req.body.user)
+    
+    db.users.findAndModify({
+      query: {"_id": mongojs.ObjectId(req.body.user)}, 
+      update: {$set: {"task.0.Done": false} },
+      new: true
+    }, function (err, doc){
+
+        console.log('BrowniePoints = ' + typeof doc.task[0].BrowniePoints)
+        
+        db.users.findAndModify({
+
+                          query: {"_id": mongojs.ObjectId(req.body.user)}, 
+                          update: {$inc: {"Points" : parseInt(doc.task[0].BrowniePoints)}},
+                          upsert: false,
+                          multi:true
+                        }, function (err, docs){
+
+                            if (err) throw err;
+
+                            res.send(docs);
+                          });
+      
+      if (err) throw err;
+
+    });
+
+  })
 }

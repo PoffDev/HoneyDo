@@ -82,6 +82,15 @@ var helpers = {
 			}.bind(this));
 	},
 
+	// completeTask: function (true) {
+
+	// 	return axios.post('/completeTask', {completeTask: completeTask})
+	// 		.then(function(response){
+	// 			console.log('changed to true')
+
+	// 		}.bind(this));
+	// },
+
 	//populate tasks by user
 	//add task by user
 		//add point value by user
@@ -98,6 +107,7 @@ var helpers = {
 					var partner1 = response.data.partner1;
 					var partner2 = response.data.partner2;
 					var password = response.data.password;
+					var points = 0;
 
 			}.bind(this));
 			

@@ -28305,6 +28305,8 @@
 	
 		var getHoneyDo = props.getHoneyDo;
 	
+		console.log(getHoneyDo);
+	
 		var getRewards = props.getRewards;
 	
 		return React.createElement(
@@ -28353,10 +28355,15 @@
 													task.HoneyDo,
 													' (',
 													task.BrowniePoints,
-													' BP\'s)',
+													' BP\'s))',
 													React.createElement(
 														'button',
-														{ type: 'button', className: 'btn btn-link' },
+														{
+															type: 'button',
+															onClick: function onClick() {
+																props.completeTask(i);
+															},
+															className: 'btn btn-link' },
 														'Honey, I\'m Done!'
 													)
 												);
@@ -30203,7 +30210,8 @@
 				email: '',
 				partner1: '',
 				partner2: '',
-				password: ''
+				password: '',
+				points: 0
 			};
 		},
 	
@@ -30224,7 +30232,8 @@
 					email: this.state.email,
 					partner1: this.state.partner1,
 					partner2: this.state.partner2,
-					password: this.state.password
+					password: this.state.password,
+					points: 0
 				}
 			});
 		},
@@ -30323,8 +30332,8 @@
 	      userID: localStorage.getItem('_id'),
 	      tasks: [],
 	      points: [],
-	      rewards: [],
-	      rPointValue: []
+	      complete: false,
+	      rewards: []
 	    };
 	  },
 	
@@ -30343,8 +30352,7 @@
 	        //console.log(response.data[0].task)
 	
 	        self.setState({
-	          tasks: response.data[0].task,
-	          points: response.data[0].task
+	          tasks: response.data[0].task
 	        });
 	      });
 	
@@ -30354,8 +30362,7 @@
 	        //console.log(response.data[0].reward)
 	
 	        self.setState({
-	          rewards: response.data[0].reward,
-	          rPointValue: response.data[0].reward
+	          rewards: response.data[0].reward
 	        });
 	      });
 	
@@ -30364,6 +30371,22 @@
 	
 	      });
 	    }
+	  },
+	
+	  completeTask: function completeTask(i) {
+	
+	    console.log('task is: ' + i);
+	
+	    var self = this;
+	
+	    self.setState({
+	      complete: true
+	
+	    });
+	
+	    console.log('state =' + this.state.complete);
+	
+	    //axios call update 
 	  },
 	
 	  //find all HoneyDo
@@ -30377,14 +30400,10 @@
 	
 	  render: function render() {
 	
-	    return (
-	      //map out this.state.tasks.map(function(task){})
-	      React.createElement(View, {
-	        getHoneyDo: this.state.tasks,
-	        getPoints: this.state.tasks,
-	        getRewards: this.state.rewards,
-	        getRewardPoints: this.state.rewards })
-	    );
+	    return React.createElement(View, {
+	      getHoneyDo: this.state.tasks,
+	      getRewards: this.state.rewards,
+	      completeTask: this.completeTask });
 	  }
 	});
 	

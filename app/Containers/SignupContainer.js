@@ -13,7 +13,8 @@ var SignupContainer = React.createClass({
 			email: '',
 			partner1: '',
 			partner2: '',
-			password: ''
+			password: '',
+			points: 0,
 		};
 	},
 	
@@ -34,7 +35,8 @@ var SignupContainer = React.createClass({
 				email: this.state.email,
 				partner1: this.state.partner1,
 				partner2: this.state.partner2,
-				password: this.state.password
+				password: this.state.password,
+				points: 0,
 			}
 		});
 
