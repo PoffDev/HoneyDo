@@ -55,30 +55,40 @@ module.exports = function(app) {
     res.sendFile('./App/Public/index.html');
   });
 
-  app.get('/findHoneyDo', function(req, res) {
+  app.get('/findHoneyDo/:_id', function(req, res) {
 
-    db.users.find({}, {"task.HoneyDo": 1, "task.BrowniePoints": 1, "task.Completed": 1,}, function(err, docs){
+    var ID = req.params._id;
 
-      res.send(docs);
-      if (err) throw err;
-    })
-  });
+    console.log(ID)
 
-  app.get('/findReward', function(req, res) {
-
-    db.users.find({}, {"reward.Reward": 1, "reward.PointValue": 1}, function(err, docs){
+    db.users.find({"_id": mongojs.ObjectId(ID)}, {"task.HoneyDo": 1, "task.BrowniePoints": 1, "task.Completed": 1,}, function(err, docs){
 
       res.send(docs);
       if (err) throw err;
     })
   });
 
+  app.get('/findReward/:_id', function(req, res) {
 
-  app.get('/getpoints', function(req, res) {
+    var ID = req.params._id;
+
+    console.log(ID)
+
+    db.users.find({"_id": mongojs.ObjectId(ID)}, {"reward.Reward": 1, "reward.PointValue": 1}, function(err, docs){
+
+      res.send(docs);
+      if (err) throw err;
+    })
+  });
+
+
+  app.get('/getpoints/:_id', function(req, res) {
+
+    var ID = req.params._id;
 
     //console.log('getpoints hitting');
 
-     db.users.find({},{Points:1}, function (err, docs) {
+     db.users.find({"_id": mongojs.ObjectId(ID)},{Points:1}, function (err, docs) {
 
         console.log('get points db query ' + docs);
 
@@ -89,7 +99,7 @@ module.exports = function(app) {
   // signup a user
   app.post('/Signup', function(req, res) {
     var user = req.body;
-    // console.log(user);
+    console.log(user);
     db.users.insert(user, function(err, docs) {
       if (err) throw err;
       console.log('saved to db');

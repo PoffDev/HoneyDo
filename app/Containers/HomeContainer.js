@@ -27,11 +27,11 @@ var HomeContainer = React.createClass({
 	signupUser: function(event){
 		event.preventDefault();
 
-		helpers.signupUser(this.state.email, this.state.partner1, this.state.partner2, this.state.password);
+		helpers.signupUser(this.state.partner1, this.state.partner2, this.state.email, this.state.password);
 
 		this.context.router.push({
 
-			pathname:'/Signup',
+			pathname:'/Home',
 			state:{
 				partner1: this.state.partner1,
 				partner2: this.state.partner2,
@@ -46,15 +46,14 @@ var HomeContainer = React.createClass({
 
 	link: function (){
 		this.context.router.push({
-			pathname: 'Login'
+			pathname: '/Login'
 		})
 	},
 
 	render: function() {
-		console.log(this)
+		//console.log(this)
 		return (
 			<Home
-				getInitialState = {this.getInitialState}
 				updateInputs={this.updateInputs}
 				signupUser={this.signupUser} 
 				link = {this.link}/>

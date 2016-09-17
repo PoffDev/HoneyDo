@@ -27102,7 +27102,7 @@
 			return React.createElement(
 				Router,
 				{ history: hashHistory },
-				React.createElement(Route, { path: '/Home', component: Home }),
+				React.createElement(Route, { path: '/Home', component: HomeContainer }),
 				React.createElement(Route, { path: '/Add', component: AddContainer }),
 				React.createElement(Route, { path: '/Dash', component: DashContainer }),
 				React.createElement(Route, { path: '/Login', component: LoginContainer }),
@@ -27578,7 +27578,7 @@
 							),
 							React.createElement(
 								'button',
-								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
+								{ type: 'submit', onClick: props.link, className: 'btn btn-lg btn-block btn-default' },
 								'Honey, I\'m Home'
 							)
 						)
@@ -28099,7 +28099,7 @@
 	
 			var user = localStorage.getItem('_id');
 	
-			return axios.get('/findHoneyDo', { user: user }).then(function (response) {
+			return axios.get('/findHoneyDo/' + user).then(function (response) {
 	
 				for (var i = 0; i < response.data[0].task.length; i++) {
 	
@@ -28117,7 +28117,7 @@
 	
 			var user = localStorage.getItem('_id');
 	
-			return axios.get('/findReward', { user: user }).then(function (response) {
+			return axios.get('/findReward/' + user).then(function (response) {
 	
 				for (var i = 0; i < response.data[0].reward.length; i++) {
 	
@@ -28135,9 +28135,7 @@
 	
 			var user = localStorage.getItem('_id');
 	
-			return axios.get('/getpoints', { user: user }).then(function (response) {
-	
-				//console.log(response.data[0].Points);
+			return axios.get('/getpoints/' + user).then(function (response) {
 	
 				return response;
 			}.bind(this));
@@ -29636,7 +29634,7 @@
 	      //Pull HoneyDo's
 	      helpers.findHoneyDo().then(function (response) {
 	
-	        //console.log(response.data[0].task)
+	        console.log(response);
 	
 	        self.setState({
 	          tasks: response.data[0].task
@@ -29770,7 +29768,7 @@
 	    localStorage.removeItem("_id");
 	
 	    this.context.router.push({
-	      pathname: '/'
+	      pathname: '/Home'
 	
 	    });
 	  },
@@ -29851,11 +29849,11 @@
 		signupUser: function signupUser(event) {
 			event.preventDefault();
 	
-			helpers.signupUser(this.state.email, this.state.partner1, this.state.partner2, this.state.password);
+			helpers.signupUser(this.state.partner1, this.state.partner2, this.state.email, this.state.password);
 	
 			this.context.router.push({
 	
-				pathname: '/Signup',
+				pathname: '/Home',
 				state: {
 					partner1: this.state.partner1,
 					partner2: this.state.partner2,
@@ -29869,14 +29867,13 @@
 	
 		link: function link() {
 			this.context.router.push({
-				pathname: 'Login'
+				pathname: '/Login'
 			});
 		},
 	
 		render: function render() {
-			console.log(this);
+			//console.log(this)
 			return React.createElement(Home, {
-				getInitialState: this.getInitialState,
 				updateInputs: this.updateInputs,
 				signupUser: this.signupUser,
 				link: this.link });

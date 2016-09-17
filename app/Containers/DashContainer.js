@@ -32,7 +32,7 @@ var DashContainer = React.createClass({
         //Pull HoneyDo's
         helpers.findHoneyDo().then(function(response){
 
-          //console.log(response.data[0].task)
+          console.log(response)
 
           self.setState({
             tasks: response.data[0].task,
@@ -79,6 +79,8 @@ var DashContainer = React.createClass({
 
         //Pull HoneyDo's
         helpers.findHoneyDo().then(function(response){
+
+
 
           //console.log(response.data[0].task)
 
@@ -187,7 +189,7 @@ var DashContainer = React.createClass({
       localStorage.removeItem("_id");
 
       this.context.router.push({
-        pathname: '/',
+        pathname: '/Home',
 
         });
     },

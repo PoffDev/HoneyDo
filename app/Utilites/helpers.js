@@ -7,7 +7,7 @@ var helpers = {
 
 		var user = localStorage.getItem('_id')
 
-		return axios.get('/findHoneyDo', {user: user})
+		return axios.get('/findHoneyDo/'+user)
 			.then(function(response){
 
 				for (var i = 0; i < response.data[0].task.length; i++) {
@@ -28,7 +28,7 @@ var helpers = {
 
 		var user = localStorage.getItem('_id')
 
-		return axios.get('/findReward', {user: user})
+		return axios.get('/findReward/'+user)
 			.then(function(response){
 
 				for (var i = 0; i < response.data[0].reward.length; i++) {
@@ -49,10 +49,8 @@ var helpers = {
 
 		var user = localStorage.getItem('_id')
 
-		return axios.get('/getpoints', {user: user})
+		return axios.get('/getpoints/'+user)
 			.then(function(response){
-
-				//console.log(response.data[0].Points);
 
 				return response;
 				
