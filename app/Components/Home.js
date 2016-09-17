@@ -4,6 +4,10 @@ var Link = ReactRouter.Link;
 
 function Home(props) {
 
+	console.log(props.getInitialState);
+
+
+
     return (
 
     	<div id= 'Home'>
@@ -28,7 +32,7 @@ function Home(props) {
 
 						<div className = "col-md-1">
 
-							<Link to="/SignUp"><button type="button" id="colorbutton" className="btn">@PoffDev</button></Link>
+							<a href="http://www.github.com/Poffdev"><button type="button" id="colorbutton" className="btn">@PoffDev</button></a>
 
 						</div>
 
@@ -80,7 +84,7 @@ function Home(props) {
 
 				            </div>
 
-		        			<button type="submit" onClick={props.link} className="btn btn-lg btn-block btn-default">Honey, I'm Home</button>
+		        			<button type="submit" className="btn btn-lg btn-block btn-default">Honey, I'm Home</button>
 		      
 		      			</form>
 

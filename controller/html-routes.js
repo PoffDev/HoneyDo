@@ -32,17 +32,6 @@ passport.use(new LocalStrategy({passReqToCallback : true},
   function(req, email, password, done) {
     console.log(email, password);
 
-    // Searching the ORM for the user in the database
-    // db.users.findOne({email: email}, function(err, user){
-    //   console.log("findONe Ran");
-    //   if (err) { return done(err); }
-    //   if (!user) { return done(null, false); }
-
-    //   // comparing user passwords - return if not a match
-    //   if (password !== user.password) { return done(null, false);}
-
-    //   return done(null, user);
-    // });
   }
 ));
 

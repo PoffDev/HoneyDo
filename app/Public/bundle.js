@@ -27471,6 +27471,8 @@
 	
 	function Home(props) {
 	
+		console.log(props.getInitialState);
+	
 		return React.createElement(
 			'div',
 			{ id: 'Home' },
@@ -27505,8 +27507,8 @@
 							'div',
 							{ className: 'col-md-1' },
 							React.createElement(
-								Link,
-								{ to: '/SignUp' },
+								'a',
+								{ href: 'http://www.github.com/Poffdev' },
 								React.createElement(
 									'button',
 									{ type: 'button', id: 'colorbutton', className: 'btn' },
@@ -27576,7 +27578,7 @@
 							),
 							React.createElement(
 								'button',
-								{ type: 'submit', onClick: props.link, className: 'btn btn-lg btn-block btn-default' },
+								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
 								'Honey, I\'m Home'
 							)
 						)
@@ -27742,32 +27744,19 @@
 					{ className: 'row' },
 					React.createElement(
 						'div',
-						{ className: 'col-md-10', id: 'honeydopic' },
+						{ className: 'col-md-11', id: 'honeydopic' },
 						React.createElement('img', { src: 'pics/blackright.png', alt: 'Big Logo', height: '41', width: '200' })
 					),
 					React.createElement(
 						'div',
-						{ className: 'col-md-1 ' },
+						{ className: 'col-md-1' },
 						React.createElement(
 							Link,
-							{ to: '/' },
+							{ to: '/Home' },
 							React.createElement(
 								'button',
 								{ type: 'button', id: 'colorbutton', className: 'btn' },
 								'Home'
-							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'col-md-1 ' },
-						React.createElement(
-							Link,
-							{ to: '/SignUp' },
-							React.createElement(
-								'button',
-								{ type: 'button', id: 'colorbutton', className: 'btn' },
-								'@PoffDev'
 							)
 						)
 					)
@@ -27781,10 +27770,20 @@
 					{ className: 'row' },
 					React.createElement(
 						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
+						{ className: 'col-md-5' },
+						React.createElement('img', { src: 'pics/melon.png', alt: 'Big Logo', height: '260', width: '275' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-md-6' },
 						React.createElement(
 							'form',
 							{ className: 'contact-form', onSubmit: props.loginUser },
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('img', { src: 'pics/logo.png', alt: 'Big Logo', height: '160', width: '450' })
+							),
 							React.createElement(
 								'div',
 								{ className: 'form-group' },
@@ -28199,7 +28198,7 @@
 	
 			var user = new UserModel(email, partner1, partner2, password);
 	
-			return axios.post('/signup', user).then(function (response) {
+			return axios.post('/Signup', user).then(function (response) {
 	
 				var email = response.data.email;
 				var partner1 = response.data.partner1;
@@ -29836,9 +29835,9 @@
 	
 		getInitialState: function getInitialState() {
 			return {
-				email: '',
 				partner1: '',
 				partner2: '',
+				email: '',
 				password: '',
 				points: 0
 			};
@@ -29856,11 +29855,11 @@
 	
 			this.context.router.push({
 	
-				pathname: '/SignUp',
+				pathname: '/Signup',
 				state: {
-					email: this.state.email,
 					partner1: this.state.partner1,
 					partner2: this.state.partner2,
+					email: this.state.email,
 					password: this.state.password,
 					points: 0
 				}
@@ -29877,6 +29876,7 @@
 		render: function render() {
 			console.log(this);
 			return React.createElement(Home, {
+				getInitialState: this.getInitialState,
 				updateInputs: this.updateInputs,
 				signupUser: this.signupUser,
 				link: this.link });
@@ -30079,7 +30079,7 @@
 	
 			this.context.router.push({
 	
-				pathname: '/SignUp',
+				pathname: '/Signup',
 				state: {
 					email: this.state.email,
 					partner1: this.state.partner1,
@@ -30093,7 +30093,7 @@
 	
 		link: function link() {
 			this.context.router.push({
-				pathname: 'Login'
+				pathname: '/Login'
 			});
 		},
 	

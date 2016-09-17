@@ -11,23 +11,19 @@ function Login(props) {
 
 	    			<div className = "row">
 
-	    				<div className = "col-md-10" id="honeydopic">
+	    				<div className = "col-md-11" id="honeydopic">
 
 	    					<img src="pics/blackright.png" alt="Big Logo" height="41" width="200" />
 
 	    				</div>
 
-	    				<div className = "col-md-1 ">
+	    				<div className = "col-md-1">
 
-							<Link to="/"><button type="button" id="colorbutton" className="btn">Home</button></Link>
-
-						</div>
-
-						<div className = "col-md-1 ">
-
-							<Link to="/SignUp"><button type="button" id="colorbutton" className="btn">@PoffDev</button></Link>
+							<Link to="/Home"><button type="button" id="colorbutton" className="btn">Home</button></Link>
 
 						</div>
+
+						
 
 					</div>
 
@@ -39,9 +35,19 @@ function Login(props) {
 
 			        <div className = "row">
 
-				        <div className = "col-md-6 col-md-offset-3">
+			        	<div className = "col-md-5">
+
+			        		<img src="pics/melon.png" alt="Big Logo" height="260" width="275" />
+
+			        	</div>
+
+				        <div className = "col-md-6">
 
 							<form className="contact-form" onSubmit={props.loginUser}>
+
+								<div className="form-group">
+					 			 <img src="pics/logo.png" alt="Big Logo" height="160" width="450" />
+								</div>
 
 								<div className="form-group">
 					 			 <input type="text" className="form-control" id="email" placeholder="Email" onChange={props.updateInputs} />

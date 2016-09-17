@@ -31,7 +31,7 @@ var SignupContainer = React.createClass({
 
 		this.context.router.push({
 
-			pathname:'/SignUp',
+			pathname:'/Signup',
 			state:{
 				email: this.state.email,
 				partner1: this.state.partner1,
@@ -46,7 +46,7 @@ var SignupContainer = React.createClass({
 
 	link: function (){
 		this.context.router.push({
-			pathname: 'Login'
+			pathname: '/Login'
 		})
 	},
 

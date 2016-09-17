@@ -122,7 +122,7 @@ var helpers = {
 
 		var user = new UserModel(email, partner1, partner2, password)
 
-			return axios.post('/signup', user)
+			return axios.post('/Signup', user)
 				.then(function(response) {
 
 					var email = response.data.email;
