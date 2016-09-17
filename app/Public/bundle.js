@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./app/public";
+/******/ 	__webpack_require__.p = "./App/public";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -27073,7 +27073,6 @@
 	
 	//Components
 	var Add = __webpack_require__(236);
-	//var Completed = require('../Components/Completed')
 	var Dash = __webpack_require__(238);
 	var Home = __webpack_require__(239);
 	var Login = __webpack_require__(240);
