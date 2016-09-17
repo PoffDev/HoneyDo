@@ -169,20 +169,27 @@ module.exports = function(app) {
 
     console.log('complete task hit route');
 
-    console.log(req.body.user)
+    console.log(req.body.taskID);
+
+    var taskID = req.body.taskID;
+
+    var $set = {};
+    $set["task."+taskID+".Done"] = true;
     
     db.users.findAndModify({
       query: {"_id": mongojs.ObjectId(req.body.user)}, 
-      update: {$set: {"task.0.Done": true} },
+      update: {$set: $set },
       new: true
     }, function (err, doc){
+
+        if (err) throw err
 
         console.log('set to true fired');
         
         db.users.findAndModify({
 
                           query: {"_id": mongojs.ObjectId(req.body.user)}, 
-                          update: {$inc: {"Points" : parseInt(doc.task[0].BrowniePoints)}},
+                          update: {$inc: {"Points" : parseInt(doc.task[taskID].BrowniePoints)}},
                           upsert: false,
                           multi:true
                         }, function (err, docs){
@@ -214,11 +221,16 @@ module.exports = function(app) {
 
     console.log('complete reward hit route');
 
-    console.log(req.body.user)
+    console.log(req.body.rewardID)
+
+    var rewardID = req.body.rewardID;
+
+    var $set = {};
+    $set["reward."+rewardID+".Redeemed"] = true;
     
     db.users.findAndModify({
       query: {"_id": mongojs.ObjectId(req.body.user)}, 
-      update: {$set: {"reward.0.Redeemed": true} },
+      update: {$set: $set },
       new: true
     }, function (err, doc){
 
@@ -227,7 +239,7 @@ module.exports = function(app) {
         db.users.findAndModify({
 
                           query: {"_id": mongojs.ObjectId(req.body.user)}, 
-                          update: {$inc: {"Points" : -(parseInt(doc.reward[0].PointValue))}},
+                          update: {$inc: {"Points" : -(parseInt(doc.reward[rewardID].PointValue))}},
                           upsert: false,
                           multi:true
                         }, function (err, docs){

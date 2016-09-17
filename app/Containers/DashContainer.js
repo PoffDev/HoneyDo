@@ -68,45 +68,43 @@ var DashContainer = React.createClass({
       }
   	},
 
-    completeTask: function(){
-
-      helpers.completeTask().then(function(response){
-          console.log('dash container helper fired')
-
-        });
+    completeTask: function(taskID){
 
       var self = this
 
-        //Pull HoneyDo's
-        helpers.findHoneyDo().then(function(response){
+      helpers.completeTask(taskID).then(function(response){
+          console.log('dash container helper fired')
 
+          //Pull HoneyDo's
+          helpers.findHoneyDo().then(function(response){
 
+            console.log(response.data);
 
-          //console.log(response.data[0].task)
+            self.setState({
+              tasks: response.data[0].task,
+            });
 
-          self.setState({
-            tasks: response.data[0].task,
           });
 
-        });
+          //Pull Points
+          helpers.getPoints().then(function(response){
 
-        //Pull Points
-        helpers.getPoints().then(function(response){
-
-        //console.log('dash container ' + response.data[0].Points)
-
-        self.setState({
-          points: response.data[0].Points
-          })
-        })
-
-        //Reward
-        helpers.findReward().then(function(response){
-
-          console.log(response.data[0].reward)
+          //console.log('dash container ' + response.data[0].Points)
 
           self.setState({
-            rewards: response.data[0].reward
+            points: response.data[0].Points
+            })
+          })
+
+          //Reward
+          helpers.findReward().then(function(response){
+
+            console.log(response.data[0].reward)
+
+            self.setState({
+              rewards: response.data[0].reward
+            });
+
           });
 
         });
@@ -117,16 +115,14 @@ var DashContainer = React.createClass({
         })
     },
 
-    completeReward: function(){
-
-      helpers.completeReward().then(function(response){
-          console.log('dash container helper fired')
-
-        });
+    completeReward: function(rewardID){
 
       var self = this
 
-        //Pull HoneyDo's
+      helpers.completeReward(rewardID).then(function(response){
+          console.log('dash container helper fired')
+
+          //Pull HoneyDo's
         helpers.findHoneyDo().then(function(response){
 
           //console.log(response.data[0].task)
@@ -157,6 +153,8 @@ var DashContainer = React.createClass({
           });
 
         });
+
+    });
 
         this.context.router.push({
         pathname: '/Dash',

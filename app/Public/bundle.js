@@ -28034,7 +28034,7 @@
 	  },
 	
 	  onClick: function onClick() {
-	    var messages = ["HoneyDo rewards can be anything and everything, the only limit is your imagination!", "Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!", "Think about it, Brownie Points can be both rewarding and Delicious!", "Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!", "Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
+	    var messages = ["Wash and fold the laundry.", "Clean the kitchen, wipe down counters and clean the sink.", "Empty/fill dishwasher", "Pick up the children's toys", "Make the beds.", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
 	
 	    var randomMessage = messages[Math.floor(Math.random() * messages.length)];
 	
@@ -28174,20 +28174,20 @@
 			}.bind(this));
 		},
 	
-		completeTask: function completeTask() {
+		completeTask: function completeTask(taskID) {
 	
 			var user = localStorage.getItem('_id');
 	
-			return axios.post('/completeTask', { user: user }).then(function (response) {
+			return axios.post('/completeTask', { user: user, taskID: taskID }).then(function (response) {
 				console.log('helpers deleted task');
 			}.bind(this));
 		},
 	
-		completeReward: function completeReward() {
+		completeReward: function completeReward(rewardID) {
 	
 			var user = localStorage.getItem('_id');
 	
-			return axios.post('/completereward', { user: user }).then(function (response) {
+			return axios.post('/completereward', { user: user, rewardID: rewardID }).then(function (response) {
 				console.log('helpers completed reward');
 			}.bind(this));
 		},
@@ -29668,41 +29668,41 @@
 	    }
 	  },
 	
-	  completeTask: function completeTask() {
-	
-	    helpers.completeTask().then(function (response) {
-	      console.log('dash container helper fired');
-	    });
+	  completeTask: function completeTask(taskID) {
 	
 	    var self = this;
 	
-	    //Pull HoneyDo's
-	    helpers.findHoneyDo().then(function (response) {
+	    helpers.completeTask(taskID).then(function (response) {
+	      console.log('dash container helper fired');
 	
-	      //console.log(response.data[0].task)
+	      //Pull HoneyDo's
+	      helpers.findHoneyDo().then(function (response) {
 	
-	      self.setState({
-	        tasks: response.data[0].task
+	        console.log(response.data);
+	
+	        self.setState({
+	          tasks: response.data[0].task
+	        });
 	      });
-	    });
 	
-	    //Pull Points
-	    helpers.getPoints().then(function (response) {
+	      //Pull Points
+	      helpers.getPoints().then(function (response) {
 	
-	      //console.log('dash container ' + response.data[0].Points)
+	        //console.log('dash container ' + response.data[0].Points)
 	
-	      self.setState({
-	        points: response.data[0].Points
+	        self.setState({
+	          points: response.data[0].Points
+	        });
 	      });
-	    });
 	
-	    //Reward
-	    helpers.findReward().then(function (response) {
+	      //Reward
+	      helpers.findReward().then(function (response) {
 	
-	      console.log(response.data[0].reward);
+	        console.log(response.data[0].reward);
 	
-	      self.setState({
-	        rewards: response.data[0].reward
+	        self.setState({
+	          rewards: response.data[0].reward
+	        });
 	      });
 	    });
 	
@@ -29712,41 +29712,41 @@
 	    });
 	  },
 	
-	  completeReward: function completeReward() {
-	
-	    helpers.completeReward().then(function (response) {
-	      console.log('dash container helper fired');
-	    });
+	  completeReward: function completeReward(rewardID) {
 	
 	    var self = this;
 	
-	    //Pull HoneyDo's
-	    helpers.findHoneyDo().then(function (response) {
+	    helpers.completeReward(rewardID).then(function (response) {
+	      console.log('dash container helper fired');
 	
-	      //console.log(response.data[0].task)
+	      //Pull HoneyDo's
+	      helpers.findHoneyDo().then(function (response) {
 	
-	      self.setState({
-	        tasks: response.data[0].task
+	        //console.log(response.data[0].task)
+	
+	        self.setState({
+	          tasks: response.data[0].task
+	        });
 	      });
-	    });
 	
-	    //Pull Points
-	    helpers.getPoints().then(function (response) {
+	      //Pull Points
+	      helpers.getPoints().then(function (response) {
 	
-	      //console.log('dash container ' + response.data[0].Points)
+	        //console.log('dash container ' + response.data[0].Points)
 	
-	      self.setState({
-	        points: response.data[0].Points
+	        self.setState({
+	          points: response.data[0].Points
+	        });
 	      });
-	    });
 	
-	    //Reward
-	    helpers.findReward().then(function (response) {
+	      //Reward
+	      helpers.findReward().then(function (response) {
 	
-	      console.log(response.data[0].reward);
+	        console.log(response.data[0].reward);
 	
-	      self.setState({
-	        rewards: response.data[0].reward
+	        self.setState({
+	          rewards: response.data[0].reward
+	        });
 	      });
 	    });
 	

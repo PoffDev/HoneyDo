@@ -94,22 +94,22 @@ var helpers = {
 			}.bind(this));
 	},
 
-	completeTask: function () {
+	completeTask: function (taskID) {
 
 		var user = localStorage.getItem('_id')
 
-		return axios.post('/completeTask', {user: user})
+		return axios.post('/completeTask', {user: user, taskID: taskID})
 			.then(function(response){
 				console.log('helpers deleted task')
 
 			}.bind(this));
 	},
 
-	completeReward: function () {
+	completeReward: function (rewardID) {
 
 		var user = localStorage.getItem('_id')
 
-		return axios.post('/completereward', {user: user})
+		return axios.post('/completereward', {user: user, rewardID})
 			.then(function(response){
 				console.log('helpers completed reward')
 
