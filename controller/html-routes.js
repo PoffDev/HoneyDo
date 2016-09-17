@@ -52,7 +52,7 @@ module.exports = function(app) {
 
   // entry for the React app
   app.get('/', function(req, res) {
-    res.sendFile('./App/Public/index.html');
+    res.sendFile(__dirname + './app/Public/index.html');
   });
 
   app.get('/findHoneyDo/:_id', function(req, res) {
