@@ -27084,7 +27084,7 @@
 	
 	
 	//Containers
-	var AddContainer = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../Containers/AddContainer\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var AddContainer = __webpack_require__(243);
 	var DashContainer = __webpack_require__(268);
 	var HomeContainer = __webpack_require__(269);
 	var LoginContainer = __webpack_require__(270);
@@ -27997,7 +27997,94 @@
 	module.exports = Reward;
 
 /***/ },
-/* 243 */,
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	var React = __webpack_require__(1);
+	var Add = __webpack_require__(236);
+	var helpers = __webpack_require__(244);
+	
+	var AddContainer = React.createClass({
+	  displayName: 'AddContainer',
+	
+	
+	  contextTypes: {
+	    router: React.PropTypes.object
+	  },
+	
+	  getInitialState: function getInitialState() {
+	    return {
+	      HoneyDo: '',
+	      BrowniePoints: '',
+	      CompleteBy: '',
+	      message: 'Need Some inspiration? Click me'
+	    };
+	  },
+	
+	  componentWillMount: function componentWillMount() {
+	    if (this.state.userID === null) {
+	      this.context.router.push({
+	        pathname: '/'
+	      });
+	    }
+	  },
+	
+	  onClick: function onClick() {
+	    var messages = ["Wash and fold the laundry.", "Clean the kitchen, wipe down counters and clean the sink.", "Empty/fill dishwasher", "Pick up the children's toys", "Wash the sheets and make the beds.", "Vacuum the carpet", "Take out the trash"];
+	
+	    var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+	
+	    this.setState({ message: randomMessage });
+	  },
+	
+	  updateInputs: function updateInputs(event) {
+	    this.setState(_defineProperty({}, event.target.id, event.target.value));
+	  },
+	
+	  addUserTask: function addUserTask(event) {
+	    event.preventDefault();
+	
+	    helpers.addTask(this.state.HoneyDo, this.state.BrowniePoints, this.state.CompleteBy);
+	
+	    this.context.router.push({
+	
+	      pathname: '/Dash',
+	      state: {
+	        HoneyDo: this.state.HoneyDo,
+	        BrowniePoints: this.state.BrowniePoints,
+	        CompleteBy: this.state.CompleteBy
+	      }
+	    });
+	  },
+	
+	  logout: function logout() {
+	
+	    localStorage.removeItem("_id");
+	
+	    this.context.router.push({
+	      pathname: '/'
+	
+	    });
+	  },
+	
+	  render: function render() {
+	    return React.createElement(Add, {
+	      message: this.state.message,
+	      onClick: this.onClick,
+	      logout: this.logout,
+	      updateInputs: this.updateInputs,
+	      addUserTask: this.addUserTask });
+	  }
+	
+	});
+	
+	module.exports = AddContainer;
+
+/***/ },
 /* 244 */
 /***/ function(module, exports, __webpack_require__) {
 

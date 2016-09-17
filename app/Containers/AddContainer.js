@@ -33,7 +33,7 @@ var AddContainer = React.createClass({
     	   "Empty/fill dishwasher",
     	   "Pick up the children's toys",
 		     "Wash the sheets and make the beds.",
-         "Vacuum the carpet"
+         "Vacuum the carpet",
          "Take out the trash"
     ];
     	
