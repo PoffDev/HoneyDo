@@ -32,12 +32,9 @@ var AddContainer = React.createClass({
     	   "Clean the kitchen, wipe down counters and clean the sink.", 
     	   "Empty/fill dishwasher",
     	   "Pick up the children's toys",
-		     "Make the beds.",
-		"A clean house leads to less stress, and also some much needed, uninterupted time with your TV!",
-	   	"The cleaner that garage, the easier it is to turn into a man cave!",
-		"A HoneyDo without a point value is a HoneyDo that wont get done!",
-		"2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later",
-		"Love is shown in your deeds, but more importantly in your Rewards"
+		     "Wash the sheets and make the beds.",
+         "Vacuum the carpet"
+         "Take out the trash"
     ];
     	
     	var randomMessage = messages[Math.floor(Math.random()*messages.length)];
