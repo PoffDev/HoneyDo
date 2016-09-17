@@ -31,7 +31,7 @@ input#form-control{
 #titleRow{
   text-align: center;
   padding-top: 15%;
-  padding-bottom: 3%;
+  padding-bottom: 1%;
 }
 
 #partner1{
@@ -60,7 +60,28 @@ input#form-control{
   border-bottom: #363635;
 
 }
+
 #panel {
+  background-color: #DCDDCD;
+  color: #363635;
+  border: transparent;
+  border-bottom: #363635;
+  border-style: solid !important;
+  border-width: 2px
+  border: #000000 !important;
+}
+
+#panelHome {
+  background-color: #363635;
+  color: #DCDDCD;
+  border: transparent;
+  border-bottom: #FFFFFF;
+  border-style: solid !important;
+  border-width: 2px
+  border: #363635 !important;
+}
+
+#Home {
   background-color: #DCDDCD;
   color: #363635;
   border: transparent;
@@ -79,9 +100,10 @@ input#form-control{
 }
 
 #about {
-  background-color: #DCDDCD;
+  background-color: #363635;
+  color: #DCDDCD;
   height: 525px; 
-  padding-top: 5%;
+  padding-top: 3%;
 }
 
 #aboutRow {

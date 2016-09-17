@@ -42,8 +42,7 @@ function Home(props) {
 
 						<div className = "row" id= "titleRow">
 
-							<h1>HoneyDO</h1>
-							<p>The app that helps you both, get what you want</p>
+							<img src="pics/logo.png" alt="Logo" height="150" width="450" />
 
 						</div>
 
@@ -93,10 +92,22 @@ function Home(props) {
 
 					<div className = "row">
 
+						<div className = "col-md-6 col-md-offset-3">
+
+							<h4>The app that helps you both, get what you want. Sign Up Today!</h4>
+
+						</div>
+
+					</div>
+
+					<br />
+
+					<div className = "row">
+
 						<div className = "col-md-4 col-md-offset-2">
 
-							<div className="panel panel-default" id="panel">
-								<div className="panel-heading" id="panel">
+							<div className="panel panel-default" id="panelHome">
+								<div className="panel-heading" id="panelHome">
 							    	<h3 className="panel-title">HAPPY WIFE</h3>
 							  	</div>
 	  							<div className="panel-body">
@@ -108,8 +119,8 @@ function Home(props) {
 
 						<div className = "col-md-4">
 
-							<div className="panel panel-default" id="panel">
-								<div className="panel-heading" id="panel">
+							<div className="panel panel-default" id="panelHome">
+								<div className="panel-heading" id="panelHome">
 							    	<h3 className="panel-title">HAPPY LIFE</h3>
 							  	</div>
 	  							<div className="panel-body">
@@ -125,8 +136,8 @@ function Home(props) {
 
 						<div className = "col-md-4 col-md-offset-2">
 
-							<div className="panel panel-default" id="panel">
-								<div className="panel-heading" id="panel">
+							<div className="panel panel-default" id="panelHome">
+								<div className="panel-heading" id="panelHome">
 							    	<h3 className="panel-title">HAPPY HUSBAND</h3>
 							  	</div>
 	  							<div className="panel-body">
@@ -138,12 +149,12 @@ function Home(props) {
 
 						<div className = "col-md-4">
 
-							<div className="panel panel-default" id="panel">
-								<div className="panel-heading" id="panel">
+							<div className="panel panel-default" id="panelHome">
+								<div className="panel-heading" id="panelHome">
 							    	<h3 className="panel-title">umm.. FREE STUFF!!! </h3>
 							  	</div>
 	  							<div className="panel-body">
-	   							 &emsp;&emsp;&emsp;&emsp;&emsp;Now here is the fun part. Guys, you know how it is slaving away across the house while your wife is away, you don't get no respect... Well now you can at least buy it. Save up those BrowniePoints and redeem them for rewards specified by your wife. Sunday's just got a little more quieter! 
+	   							 &emsp;&emsp;&emsp;&emsp;&emsp;Now here is the fun part. Guys, you know how it is slaving away across the house while your wife is away, you don't get no respect... Well now you can at least buy it. Save up those BrowniePoints and redeem them for rewards specified by your wife.  
 	  							</div>
 							</div>
 
@@ -161,7 +172,7 @@ function Home(props) {
 							
 							<div id = 'previewImage'>
 
-								<img src="http://placehold.it/950x425" />
+								<img src="pics/screen.png" alt="Logo" height="425" width="950" />
 
 							</div>
 									

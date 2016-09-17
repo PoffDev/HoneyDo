@@ -27630,16 +27630,7 @@
 						React.createElement(
 							'div',
 							{ className: 'row', id: 'titleRow' },
-							React.createElement(
-								'h1',
-								null,
-								'HoneyDO'
-							),
-							React.createElement(
-								'p',
-								null,
-								'The app that helps you both, get what you want'
-							)
+							React.createElement('img', { src: 'pics/logo.png', alt: 'Logo', height: '150', width: '450' })
 						),
 						React.createElement(
 							'form',
@@ -27704,13 +27695,27 @@
 						{ className: 'row' },
 						React.createElement(
 							'div',
+							{ className: 'col-md-6 col-md-offset-3' },
+							React.createElement(
+								'h4',
+								null,
+								'The app that helps you both, get what you want. Sign Up Today!'
+							)
+						)
+					),
+					React.createElement('br', null),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
 							{ className: 'col-md-4 col-md-offset-2' },
 							React.createElement(
 								'div',
-								{ className: 'panel panel-default', id: 'panel' },
+								{ className: 'panel panel-default', id: 'panelHome' },
 								React.createElement(
 									'div',
-									{ className: 'panel-heading', id: 'panel' },
+									{ className: 'panel-heading', id: 'panelHome' },
 									React.createElement(
 										'h3',
 										{ className: 'panel-title' },
@@ -27729,10 +27734,10 @@
 							{ className: 'col-md-4' },
 							React.createElement(
 								'div',
-								{ className: 'panel panel-default', id: 'panel' },
+								{ className: 'panel panel-default', id: 'panelHome' },
 								React.createElement(
 									'div',
-									{ className: 'panel-heading', id: 'panel' },
+									{ className: 'panel-heading', id: 'panelHome' },
 									React.createElement(
 										'h3',
 										{ className: 'panel-title' },
@@ -27755,10 +27760,10 @@
 							{ className: 'col-md-4 col-md-offset-2' },
 							React.createElement(
 								'div',
-								{ className: 'panel panel-default', id: 'panel' },
+								{ className: 'panel panel-default', id: 'panelHome' },
 								React.createElement(
 									'div',
-									{ className: 'panel-heading', id: 'panel' },
+									{ className: 'panel-heading', id: 'panelHome' },
 									React.createElement(
 										'h3',
 										{ className: 'panel-title' },
@@ -27777,10 +27782,10 @@
 							{ className: 'col-md-4' },
 							React.createElement(
 								'div',
-								{ className: 'panel panel-default', id: 'panel' },
+								{ className: 'panel panel-default', id: 'panelHome' },
 								React.createElement(
 									'div',
-									{ className: 'panel-heading', id: 'panel' },
+									{ className: 'panel-heading', id: 'panelHome' },
 									React.createElement(
 										'h3',
 										{ className: 'panel-title' },
@@ -27790,7 +27795,7 @@
 								React.createElement(
 									'div',
 									{ className: 'panel-body' },
-									'     Now here is the fun part. Guys, you know how it is slaving away across the house while your wife is away, you don\'t get no respect... Well now you can at least buy it. Save up those BrowniePoints and redeem them for rewards specified by your wife. Sunday\'s just got a little more quieter!'
+									'     Now here is the fun part. Guys, you know how it is slaving away across the house while your wife is away, you don\'t get no respect... Well now you can at least buy it. Save up those BrowniePoints and redeem them for rewards specified by your wife.'
 								)
 							)
 						)
@@ -27808,7 +27813,7 @@
 							React.createElement(
 								'div',
 								{ id: 'previewImage' },
-								React.createElement('img', { src: 'http://placehold.it/950x425' })
+								React.createElement('img', { src: 'pics/screen.png', alt: 'Logo', height: '425', width: '950' })
 							)
 						)
 					)
