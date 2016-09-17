@@ -7,7 +7,7 @@ function Dash(props) {
 
 	var getHoneyDo = props.getHoneyDo;
 
-	console.log(getHoneyDo)
+	//console.log(getHoneyDo)
 
 	var getRewards = props.getRewards
 

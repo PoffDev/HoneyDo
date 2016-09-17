@@ -107,6 +107,17 @@ var helpers = {
 			}.bind(this));
 	},
 
+	completeReward: function () {
+
+		var user = localStorage.getItem('_id')
+
+		return axios.post('/completereward', {user: user})
+			.then(function(response){
+				console.log('helpers completed reward')
+
+			}.bind(this));
+	},
+
 	signupUser: function (email, partner1, partner2, password) {
 
 		var user = new UserModel(email, partner1, partner2, password)

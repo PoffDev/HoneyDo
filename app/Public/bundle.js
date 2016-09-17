@@ -27088,7 +27088,7 @@
 	var LoginContainer = __webpack_require__(274);
 	var RewardContainer = __webpack_require__(275);
 	var SignupContainer = __webpack_require__(276);
-	var ViewContainer = __webpack_require__(277);
+	var ViewContainer = __webpack_require__(278);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27388,7 +27388,7 @@
 	
 		var getHoneyDo = props.getHoneyDo;
 	
-		console.log(getHoneyDo);
+		//console.log(getHoneyDo)
 	
 		var getRewards = props.getRewards;
 	
@@ -30378,7 +30378,7 @@
 	
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
-	var Signup = __webpack_require__(278);
+	var Signup = __webpack_require__(277);
 	var helpers = __webpack_require__(249);
 	
 	var SignupContainer = React.createClass({
@@ -30442,6 +30442,67 @@
 
 /***/ },
 /* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Link = ReactRouter.Link;
+	
+	function Signup(props) {
+	
+		return React.createElement(
+			'div',
+			{ id: 'Signup' },
+			React.createElement(
+				'div',
+				{ className: 'container text-center' },
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'form',
+							{ className: 'contact-form', onSubmit: props.signupUser },
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner1', placeholder: 'Partner 1', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Partner 2', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'button',
+								{ type: 'submit', onClick: props.link, className: 'btn btn-lg btn-block btn-default' },
+								'Signup'
+							)
+						)
+					)
+				)
+			)
+		);
+	};
+	
+	module.exports = Signup;
+
+/***/ },
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30539,67 +30600,6 @@
 	});
 	
 	module.exports = ViewContainer;
-
-/***/ },
-/* 278 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var ReactRouter = __webpack_require__(172);
-	var Link = ReactRouter.Link;
-	
-	function Signup(props) {
-	
-		return React.createElement(
-			'div',
-			{ id: 'Signup' },
-			React.createElement(
-				'div',
-				{ className: 'container text-center' },
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
-						React.createElement(
-							'form',
-							{ className: 'contact-form', onSubmit: props.signupUser },
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner1', placeholder: 'Partner 1', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Partner 2', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'button',
-								{ type: 'submit', onClick: props.link, className: 'btn btn-lg btn-block btn-default' },
-								'Signup'
-							)
-						)
-					)
-				)
-			)
-		);
-	};
-	
-	module.exports = Signup;
 
 /***/ }
 /******/ ]);

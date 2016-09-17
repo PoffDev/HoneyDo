@@ -84,6 +84,19 @@ module.exports = function(app) {
     })
   });
 
+
+  app.get('/getpoints', function(req, res) {
+
+    //console.log('getpoints hitting');
+
+     db.users.find({},{Points:1}, function (err, docs) {
+
+        console.log('get points db query ' + docs);
+
+        res.send(docs);
+      })
+    });
+
   // signup a user
   app.post('/Signup', function(req, res) {
     var user = req.body;
@@ -177,7 +190,7 @@ module.exports = function(app) {
 
                             console.log('find and modify fired');
 
-                            db.users.update({}, {$pull: {"task": {"Done": true}}}, function (err, docs) {
+                            db.users.update({"_id": mongojs.ObjectId(req.body.user)}, {$pull: {"task": {"Done": true}}}, function (err, docs) {
 
                               console.log( 'update and delete')
                               if (err) throw err;
@@ -195,16 +208,50 @@ module.exports = function(app) {
 
   });
 
-  app.get('/getpoints', function(req, res) {
 
-    //console.log('getpoints hitting');
 
-     db.users.find({},{Points:1}, function (err, docs) {
 
-        console.log('get points db query ' + docs);
+  app.post('/completereward', function (req, res) {
 
-        res.send(docs);
-      })
+    console.log('complete reward hit route');
+
+    console.log(req.body.user)
+    
+    db.users.findAndModify({
+      query: {"_id": mongojs.ObjectId(req.body.user)}, 
+      update: {$set: {"reward.0.Redeemed": true} },
+      new: true
+    }, function (err, doc){
+
+        console.log('completed reward set to true fired');
+        
+        db.users.findAndModify({
+
+                          query: {"_id": mongojs.ObjectId(req.body.user)}, 
+                          update: {$inc: {"Points" : -(parseInt(doc.reward[0].PointValue))}},
+                          upsert: false,
+                          multi:true
+                        }, function (err, docs){
+
+                            console.log('subtracted points fired');
+
+                            db.users.update({"_id": mongojs.ObjectId(req.body.user)}, {$pull: {"reward": {"Redeemed": true}}}, function (err, docs) {
+
+                              console.log( 'reward update and delete')
+                              if (err) throw err;
+
+                             res.send(docs)
+                              
+                            });
+                            //delete an array mongo call
+                            //db.users.update({}, {$pull: {"task": {"Done": true}}});
+                          });
+      
+      if (err) throw err;
+
     });
+
+  });
+
   
 }
