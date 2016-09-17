@@ -4,12 +4,12 @@ module.exports = {
   devtool: 'source-map',
 
   // This code will be compiled
-  entry: "./app/App.js",
+  entry: "./App/app.js",
 
   // Then output into this file
   output: {
-    filename: "app/public/bundle.js",
-    publicPath: './app/public'
+    filename: "App/public/bundle.js",
+    publicPath: './App/public'
   },
 
   module: {
