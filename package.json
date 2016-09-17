@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "dev": "webpack"
+    "dev": "webpack",
   },
   "license": "ISC",
   "dependencies": {
