@@ -29,7 +29,7 @@ function Signup(props) {
                  				<input type="password" className="form-control" id="password" placeholder="Password" onChange={props.updateInputs} />
                 			</div>
 
-                			<button type="submit" className="btn btn-lg btn-block btn-default">Signup</button>
+                			<button type="submit" onClick={props.link} className="btn btn-lg btn-block btn-default">Signup</button>
               
               			</form>
 

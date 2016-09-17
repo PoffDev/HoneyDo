@@ -1,4 +1,5 @@
 var React = require('react');
+var Router = require('react-router')
 var Signup = require('../Components/Signup');
 var helpers = require('../utilites/helpers');
 
@@ -37,9 +38,16 @@ var SignupContainer = React.createClass({
 				partner2: this.state.partner2,
 				password: this.state.password,
 				points: 0,
-			}
+			},
+
 		});
 
+	},
+
+	link: function (){
+		this.context.router.push({
+			pathname: 'Login'
+		})
 	},
 
 	render: function() {
@@ -47,7 +55,8 @@ var SignupContainer = React.createClass({
 		return (
 			<Signup
 				updateInputs={this.updateInputs}
-				signupUser={this.signupUser} />
+				signupUser={this.signupUser} 
+				link = {this.link}/>
 		)
 	}
 });

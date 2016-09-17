@@ -79,7 +79,7 @@ function Dash(props) {
 									{getRewards.map( function (reward,i){
                            						
                            						return(<li key={i}> {reward.Reward} ({reward.PointValue} BP's)
-                           							<button type="button" className="btn btn-link">Redeem</button>
+                           							<button onClick={props.completeTask} type="button" className="btn btn-link">Redeem</button>
                            						</li>)
         					        })}
 
@@ -147,7 +147,7 @@ function Dash(props) {
 
 		    			<div className = "col-md-1">
 
-		    				<Link to="/Home"><button type="button" className="btn btn-danger">Log Out</button></Link>
+		    				<button type="button" className="btn btn-danger" onClick={props.logout}>Log Out</button>
 
 		    			</div>
 

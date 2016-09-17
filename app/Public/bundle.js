@@ -27088,7 +27088,7 @@
 	var LoginContainer = __webpack_require__(274);
 	var RewardContainer = __webpack_require__(275);
 	var SignupContainer = __webpack_require__(276);
-	var ViewContainer = __webpack_require__(278);
+	var ViewContainer = __webpack_require__(277);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27519,7 +27519,7 @@
 											' BP\'s)',
 											React.createElement(
 												'button',
-												{ type: 'button', className: 'btn btn-link' },
+												{ onClick: props.completeTask, type: 'button', className: 'btn btn-link' },
 												'Redeem'
 											)
 										);
@@ -27617,13 +27617,9 @@
 						'div',
 						{ className: 'col-md-1' },
 						React.createElement(
-							Link,
-							{ to: '/Home' },
-							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-danger' },
-								'Log Out'
-							)
+							'button',
+							{ type: 'button', className: 'btn btn-danger', onClick: props.logout },
+							'Log Out'
 						)
 					)
 				)
@@ -28678,19 +28674,14 @@
 			}.bind(this));
 		},
 	
-		// completeTask: function (true) {
+		completeTask: function completeTask() {
 	
-		// 	return axios.post('/completeTask', {completeTask: completeTask})
-		// 		.then(function(response){
-		// 			console.log('changed to true')
+			var user = localStorage.getItem('_id');
 	
-		// 		}.bind(this));
-		// },
-	
-		//populate tasks by user
-		//add task by user
-		//add point value by user
-		//remove task by user
+			return axios.post('/completeTask', { user: user }).then(function (response) {
+				console.log('helpers deleted task');
+			}.bind(this));
+		},
 	
 		signupUser: function signupUser(email, partner1, partner2, password) {
 	
@@ -28724,8 +28715,6 @@
 						resolve("User is null No User by that email");
 						console.warn("No user or email");
 					}
-	
-					// this.isAuthenticated = true;
 				}.bind(this));
 			});
 		},
@@ -30170,12 +30159,65 @@
 	    }
 	  },
 	
+	  completeTask: function completeTask() {
+	
+	    helpers.completeTask().then(function (response) {
+	      console.log('dash container helper fired');
+	    });
+	
+	    var self = this;
+	
+	    //Pull HoneyDo's
+	    helpers.findHoneyDo().then(function (response) {
+	
+	      //console.log(response.data[0].task)
+	
+	      self.setState({
+	        tasks: response.data[0].task
+	      });
+	    });
+	
+	    //Pull Points
+	    helpers.getPoints().then(function (response) {
+	
+	      //console.log('dash container ' + response.data[0].Points)
+	
+	      self.setState({
+	        points: response.data[0].Points
+	      });
+	    });
+	
+	    //Reward
+	    helpers.findReward().then(function (response) {
+	
+	      console.log(response.data[0].reward);
+	
+	      self.setState({
+	        rewards: response.data[0].reward
+	      });
+	    });
+	
+	    this.context.router.push({
+	      pathname: '/Dash'
+	
+	    });
+	  },
 	  onClick: function onClick() {
 	    var messages = ["HoneyDo rewards can be anything and everything, the only limit is your imagination!", "Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!", "Think about it, Brownie Points can be both rewarding and Delicious!", "Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!", "Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
 	
 	    var randomMessage = messages[Math.floor(Math.random() * messages.length)];
 	
 	    this.setState({ message: randomMessage });
+	  },
+	
+	  logout: function logout() {
+	
+	    localStorage.removeItem("_id");
+	
+	    this.context.router.push({
+	      pathname: '/'
+	
+	    });
 	  },
 	
 	  render: function render() {
@@ -30185,7 +30227,9 @@
 	      onClick: this.onClick,
 	      updatePoints: this.state.points,
 	      getHoneyDo: this.state.tasks,
-	      getRewards: this.state.rewards });
+	      getRewards: this.state.rewards,
+	      completeTask: this.completeTask,
+	      logout: this.logout });
 	  }
 	});
 	
@@ -30333,7 +30377,8 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Signup = __webpack_require__(277);
+	var Router = __webpack_require__(172);
+	var Signup = __webpack_require__(278);
 	var helpers = __webpack_require__(249);
 	
 	var SignupContainer = React.createClass({
@@ -30374,6 +30419,13 @@
 					password: this.state.password,
 					points: 0
 				}
+	
+			});
+		},
+	
+		link: function link() {
+			this.context.router.push({
+				pathname: 'Login'
 			});
 		},
 	
@@ -30381,7 +30433,8 @@
 			console.log(this);
 			return React.createElement(Signup, {
 				updateInputs: this.updateInputs,
-				signupUser: this.signupUser });
+				signupUser: this.signupUser,
+				link: this.link });
 		}
 	});
 	
@@ -30389,67 +30442,6 @@
 
 /***/ },
 /* 277 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var ReactRouter = __webpack_require__(172);
-	var Link = ReactRouter.Link;
-	
-	function Signup(props) {
-	
-		return React.createElement(
-			'div',
-			{ id: 'Signup' },
-			React.createElement(
-				'div',
-				{ className: 'container text-center' },
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
-						React.createElement(
-							'form',
-							{ className: 'contact-form', onSubmit: props.signupUser },
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner1', placeholder: 'Partner 1', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Partner 2', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'div',
-								{ className: 'form-group' },
-								React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
-							),
-							React.createElement(
-								'button',
-								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
-								'Signup'
-							)
-						)
-					)
-				)
-			)
-		);
-	};
-	
-	module.exports = Signup;
-
-/***/ },
-/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30547,6 +30539,67 @@
 	});
 	
 	module.exports = ViewContainer;
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Link = ReactRouter.Link;
+	
+	function Signup(props) {
+	
+		return React.createElement(
+			'div',
+			{ id: 'Signup' },
+			React.createElement(
+				'div',
+				{ className: 'container text-center' },
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'form',
+							{ className: 'contact-form', onSubmit: props.signupUser },
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner1', placeholder: 'Partner 1', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Partner 2', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'button',
+								{ type: 'submit', onClick: props.link, className: 'btn btn-lg btn-block btn-default' },
+								'Signup'
+							)
+						)
+					)
+				)
+			)
+		);
+	};
+	
+	module.exports = Signup;
 
 /***/ }
 /******/ ]);

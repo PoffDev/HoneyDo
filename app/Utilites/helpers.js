@@ -96,19 +96,16 @@ var helpers = {
 			}.bind(this));
 	},
 
-	// completeTask: function (true) {
+	completeTask: function () {
 
-	// 	return axios.post('/completeTask', {completeTask: completeTask})
-	// 		.then(function(response){
-	// 			console.log('changed to true')
+		var user = localStorage.getItem('_id')
 
-	// 		}.bind(this));
-	// },
+		return axios.post('/completeTask', {user: user})
+			.then(function(response){
+				console.log('helpers deleted task')
 
-	//populate tasks by user
-	//add task by user
-		//add point value by user
-	//remove task by user
+			}.bind(this));
+	},
 
 	signupUser: function (email, partner1, partner2, password) {
 
@@ -146,8 +143,6 @@ var helpers = {
 						resolve("User is null No User by that email");
 						console.warn("No user or email")
 					}
-
-					// this.isAuthenticated = true;
 
 			}.bind(this))
 
