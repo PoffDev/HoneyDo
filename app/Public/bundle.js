@@ -27519,7 +27519,7 @@
 											' BP\'s)',
 											React.createElement(
 												'button',
-												{ onClick: props.completeTask, type: 'button', className: 'btn btn-link' },
+												{ onClick: props.completeReward, type: 'button', className: 'btn btn-link' },
 												'Redeem'
 											)
 										);
@@ -28680,6 +28680,15 @@
 	
 			return axios.post('/completeTask', { user: user }).then(function (response) {
 				console.log('helpers deleted task');
+			}.bind(this));
+		},
+	
+		completeReward: function completeReward() {
+	
+			var user = localStorage.getItem('_id');
+	
+			return axios.post('/completereward', { user: user }).then(function (response) {
+				console.log('helpers completed reward');
 			}.bind(this));
 		},
 	
@@ -30202,6 +30211,50 @@
 	
 	    });
 	  },
+	
+	  completeReward: function completeReward() {
+	
+	    helpers.completeReward().then(function (response) {
+	      console.log('dash container helper fired');
+	    });
+	
+	    var self = this;
+	
+	    //Pull HoneyDo's
+	    helpers.findHoneyDo().then(function (response) {
+	
+	      //console.log(response.data[0].task)
+	
+	      self.setState({
+	        tasks: response.data[0].task
+	      });
+	    });
+	
+	    //Pull Points
+	    helpers.getPoints().then(function (response) {
+	
+	      //console.log('dash container ' + response.data[0].Points)
+	
+	      self.setState({
+	        points: response.data[0].Points
+	      });
+	    });
+	
+	    //Reward
+	    helpers.findReward().then(function (response) {
+	
+	      console.log(response.data[0].reward);
+	
+	      self.setState({
+	        rewards: response.data[0].reward
+	      });
+	    });
+	
+	    this.context.router.push({
+	      pathname: '/Dash'
+	
+	    });
+	  },
 	  onClick: function onClick() {
 	    var messages = ["HoneyDo rewards can be anything and everything, the only limit is your imagination!", "Use the 'complete by' feature to help motivate your Honey by adding 25% more Brownie Poitns!", "Think about it, Brownie Points can be both rewarding and Delicious!", "Make sure to follow HoneyDo on social media to stay up to date with future updates and offers!", "Make sure to checkout our Seeds, our childrens version of HoneyDo, and put your kids to work for you!", "A clean house leads to less stress, and also some much needed, uninterupted time with your TV!", "The cleaner that garage, the easier it is to turn into a man cave!", "A HoneyDo without a point value is a HoneyDo that wont get done!", "2oz fresh honeydew juice, 1.5oz fresh lime juice, and 1.5oz Tequila. Thank us later", "Love is shown in your deeds, but more importantly in your Rewards"];
 	
@@ -30229,6 +30282,7 @@
 	      getHoneyDo: this.state.tasks,
 	      getRewards: this.state.rewards,
 	      completeTask: this.completeTask,
+	      completeReward: this.completeReward,
 	      logout: this.logout });
 	  }
 	});

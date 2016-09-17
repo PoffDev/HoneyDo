@@ -79,7 +79,7 @@ function Dash(props) {
 									{getRewards.map( function (reward,i){
                            						
                            						return(<li key={i}> {reward.Reward} ({reward.PointValue} BP's)
-                           							<button onClick={props.completeTask} type="button" className="btn btn-link">Redeem</button>
+                           							<button onClick={props.completeReward} type="button" className="btn btn-link">Redeem</button>
                            						</li>)
         					        })}
 

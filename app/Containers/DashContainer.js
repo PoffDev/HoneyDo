@@ -112,6 +112,53 @@ var DashContainer = React.createClass({
         this.context.router.push({
         pathname: '/Dash',
 
+        })
+    },
+
+    completeReward: function(){
+
+      helpers.completeReward().then(function(response){
+          console.log('dash container helper fired')
+
+        });
+
+      var self = this
+
+        //Pull HoneyDo's
+        helpers.findHoneyDo().then(function(response){
+
+          //console.log(response.data[0].task)
+
+          self.setState({
+            tasks: response.data[0].task,
+          });
+
+        });
+
+        //Pull Points
+        helpers.getPoints().then(function(response){
+
+        //console.log('dash container ' + response.data[0].Points)
+
+        self.setState({
+          points: response.data[0].Points
+          })
+        })
+
+        //Reward
+        helpers.findReward().then(function(response){
+
+          console.log(response.data[0].reward)
+
+          self.setState({
+            rewards: response.data[0].reward
+          });
+
+        });
+
+        this.context.router.push({
+        pathname: '/Dash',
+
         });
 
 },
@@ -156,6 +203,7 @@ var DashContainer = React.createClass({
         getHoneyDo = {this.state.tasks}
         getRewards = {this.state.rewards} 
         completeTask = {this.completeTask}
+        completeReward = {this.completeReward}
         logout = {this.logout}/>
 
 		)
