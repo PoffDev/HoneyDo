@@ -10,7 +10,7 @@ var DashContainer = React.createClass({
     
     getInitialState: function() {
     	return { 
-    		message: 'Click to see more tips',
+    		message: 'Welcome to your dashboard. Click on the "Add Task" or "Add Rewards" buttons to get started.',
     		userID: localStorage.getItem('_id'),
         points: 0,
         tasks: [],
@@ -192,6 +192,23 @@ var DashContainer = React.createClass({
         });
     },
 
+    link: function (){
+    this.context.router.push({
+      pathname: '/Dash'
+    })
+  },
+
+    viewLink: function (){
+      this.context.router.push({
+        pathname: '/Add'
+      })
+    },
+
+    rewLink: function (){
+      this.context.router.push({
+        pathname: '/Reward'
+      })
+    },
 	
 	render: function (){
 
@@ -204,6 +221,9 @@ var DashContainer = React.createClass({
         getRewards = {this.state.rewards} 
         completeTask = {this.completeTask}
         completeReward = {this.completeReward}
+        link = {this.link}
+        viewLink = {this.viewLink}
+        rewLink = {this.rewLink}
         logout = {this.logout}/>
 
 		)

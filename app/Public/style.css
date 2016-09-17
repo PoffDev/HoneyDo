@@ -1,43 +1,111 @@
 body {
-  padding-top: 50px;
+  background: #DCDDCD;
+  padding-top: 25px;
+  color: #363635 !important;;
   /*background: url(/images/background.jpg);*/ }
 
-#home {
-  background-color: #2FD620;
-  height: 525px;
-  color: #FFFFFF; }
+button {
+  color: #363635 !important;
+}
 
-#jumbo {
-  background: #425052; 
-  margin-top: 145px}
+input#form-control{
+  color: #363635 !important;
+}
+#background{
+  background: #DCDDCD;
+}
+
+.button#colorbutton.btn{
+  color: #363635 !important;
+}
+
+#Login{
+  margin-top: 3%;
+}
+
+#home {
+  background-color: #F15D58;
+  height: 535px;
+  color: #363635; }
+
+#titleRow{
+  text-align: center;
+  padding-top: 15%;
+  padding-bottom: 3%;
+}
+
+#partner1{
+  color: #363635 !important;
+}
+
+#partner2{
+  color: #363635;
+}
+
+#email{
+  color: #363635;
+}
+
+#password{
+  color: #363635;
+}
 
 #colorbutton{
   background-color: #FFFFFF !important;
   color: #CACECF;
 }
 
+#panel.panel-heading{
+  border: transparent;
+  border-bottom: #363635;
+
+}
 #panel {
-  background-color: #7EC478;
-  color: #FFFFFF;
+  background-color: #DCDDCD;
+  color: #363635;
+  border: transparent;
+  border-bottom: #363635;
+  border-style: solid !important;
+  border-width: 2px
+  border: #000000 !important;
+}
+
+#well {
+  background-color: #DCDDCD;
+  color: #363635;
+  border-style: solid !important;
+  border-width: 2px
+  border: #363635 !important;
 }
 
 #about {
-  background-color: #425052;
-  height: 525px; }
+  background-color: #DCDDCD;
+  height: 525px; 
+  padding-top: 5%;
+}
 
 #aboutRow {
   padding-top: 17%;
   text-align: center; }
 
 #preview {
-  background-color: #2FD620;
+  background-color: #F15D58;
   height: 525px; }
 
 #previewImage {
   margin-top: 5%; }
 
 #footer {
+  padding-top: 95px;
   margin-bottom: 0%; }
+
+#panel {
+  background-color: transparent !important;
+}
+
+#colorfont{
+  color: #F15D58;
+}
 
 .body {
   color: red; }

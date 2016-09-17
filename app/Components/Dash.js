@@ -23,11 +23,25 @@ function Dash(props) {
 
 	    			<div className = "row">
 
+	    				<div className = "col-md-6 col-md-offset-3">
+
+			    			<div className="well well-lg text-center" id="well" onClick={props.onClick}>
+
+			    				<div> <h5>{props.message}</h5> </div>
+
+			    			</div>
+
+			    		</div>
+
+		    		</div>
+
+	    			<div className = "row">
+
 	    				<div className = "col-md-4">
 
-	    					<div className="panel panel-default text-center">
-									<div className="panel-heading">
-										<h3 className="panel-title">View Task</h3>
+	    					<div className="panel panel-default text-center" id="panel">
+									<div className="panel-heading" id="panel" onClick={props.viewLink}>
+										<h3 className="panel-title">HoneyDo's</h3>
 									</div>
 								  
 								<div className="panel-body">
@@ -54,13 +68,13 @@ function Dash(props) {
 
 	    				<div className = "col-md-2 col-md-offset-1">
 
-	    					<div className="panel panel-default text-center">
-									<div className="panel-heading">
+	    					<div className="panel panel-default text-center" id="panel">
+									<div className="panel-heading" id="panel">
 										<h3 className="panel-title">Brownie Points</h3>
 									</div>
 								  
 								<div className="panel-body">
-									<span><h1>{props.updatePoints}</h1><p>pts</p></span>
+									<span><h1 id="colorfont">{props.updatePoints}</h1><p>pts</p></span>
 								</div>
 							</div>
 
@@ -68,8 +82,8 @@ function Dash(props) {
 
 		    			<div className = "col-md-4 col-md-offset-1">
 
-	    					<div className="panel panel-default text-center">
-									<div className="panel-heading">
+	    					<div className="panel panel-default text-center" id="panel">
+									<div className="panel-heading" id="panel" onClick={props.rewLink}>
 										<h3 className="panel-title">Available Rewards</h3>
 									</div>
 								  
@@ -77,9 +91,15 @@ function Dash(props) {
 									<span>
 
 									{getRewards.map( function (reward,i){
-                           						
-                           						return(<li key={i}> {reward.Reward} ({reward.PointValue} BP's)
-                           							<button onClick={props.completeReward} type="button" className="btn btn-link">Redeem</button>
+
+												return(<li key={i}> {reward.Reward} ({reward.PointValue} BP's)
+                           							<button 
+                           								type= "button" 
+                           								onClick= {function()
+                           									{props.completeReward(i)}} 
+                           								className="btn btn-link">Redeem!
+                           								</button>
+
                            						</li>)
         					        })}
 
@@ -91,69 +111,21 @@ function Dash(props) {
 
 		    		</div>
 
-		    		<br />
+		    		<div className = "row text-center" id="footer">
 
-		    		<div className = "row">
+		    			<div className = "row">
 
-		    			<div className = "col-md-2 col-md-offset-1">
+		    				<div className = "col-md-12">
 
-		    				<Link to="/add"><button type="button" className="btn btn-primary form-control">Add Tasks</button></Link>
+		    					<p onClick={props.logout}>Made with love from @Poffdev, click Here to say goodbye</p>
 
-		    			</div>
-
-		    			<div className = "col-md-2 col-md-offset-2">
-
-		    				<Link to="/view"><button type="button" className="btn btn-primary form-control">View Tasks</button></Link>
-
-		    			</div>
-
-		    			<div className = "col-md-2 col-md-offset-2">
-
-		    				<Link to="/reward"><button type="button" className="btn btn-primary form-control">Add Rewards</button></Link>
+		    				</div>
 
 		    			</div>
 
 		    		</div>
 
-		    		<br />
-
-		    		<div className = "row">
-
-		    			<div className = "col-md-6 col-md-offset-3">
-
-			    			<div className="well well-lg">
-
-			    				<div> <h5>{props.message}</h5> </div>
-
-			    			</div>
-
-			    		</div>
-
-		    		</div>
-
-		    		<div className = "row">
-
-		    			<div className = "col-md-2 col-md-offset-5">
-
-
-			    				<button type="button" className="btn btn-primary form-control" onClick={props.onClick}>More Tips</button>
-
-
-			    		</div>
-
-		    		</div>
-
-		    		<div className = "row">
-
-		    			<div className = "col-md-1">
-
-		    				<button type="button" className="btn btn-danger" onClick={props.logout}>Log Out</button>
-
-		    			</div>
-
-		    		</div>
-
-	    		</div>
+		    	</div>
 
 	    	</div>
 

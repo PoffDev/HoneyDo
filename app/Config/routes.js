@@ -23,10 +23,12 @@ var View = require('../Components/View')
 //Containers
 var AddContainer = require('../Containers/AddContainer');
 var DashContainer = require('../Containers/DashContainer');
+var HomeContainer = require('../Containers/HomeContainer');
 var LoginContainer = require('../Containers/LoginContainer');
 var RewardContainer = require('../Containers/RewardContainer');
 var SignupContainer = require('../Containers/SignupContainer');
 var ViewContainer = require('../Containers/ViewContainer');
+
 
 
 

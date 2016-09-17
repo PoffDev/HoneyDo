@@ -50,7 +50,7 @@
 	var ReactDom = __webpack_require__(34);
 	var Router = __webpack_require__(172).Router;
 	var Routes = __webpack_require__(235);
-	var Main = __webpack_require__(244);
+	var Main = __webpack_require__(242);
 	
 	//require('css file here');
 	
@@ -27076,19 +27076,20 @@
 	var Completed = __webpack_require__(238);
 	var Dash = __webpack_require__(239);
 	var Home = __webpack_require__(240);
-	var Login = __webpack_require__(243);
-	var Main = __webpack_require__(244);
-	var Redeem = __webpack_require__(245);
+	var Login = __webpack_require__(241);
+	var Main = __webpack_require__(242);
+	var Redeem = __webpack_require__(243);
 	var Reward = __webpack_require__(246);
 	var View = __webpack_require__(247);
 	
 	//Containers
 	var AddContainer = __webpack_require__(248);
 	var DashContainer = __webpack_require__(273);
-	var LoginContainer = __webpack_require__(274);
-	var RewardContainer = __webpack_require__(275);
-	var SignupContainer = __webpack_require__(276);
-	var ViewContainer = __webpack_require__(278);
+	var HomeContainer = __webpack_require__(274);
+	var LoginContainer = __webpack_require__(275);
+	var RewardContainer = __webpack_require__(276);
+	var SignupContainer = __webpack_require__(277);
+	var ViewContainer = __webpack_require__(279);
 	
 	var Routes = React.createClass({
 		displayName: 'Routes',
@@ -27215,26 +27216,9 @@
 				'div',
 				{ className: 'container-fluid' },
 				React.createElement(
-					'nav',
-					{ className: 'navbar navbar-default navbar-fixed-top' },
-					React.createElement(
-						'ul',
-						{ className: 'nav navbar-nav navbar-left' },
-						React.createElement(
-							Link,
-							{ to: '/Dash' },
-							React.createElement('img', { src: 'pics/allBlack.png', alt: 'Smiley face', height: '45', width: '45', style: style })
-						)
-					),
-					React.createElement(
-						'ul',
-						{ className: 'nav navbar-nav navbar-right' },
-						React.createElement(
-							Link,
-							{ to: '/Dash' },
-							'Sign Out'
-						)
-					)
+					'div',
+					{ className: 'col-md-11', id: 'honeydopic' },
+					React.createElement('img', { src: 'pics/blackright.png', alt: 'Logo', height: '41', width: '200' })
 				)
 			);
 		}
@@ -27406,17 +27390,40 @@
 					{ className: 'row' },
 					React.createElement(
 						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'div',
+							{ className: 'well well-lg text-center', id: 'well', onClick: props.onClick },
+							React.createElement(
+								'div',
+								null,
+								' ',
+								React.createElement(
+									'h5',
+									null,
+									props.message
+								),
+								' '
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
 						{ className: 'col-md-4' },
 						React.createElement(
 							'div',
-							{ className: 'panel panel-default text-center' },
+							{ className: 'panel panel-default text-center', id: 'panel' },
 							React.createElement(
 								'div',
-								{ className: 'panel-heading' },
+								{ className: 'panel-heading', id: 'panel', onClick: props.viewLink },
 								React.createElement(
 									'h3',
 									{ className: 'panel-title' },
-									'View Task'
+									'HoneyDo\'s'
 								)
 							),
 							React.createElement(
@@ -27456,10 +27463,10 @@
 						{ className: 'col-md-2 col-md-offset-1' },
 						React.createElement(
 							'div',
-							{ className: 'panel panel-default text-center' },
+							{ className: 'panel panel-default text-center', id: 'panel' },
 							React.createElement(
 								'div',
-								{ className: 'panel-heading' },
+								{ className: 'panel-heading', id: 'panel' },
 								React.createElement(
 									'h3',
 									{ className: 'panel-title' },
@@ -27474,7 +27481,7 @@
 									null,
 									React.createElement(
 										'h1',
-										null,
+										{ id: 'colorfont' },
 										props.updatePoints
 									),
 									React.createElement(
@@ -27491,10 +27498,10 @@
 						{ className: 'col-md-4 col-md-offset-1' },
 						React.createElement(
 							'div',
-							{ className: 'panel panel-default text-center' },
+							{ className: 'panel panel-default text-center', id: 'panel' },
 							React.createElement(
 								'div',
-								{ className: 'panel-heading' },
+								{ className: 'panel-heading', id: 'panel', onClick: props.rewLink },
 								React.createElement(
 									'h3',
 									{ className: 'panel-title' },
@@ -27519,8 +27526,13 @@
 											' BP\'s)',
 											React.createElement(
 												'button',
-												{ onClick: props.completeReward, type: 'button', className: 'btn btn-link' },
-												'Redeem'
+												{
+													type: 'button',
+													onClick: function onClick() {
+														props.completeReward(i);
+													},
+													className: 'btn btn-link' },
+												'Redeem!'
 											)
 										);
 									})
@@ -27529,97 +27541,20 @@
 						)
 					)
 				),
-				React.createElement('br', null),
 				React.createElement(
 					'div',
-					{ className: 'row' },
+					{ className: 'row text-center', id: 'footer' },
 					React.createElement(
 						'div',
-						{ className: 'col-md-2 col-md-offset-1' },
-						React.createElement(
-							Link,
-							{ to: '/add' },
-							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-primary form-control' },
-								'Add Tasks'
-							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'col-md-2 col-md-offset-2' },
-						React.createElement(
-							Link,
-							{ to: '/view' },
-							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-primary form-control' },
-								'View Tasks'
-							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'col-md-2 col-md-offset-2' },
-						React.createElement(
-							Link,
-							{ to: '/reward' },
-							React.createElement(
-								'button',
-								{ type: 'button', className: 'btn btn-primary form-control' },
-								'Add Rewards'
-							)
-						)
-					)
-				),
-				React.createElement('br', null),
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-6 col-md-offset-3' },
+						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'well well-lg' },
+							{ className: 'col-md-12' },
 							React.createElement(
-								'div',
-								null,
-								' ',
-								React.createElement(
-									'h5',
-									null,
-									props.message
-								),
-								' '
+								'p',
+								{ onClick: props.logout },
+								'Made with love from @Poffdev, click Here to say goodbye'
 							)
-						)
-					)
-				),
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-2 col-md-offset-5' },
-						React.createElement(
-							'button',
-							{ type: 'button', className: 'btn btn-primary form-control', onClick: props.onClick },
-							'More Tips'
-						)
-					)
-				),
-				React.createElement(
-					'div',
-					{ className: 'row' },
-					React.createElement(
-						'div',
-						{ className: 'col-md-1' },
-						React.createElement(
-							'button',
-							{ type: 'button', className: 'btn btn-danger', onClick: props.logout },
-							'Log Out'
 						)
 					)
 				)
@@ -27635,195 +27570,252 @@
 
 	'use strict';
 	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(241);
-	var Footer = __webpack_require__(242);
 	var Link = ReactRouter.Link;
 	
-	var Home = React.createClass({
-		displayName: 'Home',
+	function Home(props) {
 	
-	
-		render: function render() {
-	
-			var style = {
-				marginTop: "20px"
-	
-			};
-	
-			var align = {
-				textAlign: "center"
-			};
-	
-			return React.createElement(
+		return React.createElement(
+			'div',
+			{ id: 'Home' },
+			React.createElement(
 				'div',
-				null,
-				React.createElement(Nav, null),
+				{ className: 'containter-fluid', id: 'background' },
 				React.createElement(
 					'div',
-					{ className: 'containter' },
+					{ className: 'container', id: 'navigation' },
 					React.createElement(
 						'div',
-						{ className: 'container-fluid' },
+						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ id: 'home' },
+							{ className: 'col-md-10', id: 'honeydopic' },
+							React.createElement('img', { src: 'pics/blackright.png', alt: 'Big Logo', height: '41', width: '200' })
+						),
+						React.createElement(
+							'div',
+							{ className: 'col-md-1' },
 							React.createElement(
-								'div',
-								{ className: 'row' },
+								Link,
+								{ to: '/login' },
 								React.createElement(
-									'div',
-									{ className: 'col-md-8 col-md-offset-2' },
-									React.createElement(
-										'div',
-										{ className: 'jumbotron', id: 'jumbo' },
-										React.createElement('img', { src: 'pics/greenright.png', alt: 'Big Logo', height: '82', width: '400', style: style }),
-										React.createElement(
-											'div',
-											_defineProperty({ id: 'catchPhrase' }, 'id', align),
-											React.createElement(
-												'p',
-												null,
-												'The only way to get what either of you want'
-											)
-										),
-										React.createElement(
-											'div',
-											{ className: 'row' },
-											React.createElement(
-												'div',
-												{ className: 'col-md-1 col-md-offset-4' },
-												React.createElement(
-													Link,
-													{ to: '/login' },
-													React.createElement(
-														'button',
-														{ type: 'button', id: 'colorbutton', className: 'btn' },
-														'Login'
-													)
-												)
-											),
-											React.createElement(
-												'div',
-												{ className: 'col-md-1 col-md-offset-1' },
-												React.createElement(
-													Link,
-													{ to: '/SignUp' },
-													React.createElement(
-														'button',
-														{ type: 'button', id: 'colorbutton', className: 'btn' },
-														'Sign Up'
-													)
-												)
-											)
-										)
-									)
+									'button',
+									{ type: 'button', id: 'colorbutton', className: 'btn' },
+									'Login'
 								)
 							)
 						),
 						React.createElement(
 							'div',
-							{ id: 'about' },
+							{ className: 'col-md-1' },
 							React.createElement(
-								'div',
-								{ className: 'row', id: 'aboutRow' },
+								Link,
+								{ to: '/SignUp' },
 								React.createElement(
-									'div',
-									{ className: 'col-md-4' },
-									React.createElement(
-										'div',
-										{ className: 'panel panel-default', id: 'panel' },
-										React.createElement(
-											'div',
-											{ className: 'panel-body' },
-											React.createElement('i', { className: 'fa fa-list-ul fa-5x', 'aria-hidden': 'true' }),
-											React.createElement(
-												'h1',
-												null,
-												'Assign'
-											),
-											React.createElement(
-												'p',
-												null,
-												'Assign tasks, with "brownie" points, for your Hubby to complete'
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-4' },
-									React.createElement(
-										'div',
-										{ className: 'panel panel-default', id: 'panel' },
-										React.createElement(
-											'div',
-											{ className: 'panel-body' },
-											React.createElement('i', { className: 'fa fa-check fa-5x', 'aria-hidden': 'true' }),
-											React.createElement(
-												'h1',
-												null,
-												'Complete'
-											),
-											React.createElement(
-												'p',
-												null,
-												'Hubby completes those tasks to earn "brownie" points.'
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'col-md-4' },
-									React.createElement(
-										'div',
-										{ className: 'panel panel-default', id: 'panel' },
-										React.createElement(
-											'div',
-											{ className: 'panel-body' },
-											React.createElement('i', { className: 'fa fa-gift fa-5x', 'aria-hidden': 'true' }),
-											React.createElement(
-												'h1',
-												null,
-												'Redeem'
-											),
-											React.createElement(
-												'p',
-												null,
-												'Hubby redeems collected "brownie" points for prizes'
-											)
-										)
-									)
-								)
-							)
-						),
-						React.createElement(
-							'div',
-							{ id: 'preview' },
-							React.createElement(
-								'div',
-								{ className: 'row' },
-								React.createElement(
-									'div',
-									{ className: 'col-md-10 col-md-offset-1' },
-									React.createElement(
-										'div',
-										{ id: 'previewImage' },
-										React.createElement('img', { src: 'http://placehold.it/950x425' })
-									)
+									'button',
+									{ type: 'button', id: 'colorbutton', className: 'btn' },
+									'@PoffDev'
 								)
 							)
 						)
 					)
 				),
-				React.createElement(Footer, null)
-			);
-		}
-	});
+				React.createElement(
+					'div',
+					{ className: 'row', id: 'home' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
+						React.createElement(
+							'div',
+							{ className: 'row', id: 'titleRow' },
+							React.createElement(
+								'h1',
+								null,
+								'HoneyDO'
+							),
+							React.createElement(
+								'p',
+								null,
+								'The app that helps you both, get what you want'
+							)
+						),
+						React.createElement(
+							'form',
+							{ className: 'contact-form', onSubmit: props.signupUser },
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-6' },
+									React.createElement(
+										'div',
+										{ className: 'form-group form-group-lg' },
+										React.createElement('input', { type: 'text', className: 'form-control', id: 'partner1', placeholder: 'Husband/Boyfriend', onChange: props.updateInputs })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-6' },
+									React.createElement(
+										'div',
+										{ className: 'form-group form-group-lg' },
+										React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Wife/Girlfriend', onChange: props.updateInputs })
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'div',
+									{ className: 'col-md-6' },
+									React.createElement(
+										'div',
+										{ className: 'form-group form-group-lg' },
+										React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'col-md-6' },
+									React.createElement(
+										'div',
+										{ className: 'form-group form-group-lg' },
+										React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
+									)
+								)
+							),
+							React.createElement(
+								'button',
+								{ type: 'submit', onClick: props.link, className: 'btn btn-lg btn-block btn-default' },
+								'Honey, I\'m Home'
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ id: 'about' },
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-4 col-md-offset-2' },
+							React.createElement(
+								'div',
+								{ className: 'panel panel-default', id: 'panel' },
+								React.createElement(
+									'div',
+									{ className: 'panel-heading', id: 'panel' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'HAPPY WIFE'
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									'     Ladies let\'s be honest... Men suck at geting stuff done. HoneyDo is here to fix that. We take that boring old list from sitting on the kitchen counter the your Guy\'s fingertips. He\'ll never be able to say "I didn\'t see it" again!'
+								)
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'col-md-4' },
+							React.createElement(
+								'div',
+								{ className: 'panel panel-default', id: 'panel' },
+								React.createElement(
+									'div',
+									{ className: 'panel-heading', id: 'panel' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'HAPPY LIFE'
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									'     Alright guys, your probably thinking this is the your worst nightmare in the world. You can\'t possibly destroy that list in a believable way anymore... But guess what? There are rewards! treats! special favors! whatever you wanna call them.'
+								)
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-4 col-md-offset-2' },
+							React.createElement(
+								'div',
+								{ className: 'panel panel-default', id: 'panel' },
+								React.createElement(
+									'div',
+									{ className: 'panel-heading', id: 'panel' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'HAPPY HUSBAND'
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									'     So here\'s how it works. Ladies! you make up your HoneyDo list, just like normal. But for every task you asign, your going to give out BrowniePoints. Guys, you complete the task you get the BrowniePoints, it\'s really that simple.'
+								)
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'col-md-4' },
+							React.createElement(
+								'div',
+								{ className: 'panel panel-default', id: 'panel' },
+								React.createElement(
+									'div',
+									{ className: 'panel-heading', id: 'panel' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title' },
+										'umm.. FREE STUFF!!! '
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									'     Now here is the fun part. Guys, you know how it is slaving away across the house while your wife is away, you don\'t get no respect... Well now you can at least buy it. Save up those BrowniePoints and redeem them for rewards specified by your wife. Sunday\'s just got a little more quieter!'
+								)
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ id: 'preview' },
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-md-10 col-md-offset-1' },
+							React.createElement(
+								'div',
+								{ id: 'previewImage' },
+								React.createElement('img', { src: 'http://placehold.it/950x425' })
+							)
+						)
+					)
+				)
+			)
+		);
+	};
 	
 	module.exports = Home;
 
@@ -27837,146 +27829,77 @@
 	var ReactRouter = __webpack_require__(172);
 	var Link = ReactRouter.Link;
 	
-	var Nav = React.createClass({
-		displayName: 'Nav',
-	
-	
-		render: function render() {
-	
-			return React.createElement(
-				'div',
-				{ className: 'container-fluid' },
-				React.createElement(
-					'nav',
-					{ className: 'navbar navbar-default navbar-fixed-top' },
-					React.createElement(
-						'div',
-						{ className: 'container' },
-						React.createElement(
-							'ul',
-							{ className: 'nav navbar-nav navbar-right' },
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'Home'
-								)
-							),
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'About'
-								)
-							),
-							React.createElement(
-								'li',
-								{ role: 'presentation' },
-								React.createElement(
-									Link,
-									{ to: '/SignUp' },
-									'Sign Up'
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-	
-	module.exports = Nav;
-
-/***/ },
-/* 242 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	var React = __webpack_require__(1);
-	
-	var Footer = React.createClass({
-		displayName: "Footer",
-	
-	
-		render: function render() {
-	
-			return React.createElement(
-				"div",
-				{ className: "container-fluid" },
-				React.createElement(
-					"div",
-					{ id: "footer" },
-					React.createElement(
-						"nav",
-						{ className: "navbar navbar-default" },
-						React.createElement(
-							"div",
-							{ className: "container" },
-							React.createElement(
-								"ul",
-								{ className: "nav navbar-nav navbar-right" },
-								React.createElement(
-									"li",
-									{ role: "presentation" },
-									React.createElement(
-										"a",
-										{ href: "http://www.github.com/PoffDev" },
-										"Designed and Created with Love from PoffDev"
-									)
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-	
-	module.exports = Footer;
-
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var ReactRouter = __webpack_require__(172);
-	var Link = ReactRouter.Link;
-	
 	function Login(props) {
 	
 		return React.createElement(
 			'div',
-			{ className: 'container text-center' },
+			null,
 			React.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'container', id: 'navigation' },
 				React.createElement(
 					'div',
-					{ className: 'col-md-6 col-md-offset-3' },
+					{ className: 'row' },
 					React.createElement(
-						'form',
-						{ className: 'contact-form', onSubmit: props.loginUser },
+						'div',
+						{ className: 'col-md-10', id: 'honeydopic' },
+						React.createElement('img', { src: 'pics/blackright.png', alt: 'Big Logo', height: '41', width: '200' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-md-1 ' },
 						React.createElement(
-							'div',
-							{ className: 'form-group' },
-							React.createElement('input', { type: 'text', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
-						),
+							Link,
+							{ to: '/' },
+							React.createElement(
+								'button',
+								{ type: 'button', id: 'colorbutton', className: 'btn' },
+								'Home'
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'col-md-1 ' },
 						React.createElement(
-							'div',
-							{ className: 'form-group' },
-							React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
-						),
+							Link,
+							{ to: '/SignUp' },
+							React.createElement(
+								'button',
+								{ type: 'button', id: 'colorbutton', className: 'btn' },
+								'@PoffDev'
+							)
+						)
+					)
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'container text-center', id: 'Login' },
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'col-md-6 col-md-offset-3' },
 						React.createElement(
-							'button',
-							{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
-							'Login'
+							'form',
+							{ className: 'contact-form', onSubmit: props.loginUser },
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'text', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'div',
+								{ className: 'form-group' },
+								React.createElement('input', { type: 'password', className: 'form-control', id: 'password', placeholder: 'Password', onChange: props.updateInputs })
+							),
+							React.createElement(
+								'button',
+								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
+								'Login'
+							)
 						)
 					)
 				)
@@ -27987,7 +27910,7 @@
 	module.exports = Login;
 
 /***/ },
-/* 244 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28082,15 +28005,15 @@
 	module.exports = Main;
 
 /***/ },
-/* 245 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(172);
-	var Nav = __webpack_require__(241);
-	var Footer = __webpack_require__(242);
+	var Nav = __webpack_require__(244);
+	var Footer = __webpack_require__(245);
 	var Link = ReactRouter.Link;
 	
 	var Redeem = React.createClass({
@@ -28283,6 +28206,118 @@
 	});
 	
 	module.exports = Redeem;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(172);
+	var Link = ReactRouter.Link;
+	
+	var Nav = React.createClass({
+		displayName: 'Nav',
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				'div',
+				{ className: 'container-fluid' },
+				React.createElement(
+					'nav',
+					{ className: 'navbar navbar-default navbar-fixed-top' },
+					React.createElement(
+						'div',
+						{ className: 'container' },
+						React.createElement(
+							'ul',
+							{ className: 'nav navbar-nav navbar-right' },
+							React.createElement(
+								'li',
+								{ role: 'presentation' },
+								React.createElement(
+									Link,
+									{ to: '/SignUp' },
+									'Home'
+								)
+							),
+							React.createElement(
+								'li',
+								{ role: 'presentation' },
+								React.createElement(
+									Link,
+									{ to: '/SignUp' },
+									'About'
+								)
+							),
+							React.createElement(
+								'li',
+								{ role: 'presentation' },
+								React.createElement(
+									Link,
+									{ to: '/SignUp' },
+									'Sign Up'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = Nav;
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var React = __webpack_require__(1);
+	
+	var Footer = React.createClass({
+		displayName: "Footer",
+	
+	
+		render: function render() {
+	
+			return React.createElement(
+				"div",
+				{ className: "container-fluid" },
+				React.createElement(
+					"div",
+					{ id: "footer" },
+					React.createElement(
+						"nav",
+						{ className: "navbar navbar-default" },
+						React.createElement(
+							"div",
+							{ className: "container" },
+							React.createElement(
+								"ul",
+								{ className: "nav navbar-nav navbar-right" },
+								React.createElement(
+									"li",
+									{ role: "presentation" },
+									React.createElement(
+										"a",
+										{ href: "http://www.github.com/PoffDev" },
+										"Designed and Created with Love from PoffDev"
+									)
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+	
+	module.exports = Footer;
 
 /***/ },
 /* 246 */
@@ -30113,7 +30148,7 @@
 	
 	  getInitialState: function getInitialState() {
 	    return {
-	      message: 'Click to see more tips',
+	      message: 'Welcome to your dashboard. Click on the "Add Task" or "Add Rewards" buttons to get started.',
 	      userID: localStorage.getItem('_id'),
 	      points: 0,
 	      tasks: [],
@@ -30273,6 +30308,24 @@
 	    });
 	  },
 	
+	  link: function link() {
+	    this.context.router.push({
+	      pathname: '/Dash'
+	    });
+	  },
+	
+	  viewLink: function viewLink() {
+	    this.context.router.push({
+	      pathname: '/Add'
+	    });
+	  },
+	
+	  rewLink: function rewLink() {
+	    this.context.router.push({
+	      pathname: '/Reward'
+	    });
+	  },
+	
 	  render: function render() {
 	
 	    return React.createElement(Dash, {
@@ -30283,6 +30336,9 @@
 	      getRewards: this.state.rewards,
 	      completeTask: this.completeTask,
 	      completeReward: this.completeReward,
+	      link: this.link,
+	      viewLink: this.viewLink,
+	      rewLink: this.rewLink,
 	      logout: this.logout });
 	  }
 	});
@@ -30298,7 +30354,79 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var React = __webpack_require__(1);
-	var Login = __webpack_require__(243);
+	var Router = __webpack_require__(172);
+	var Home = __webpack_require__(240);
+	var helpers = __webpack_require__(249);
+	
+	var HomeContainer = React.createClass({
+		displayName: 'HomeContainer',
+	
+	
+		contextTypes: {
+			router: React.PropTypes.object
+		},
+	
+		getInitialState: function getInitialState() {
+			return {
+				email: '',
+				partner1: '',
+				partner2: '',
+				password: '',
+				points: 0
+			};
+		},
+	
+	
+		updateInputs: function updateInputs(event) {
+			this.setState(_defineProperty({}, event.target.id, event.target.value));
+		},
+	
+		signupUser: function signupUser(event) {
+			event.preventDefault();
+	
+			helpers.signupUser(this.state.email, this.state.partner1, this.state.partner2, this.state.password);
+	
+			this.context.router.push({
+	
+				pathname: '/SignUp',
+				state: {
+					email: this.state.email,
+					partner1: this.state.partner1,
+					partner2: this.state.partner2,
+					password: this.state.password,
+					points: 0
+				}
+	
+			});
+		},
+	
+		link: function link() {
+			this.context.router.push({
+				pathname: 'Login'
+			});
+		},
+	
+		render: function render() {
+			console.log(this);
+			return React.createElement(Home, {
+				updateInputs: this.updateInputs,
+				signupUser: this.signupUser,
+				link: this.link });
+		}
+	});
+	
+	module.exports = HomeContainer;
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	var React = __webpack_require__(1);
+	var Login = __webpack_require__(241);
 	var helpers = __webpack_require__(249);
 	var axios = __webpack_require__(250);
 	
@@ -30359,7 +30487,7 @@
 	module.exports = LoginContainer;
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30412,8 +30540,15 @@
 			});
 		},
 	
+		link: function link() {
+			this.context.router.push({
+				pathname: '/Dash'
+			});
+		},
+	
 		render: function render() {
 			return React.createElement(Reward, {
+				link: this.link,
 				updateInputs: this.updateInputs,
 				reward: this.reward });
 		}
@@ -30423,7 +30558,7 @@
 	module.exports = RewardContainer;
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30432,7 +30567,7 @@
 	
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
-	var Signup = __webpack_require__(277);
+	var Signup = __webpack_require__(278);
 	var helpers = __webpack_require__(249);
 	
 	var SignupContainer = React.createClass({
@@ -30495,7 +30630,7 @@
 	module.exports = SignupContainer;
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30556,7 +30691,7 @@
 	module.exports = Signup;
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

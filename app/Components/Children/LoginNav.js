@@ -16,21 +16,11 @@ var LoginNav = React.createClass({
 
 			<div className = "container-fluid">
 
-				<nav className = "navbar navbar-default navbar-fixed-top">
-					
-						<ul className="nav navbar-nav navbar-left">
-						  	<Link to="/Dash"><img src="pics/allBlack.png" alt="Smiley face" height="45" width="45" style={style} /></Link>
-						  	
-						</ul>
+				<div className = "col-md-11" id="honeydopic">
 
-						<ul className="nav navbar-nav navbar-right">
-							<Link to ="/Dash">Sign Out</Link>
+	    			<img src="pics/blackright.png" alt="Logo" height="41" width="200" />
 
-						</ul>
-
-					
-					
-				</nav>
+	    		</div>
 
 			</div>
 

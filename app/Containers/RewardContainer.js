@@ -43,9 +43,16 @@ var RewardContainer = React.createClass({
 		});
 	},
 
+	link: function (){
+		this.context.router.push({
+			pathname: '/Dash'
+		})
+	},
+
 	render: function() {
 		return (
 			<Reward
+				link = {this.link}
 				updateInputs = {this.updateInputs}
 				reward = {this.reward} />
 

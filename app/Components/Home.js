@@ -1,121 +1,181 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-var Nav = require('./Children/Nav');
-var Footer = require('./Children/Footer')
 var Link = ReactRouter.Link;
 
-var Home = React.createClass({
-
-    render: function() {
-
-    	var style = {
-			marginTop: "20px",
-		
-		}
-
-		var align = {
-			textAlign: "center"
-		}
+function Home(props) {
 
     return (
 
-    	<div>
+    	<div id= 'Home'>
 
-    		<Nav />
+	    	<div className = "containter-fluid" id="background">
 
-    	<div className = "containter">
+	    		<div className = "container" id="navigation">
 
-    			<div className = 'container-fluid'>
-    				<div id = 'home'>
-							
-							<div className = "row">
+	    			<div className = "row">
 
-								<div className = "col-md-8 col-md-offset-2">
-									<div className = 'jumbotron' id = 'jumbo'>
+	    				<div className = "col-md-10" id="honeydopic">
 
-										<img src="pics/greenright.png" alt="Big Logo" height="82" width="400" style={style} />
-										
-											<div id = 'catchPhrase' id={align}>
-											<p>The only way to get what either of you want</p>
-											</div>
+	    					<img src="pics/blackright.png" alt="Big Logo" height="41" width="200" />
 
-										<div className="row">
+	    				</div>
 
-											<div className = "col-md-1 col-md-offset-4">
+	    				<div className = "col-md-1">
 
-												<Link to="/login"><button type="button" id="colorbutton" className="btn">Login</button></Link>
+							<Link to="/login"><button type="button" id="colorbutton" className="btn">Login</button></Link>
 
-											</div>
-
-											<div className = "col-md-1 col-md-offset-1">
-
-												<Link to="/SignUp"><button type="button" id="colorbutton" className="btn">Sign Up</button></Link>
-
-											</div>
-
-										</div>
-										
-									</div>
-
-								</div>
-
-							</div>	
-						
-					</div>
-				
-					<div id = 'about'>
-						<div className = 'row' id = 'aboutRow'>
-							<div className = 'col-md-4'>
-								<div className="panel panel-default" id="panel">
-				  					<div className="panel-body">
-										<i className="fa fa-list-ul fa-5x" aria-hidden="true"></i>
-										<h1>Assign</h1>
-										<p>Assign tasks, with "brownie" points, for your Hubby to complete</p>
-									</div>
-								</div>
-							</div>
-							<div className = 'col-md-4'>
-								<div className="panel panel-default" id="panel">
-				  					<div className="panel-body">
-										<i className="fa fa-check fa-5x" aria-hidden="true"></i>
-										<h1>Complete</h1>
-										<p>Hubby completes those tasks to earn "brownie" points.</p>
-									</div>
-								</div>
-							</div>
-							<div className = 'col-md-4'>
-								<div className="panel panel-default" id="panel">
-				  					<div className="panel-body">
-										<i className="fa fa-gift fa-5x" aria-hidden="true"></i>
-										<h1>Redeem</h1>
-										<p>Hubby redeems collected "brownie" points for prizes</p>
-									</div>
-								</div>
-							</div>
 						</div>
+
+						<div className = "col-md-1">
+
+							<Link to="/SignUp"><button type="button" id="colorbutton" className="btn">@PoffDev</button></Link>
+
+						</div>
+
 					</div>
 
-					<div id = 'preview'>
-							<div className = 'row'>
-								<div className = 'col-md-10 col-md-offset-1'>
-									<div id = 'previewImage'>
-
-										<img src="http://placehold.it/950x425" />
-
-									</div>
-								</div>
-							</div>
-					</div>
 				</div>
 
-	    </div>
+				<div className = "row" id = "home">
 
-	    	<Footer />
+					<div className = "col-md-6 col-md-offset-3">
 
-	    </div>
+						<div className = "row" id= "titleRow">
+
+							<h1>HoneyDO</h1>
+							<p>The app that helps you both, get what you want</p>
+
+						</div>
+
+						<form className="contact-form" onSubmit={props.signupUser}>
+
+							<div className = "row">
+
+								<div className = "col-md-6">
+		        					<div className="form-group form-group-lg">
+				              			<input type="text" className="form-control" id="partner1" placeholder="Husband/Boyfriend" onChange={props.updateInputs} />
+				            		</div>
+		        				</div>	
+
+		        				<div className = "col-md-6">
+				            		<div className="form-group form-group-lg">
+		          						<input type="text" className="form-control" id="partner2" placeholder="Wife/Girlfriend" onChange={props.updateInputs} />
+		        					</div>
+				            	</div>
+
+				            </div>
+
+				            <div className = "row">
+
+								<div className = "col-md-6">
+		        					<div className="form-group form-group-lg">
+		         			 			<input type="email" className="form-control" id="email" placeholder="Email" onChange={props.updateInputs} />
+		        					</div>
+		        				</div>	
+
+		        				<div className = "col-md-6">
+				            		<div className="form-group form-group-lg">
+		         						<input type="password" className="form-control" id="password" placeholder="Password" onChange={props.updateInputs} />
+		        					</div>
+				            	</div>
+
+				            </div>
+
+		        			<button type="submit" onClick={props.link} className="btn btn-lg btn-block btn-default">Honey, I'm Home</button>
+		      
+		      			</form>
+
+		      		</div>
+
+				</div>
+
+				<div id = 'about'>
+
+					<div className = "row">
+
+						<div className = "col-md-4 col-md-offset-2">
+
+							<div className="panel panel-default" id="panel">
+								<div className="panel-heading" id="panel">
+							    	<h3 className="panel-title">HAPPY WIFE</h3>
+							  	</div>
+	  							<div className="panel-body">
+	   							 &emsp;&emsp;&emsp;&emsp;&emsp;Ladies let's be honest... Men suck at geting stuff done. HoneyDo is here to fix that. We take that boring old list from sitting on the kitchen counter the your Guy's fingertips. He'll never be able to say "I didn't see it" again!
+	  							</div>
+							</div>
+
+						</div>
+
+						<div className = "col-md-4">
+
+							<div className="panel panel-default" id="panel">
+								<div className="panel-heading" id="panel">
+							    	<h3 className="panel-title">HAPPY LIFE</h3>
+							  	</div>
+	  							<div className="panel-body">
+	   							 &emsp;&emsp;&emsp;&emsp;&emsp;Alright guys, your probably thinking this is the your worst nightmare in the world. You can't possibly destroy that list in a believable way anymore... But guess what? There are rewards! treats! special favors! whatever you wanna call them. 
+	  							</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div className = "row">
+
+						<div className = "col-md-4 col-md-offset-2">
+
+							<div className="panel panel-default" id="panel">
+								<div className="panel-heading" id="panel">
+							    	<h3 className="panel-title">HAPPY HUSBAND</h3>
+							  	</div>
+	  							<div className="panel-body">
+	   							 &emsp;&emsp;&emsp;&emsp;&emsp;So here's how it works. Ladies! you make up your HoneyDo list, just like normal. But for every task you asign, your going to give out BrowniePoints. Guys, you complete the task you get the BrowniePoints, it's really that simple. 
+	  							</div>
+							</div>
+
+						</div>
+
+						<div className = "col-md-4">
+
+							<div className="panel panel-default" id="panel">
+								<div className="panel-heading" id="panel">
+							    	<h3 className="panel-title">umm.. FREE STUFF!!! </h3>
+							  	</div>
+	  							<div className="panel-body">
+	   							 &emsp;&emsp;&emsp;&emsp;&emsp;Now here is the fun part. Guys, you know how it is slaving away across the house while your wife is away, you don't get no respect... Well now you can at least buy it. Save up those BrowniePoints and redeem them for rewards specified by your wife. Sunday's just got a little more quieter! 
+	  							</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id = 'preview'>
+								
+					<div className = 'row'>
+								
+						<div className = 'col-md-10 col-md-offset-1'>
+							
+							<div id = 'previewImage'>
+
+								<img src="http://placehold.it/950x425" />
+
+							</div>
+									
+						</div>
+					
+					</div>
+				
+				</div>
+
+	    	</div>
+				
+	</div>
 
     	)
-	}
-});
+	};
 
 module.exports = Home;
