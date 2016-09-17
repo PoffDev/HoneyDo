@@ -99,6 +99,14 @@ input#form-control{
   border: #363635 !important;
 }
 
+#ideaWell {
+  margin-top: 5%;
+  background-color: #DCDDCD;
+  color: #363635;
+  border: transparent;
+  border-bottom: #363635;
+}
+
 #about {
   background-color: #363635;
   color: #DCDDCD;
@@ -127,6 +135,10 @@ input#form-control{
 
 #colorfont{
   color: #F15D58;
+}
+#ideaWell{
+  margin-top: 5%;
+  border-style: solid;
 }
 
 .body {

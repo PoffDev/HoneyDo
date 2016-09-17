@@ -5,6 +5,7 @@ var Link = ReactRouter.Link;
 var LoginNav = React.createClass({
 
 
+
 	render: function() {
 
 		var style = {
@@ -18,7 +19,7 @@ var LoginNav = React.createClass({
 
 				<div className = "col-md-11" id="honeydopic">
 
-	    			<img src="pics/blackright.png" alt="Logo" height="41" width="200" />
+	    			<Link to="/Dash"><img src="pics/blackright.png" alt="Logo" height="41" width="200" /></Link>
 
 	    		</div>
 

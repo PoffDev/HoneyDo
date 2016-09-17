@@ -9,14 +9,14 @@ var hashHistory = ReactRouter.hashHistory;
 
 //Components
 var Add = require('../Components/Add');
-var Completed = require('../Components/Completed')
+//var Completed = require('../Components/Completed')
 var Dash = require('../Components/Dash');
 var Home = require('../Components/Home');
 var Login = require('../Components/Login');
 var Main = require('../Components/Main');
-var Redeem = require('../Components/Redeem');
+//var Redeem = require('../Components/Redeem');
 var Reward = require('../Components/Reward');
-var View = require('../Components/View')
+//var View = require('../Components/View')
 
 
 
@@ -27,7 +27,7 @@ var HomeContainer = require('../Containers/HomeContainer');
 var LoginContainer = require('../Containers/LoginContainer');
 var RewardContainer = require('../Containers/RewardContainer');
 var SignupContainer = require('../Containers/SignupContainer');
-var ViewContainer = require('../Containers/ViewContainer');
+//var ViewContainer = require('../Containers/ViewContainer');
 
 
 
@@ -39,15 +39,12 @@ var Routes = React.createClass({
 
 	 	return (
 			<Router history={hashHistory}>
-				<Route path= "/" component={Home} />
+				<Route path= "/Home" component={Home} />
 				<Route path= "/Add" component={AddContainer} />
-				<Route path= "/Completed" component={Completed} />
 				<Route path= "/Dash" component={DashContainer}/>
 				<Route path= "/Login" component={LoginContainer}/>
-				<Route path= "/Redeem" component={Redeem} />
 				<Route path= "/Reward" component={RewardContainer} />
 				<Route path= "/SignUp" component={SignupContainer} />
-				<Route path= "/View" component={ViewContainer} />
 
 			</Router>
 		)
