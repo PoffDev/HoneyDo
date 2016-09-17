@@ -9,7 +9,6 @@ var hashHistory = ReactRouter.hashHistory;
 
 //Components
 var Add = require('../Components/Add');
-//var Completed = require('../Components/Completed')
 var Dash = require('../Components/Dash');
 var Home = require('../Components/Home');
 var Login = require('../Components/Login');
