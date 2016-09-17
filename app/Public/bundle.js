@@ -27101,6 +27101,7 @@
 			return React.createElement(
 				Router,
 				{ history: hashHistory },
+				React.createElement(Route, { path: '/', component: HomeContainer }),
 				React.createElement(Route, { path: '/Home', component: HomeContainer }),
 				React.createElement(Route, { path: '/Add', component: AddContainer }),
 				React.createElement(Route, { path: '/Dash', component: DashContainer }),

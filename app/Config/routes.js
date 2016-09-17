@@ -38,6 +38,7 @@ var Routes = React.createClass({
 
 	 	return (
 			<Router history={hashHistory}>
+				<Route path= "/" component={HomeContainer}/>
 				<Route path= "/Home" component={HomeContainer} />
 				<Route path= "/Add" component={AddContainer} />
 				<Route path= "/Dash" component={DashContainer}/>
