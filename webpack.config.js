@@ -4,7 +4,7 @@ module.exports = {
   devtool: 'source-map',
 
   // This code will be compiled
-  entry: "./App/app.js",
+  entry: "./app/app.js",
 
   // Then output into this file
   output: {
