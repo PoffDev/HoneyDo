@@ -4,6 +4,8 @@ var Link = ReactRouter.Link;
 
 function Login(props) {
 
+	console.log(props.getInitialState);
+
 	return(
 			<div>
 

@@ -31,7 +31,7 @@ var HomeContainer = React.createClass({
 
 		this.context.router.push({
 
-			pathname:'/Home',
+			pathname:'/login',
 			state:{
 				partner1: this.state.partner1,
 				partner2: this.state.partner2,

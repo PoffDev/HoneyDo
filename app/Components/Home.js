@@ -84,7 +84,7 @@ function Home(props) {
 
 				            </div>
 
-		        			<button type="submit" onClick={props.link} className="btn btn-lg btn-block btn-default">Honey, I'm Home</button>
+		        			<button type="submit" className="btn btn-lg btn-block btn-default">Honey, I'm Home</button>
 		      
 		      			</form>
 

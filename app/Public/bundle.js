@@ -27578,7 +27578,7 @@
 							),
 							React.createElement(
 								'button',
-								{ type: 'submit', onClick: props.link, className: 'btn btn-lg btn-block btn-default' },
+								{ type: 'submit', className: 'btn btn-lg btn-block btn-default' },
 								'Honey, I\'m Home'
 							)
 						)
@@ -27732,6 +27732,8 @@
 	var Link = ReactRouter.Link;
 	
 	function Login(props) {
+	
+		console.log(props.getInitialState);
 	
 		return React.createElement(
 			'div',
@@ -29853,7 +29855,7 @@
 	
 			this.context.router.push({
 	
-				pathname: '/Home',
+				pathname: '/login',
 				state: {
 					partner1: this.state.partner1,
 					partner2: this.state.partner2,
@@ -30076,7 +30078,7 @@
 	
 			this.context.router.push({
 	
-				pathname: '/Signup',
+				pathname: '/signup',
 				state: {
 					email: this.state.email,
 					partner1: this.state.partner1,

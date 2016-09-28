@@ -31,7 +31,7 @@ var SignupContainer = React.createClass({
 
 		this.context.router.push({
 
-			pathname:'/Signup',
+			pathname:'/signup',
 			state:{
 				email: this.state.email,
 				partner1: this.state.partner1,
