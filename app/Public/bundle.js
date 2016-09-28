@@ -27541,7 +27541,7 @@
 									React.createElement(
 										'div',
 										{ className: 'form-group form-group-lg' },
-										React.createElement('input', { type: 'text', className: 'form-control', id: 'partner1', placeholder: 'Husband/Boyfriend', onChange: props.updateInputs })
+										React.createElement('input', { type: 'email', className: 'form-control', id: 'partner1', placeholder: 'Email', onChange: props.updateInputs })
 									)
 								),
 								React.createElement(
@@ -27550,7 +27550,7 @@
 									React.createElement(
 										'div',
 										{ className: 'form-group form-group-lg' },
-										React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Wife/Girlfriend', onChange: props.updateInputs })
+										React.createElement('input', { type: 'text', className: 'form-control', id: 'partner2', placeholder: 'Partner 1', onChange: props.updateInputs })
 									)
 								)
 							),
@@ -27563,7 +27563,7 @@
 									React.createElement(
 										'div',
 										{ className: 'form-group form-group-lg' },
-										React.createElement('input', { type: 'email', className: 'form-control', id: 'email', placeholder: 'Email', onChange: props.updateInputs })
+										React.createElement('input', { type: 'text', className: 'form-control', id: 'email', placeholder: 'Partner 2', onChange: props.updateInputs })
 									)
 								),
 								React.createElement(

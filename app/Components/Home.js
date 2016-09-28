@@ -56,13 +56,13 @@ function Home(props) {
 
 								<div className = "col-md-6">
 		        					<div className="form-group form-group-lg">
-				              			<input type="text" className="form-control" id="partner1" placeholder="Husband/Boyfriend" onChange={props.updateInputs} />
+				              			<input type="email" className="form-control" id="partner1" placeholder="Email" onChange={props.updateInputs} />
 				            		</div>
 		        				</div>	
 
 		        				<div className = "col-md-6">
 				            		<div className="form-group form-group-lg">
-		          						<input type="text" className="form-control" id="partner2" placeholder="Wife/Girlfriend" onChange={props.updateInputs} />
+		          						<input type="text" className="form-control" id="partner2" placeholder="Partner 1" onChange={props.updateInputs} />
 		        					</div>
 				            	</div>
 
@@ -72,7 +72,7 @@ function Home(props) {
 
 								<div className = "col-md-6">
 		        					<div className="form-group form-group-lg">
-		         			 			<input type="email" className="form-control" id="email" placeholder="Email" onChange={props.updateInputs} />
+		         			 			<input type="text" className="form-control" id="email" placeholder="Partner 2" onChange={props.updateInputs} />
 		        					</div>
 		        				</div>	
 
