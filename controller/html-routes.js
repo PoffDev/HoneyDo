@@ -9,8 +9,8 @@ var mongojs = require('mongojs');
 //var databaseUrl = 'mongodb://heroku_p4fxmdhp:flluml0imtkisl87catagjddcf@ds011449.mlab.com:11449/heroku_p4fxmdhp'
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-//var databaseUrl = 'mongodb://heroku_hp60kktt:tum76b8vkm11rgvcnesme04sju@ds033126.mlab.com:33126/heroku_hp60kktt';
-var databaseUrl = 'HoneyDo';
+var databaseUrl = 'mongodb://heroku_hp60kktt:tum76b8vkm11rgvcnesme04sju@ds033126.mlab.com:33126/heroku_hp60kktt';
+//var databaseUrl = 'HoneyDo';
 var collections = ["users"];
 
 // use mongojs to hook the database to the db variable
