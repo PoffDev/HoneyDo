@@ -11,4 +11,4 @@ Technologies Used (MERN)
     passport
     axios
   MongoDB
-    mongojs
+    Mongojs
