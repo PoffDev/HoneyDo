@@ -8,8 +8,8 @@ module.exports = {
 
   // Then output into this file
   output: {
-    filename: "App/public/bundle.js",
-    publicPath: './App/public'
+    filename: "app/public/bundle.js",
+    publicPath: './app/public'
   },
 
   module: {
