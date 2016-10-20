@@ -8,7 +8,7 @@ var flash = require('connect-flash');
 
 // Create Instance of Express
 var app = express();
-var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
+var PORT = 3000; // Sets an initial port. We'll use this later in our listener
 
 // Run Morgan for Logging
 app.use(logger('dev'));
@@ -42,6 +42,6 @@ require('./controller/html-routes.js')(app);
 // Listener
 // -------------------------------------------------
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || PORT, function() {
 	console.log("App listening on PORT: " + PORT);
 });
