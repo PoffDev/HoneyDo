@@ -1,7 +1,7 @@
 var React = require('react');
 var Router = require('react-router')
 var Signup = require('../Components/Signup');
-var helpers = require('../utilites/helpers');
+var helpers = require('../Utilites/helpers');
 
 var SignupContainer = React.createClass({
 

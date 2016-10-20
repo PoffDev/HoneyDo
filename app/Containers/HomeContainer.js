@@ -1,7 +1,7 @@
 var React = require('react');
 var Router = require('react-router')
 var Home = require('../Components/Home');
-var helpers = require('../utilites/helpers');
+var helpers = require('../Utilites/helpers');
 
 var HomeContainer = React.createClass({
 

@@ -1,6 +1,6 @@
  var React = require('react');
 var View = require('../Components/View');
-var helpers = require('../utilites/helpers');
+var helpers = require('../Utilites/helpers');
 
 
 var ViewContainer = React.createClass({

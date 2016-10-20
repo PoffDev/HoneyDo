@@ -1,6 +1,6 @@
 var React = require('react');
 var Login = require('../Components/Login');
-var helpers = require('../utilites/helpers');
+var helpers = require('../Utilites/helpers');
 var axios = require('axios');
 
 var LoginContainer = React.createClass({

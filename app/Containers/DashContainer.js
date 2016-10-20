@@ -1,5 +1,5 @@
 var React = require('react');
-var helpers = require('../utilites/helpers');
+var helpers = require('../Utilites/helpers');
 var Dash = require('../Components/Dash');
 
 var DashContainer = React.createClass({

@@ -1,6 +1,6 @@
 var React = require('react');
 var Add = require('../Components/Add');
-var helpers = require('../utilites/helpers');
+var helpers = require('../Utilites/helpers');
 
 var AddContainer = React.createClass({
 

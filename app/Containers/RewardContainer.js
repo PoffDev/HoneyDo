@@ -1,6 +1,6 @@
 var React = require('react');
 var Reward = require('../Components/Reward');
-var helpers = require('../utilites/helpers');
+var helpers = require('../Utilites/helpers');
 
 var RewardContainer = React.createClass({
 
